@@ -16,21 +16,23 @@ Os registros indicam que o desastre talvez não tenha sido um acidente: alguém 
 
 ### Estrutura em três atos
 
-1. **A descoberta** — o sobrevivente entra no complexo e recupera um terminal com sete funcionários ligados ao laboratório.
-2. **As contradições** — crachás, relatórios, gravações e registros de acesso confirmam ou eliminam hipóteses.
-3. **A verdade** — o jogador acusa um suspeito, um item e um setor.
+1. **A descoberta** — o sobrevivente recupera um terminal parcialmente funcional que revela os sete funcionários e os setores em que trabalhavam.
+2. **As contradições** — o jogador investiga ambientes, coleta documentos e registros de acesso que confirmam ou eliminam hipóteses.
+3. **A reconstrução** — o jogador identifica o responsável, como a amostra foi liberada e onde começou a propagação, com uma acusação compatível com as pistas.
 
 ## Personagens
 
-| # | Nome | Função |
-|---|------|--------|
-| 1 | Dra. Amie Lin | Virologista |
-| 2 | Giovani Pistori | Chefe de segurança |
-| 3 | Angela Torres | Engenheira de sistemas |
-| 4 | Dr. Fernando Almeida | Diretor científico |
-| 5 | Otávio Ferraz | Estagiário |
-| 6 | Clara Costa | Técnica de contenção |
-| 7 | Beatrice Salles | Técnica de manutenção |
+| # | Nome | Função | Papel na investigação |
+|---|------|--------|-----------------------|
+| 1 | Dra. Amie Lin | Virologista | Alerta científico sobre os riscos de antecipar o experimento |
+| 2 | Giovani Pistori | Chefe de segurança | Acessos físicos e interrupção das câmeras |
+| 3 | Angela Torres | Engenheira de sistemas | Alterações nos registros e origem de comandos administrativos |
+| 4 | Dr. Fernando Almeida | Diretor científico | Associado à decisão de antecipar o experimento |
+| 5 | Otávio Ferraz | Estagiário | Álibi a ser confrontado com os registros de acesso |
+| 6 | Clara Costa | Técnica de contenção | Documenta a alteração dos parâmetros de contenção |
+| 7 | Beatrice Salles | Técnica de manutenção | A ordem de manutenção da ventilação não partiu dela |
+
+Nenhuma evidência isolada entrega a solução: o jogador precisa cruzar pistas, verificar contradições e descartar hipóteses.
 
 ## Itens
 
@@ -39,6 +41,12 @@ Crachá de acesso · Pendrive criptografado · Gravador de áudio · Frasco de c
 ## Locais
 
 Câmara de contenção · Sala de servidores · Laboratório de análises · Túnel de ventilação · Central de segurança · Sala de evacuação
+
+## Caso e prova lógica
+
+O documento completo do caso, com as proposições, as premissas iniciais, o encadeamento da prova e a conclusão final, está em [docs/caso-amostra47.md](docs/caso-amostra47.md).
+
+**Conclusão final:** X ∧ Y ∧ Z ∧ K. Fernando Almeida liberou a Amostra 47 por meio de uma autorização administrativa com a conta da direção, registrada no pendrive criptografado, e tudo começou na Câmara de contenção.
 
 ## Entregas
 
