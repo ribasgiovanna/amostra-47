@@ -44,6 +44,8 @@ Crachá de acesso · Pendrive criptografado · Gravador de áudio · Frasco de c
 
 Câmara de contenção · Sala de servidores · Laboratório de análises · Túnel de ventilação · Central de segurança · Sala de evacuação
 
+Descrição de cada espaço, pistas encontradas nele e mapa: [docs/locais](docs/locais/README.md).
+
 ## Caso e prova lógica
 
 O documento completo do caso, com as proposições, as premissas iniciais, o encadeamento da prova e a conclusão final, está em [docs/caso-amostra47.md](docs/caso-amostra47.md).
