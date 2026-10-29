@@ -40,6 +40,8 @@ História, papel na prova lógica, ficha visual e card de cada personagem: [docs
 
 Crachá de acesso · Pendrive criptografado · Gravador de áudio · Frasco de contenção · Relatório de acesso · Sensor de pressão
 
+O que cada item revela, sua arte e seu papel na prova lógica: [docs/itens](docs/itens/README.md).
+
 ## Locais
 
 Câmara de contenção · Sala de servidores · Laboratório de análises · Túnel de ventilação · Central de segurança · Sala de evacuação
