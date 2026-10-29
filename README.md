@@ -34,6 +34,8 @@ Os registros indicam que o desastre talvez não tenha sido um acidente: alguém 
 
 Nenhuma evidência isolada entrega a solução: o jogador precisa cruzar pistas, verificar contradições e descartar hipóteses.
 
+História, papel na prova lógica, ficha visual e card de cada personagem: [docs/personagens](docs/personagens/README.md).
+
 ## Itens
 
 Crachá de acesso · Pendrive criptografado · Gravador de áudio · Frasco de contenção · Relatório de acesso · Sensor de pressão
