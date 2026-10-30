@@ -1,6 +1,8 @@
 # Túnel de ventilação
 
-![Mapa do Túnel de ventilação](mapa.webp)
+| Pós-incidente | Versão limpa |
+|---|---|
+| ![Mapa do Túnel de ventilação, pós-incidente](mapa.webp) | ![Mapa do Túnel de ventilação, versão limpa](mapa-limpo.webp) |
 
 | | |
 |---|---|
