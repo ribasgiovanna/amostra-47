@@ -10,11 +10,11 @@ Prof.ª Maria Angela Roveredo
 
 | # | Nome completo |
 |---|---|
-| 1 | Giovanna Ribas *(conferir nome completo)* |
-| 2 | *a preencher* |
-| 3 | *a preencher* |
-| 4 | *a preencher* |
-| 5 | *a preencher* |
+| 1 | Ana Beatriz Patussi Reolon |
+| 2 | Ana Clara Ernandes |
+| 3 | Emelize Bonfim Mlot |
+| 4 | Giovanna Ribas dos Reis |
+| 5 | Otavio Brito Fonseca |
 
 Os nomes devem estar exatamente como no grupo DETETIVE do Canvas.
 
