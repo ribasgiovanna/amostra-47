@@ -26,13 +26,13 @@ Diferente das outras salas, o túnel não é um ambiente quadrado. É uma **rede
 - **Sinalização:** faixas amarelas e pretas nas passagens e luzes vermelhas de alerta nas extremidades leste.
 - **Contaminação:** **focos verdes ao longo de quase todos os corredores**, mais do que em qualquer outro mapa. Há também detritos nos becos sem saída, como no canto sudoeste.
 
-**Leitura visual:** o túnel funciona como o caminho da propagação, e a contaminação acompanha o traçado dos dutos.
+**Leitura visual:** o túnel funciona como o caminho da propagação, e a contaminação acompanha o traçado dos dutos. Foi aqui que Beatrice Salles morreu, depois de voltar para conferir se ninguém tinha ficado preso nos corredores de serviço.
 
 ## O que se descobre aqui
 
 | Evidência | Proposição | Fonte no caso |
 |---|---|---|
-| A **ordem de manutenção** da ventilação tem inconsistências e não partiu de Beatrice | V | Premissa 7 (ordem de manutenção / depoimento de Beatrice) |
+| A **ordem de manutenção** da ventilação tem inconsistências e não partiu de Beatrice | V | Premissa 7 (ordem de manutenção / registro de Beatrice) |
 
 > O caso não define onde a ordem de manutenção é encontrada. Este túnel é o local mais coerente, mas isso precisa ser confirmado.
 

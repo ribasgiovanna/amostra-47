@@ -26,7 +26,7 @@ Laboratório amplo com portas duplas ao norte e ao sul, organizado em **três ba
 - **Sul:** geladeiras de amostras, pia, armário com símbolo de risco biológico, lixeiras e carrinho.
 - **Contaminação:** focos verdes espalhados entre as bancadas, mais concentrados no lado leste.
 
-**Leitura visual:** a pesquisa foi interrompida no meio. Os tubos continuam nos suportes, as anotações ficaram sobre as bancadas e a cultura ainda está na cuba.
+**Leitura visual:** a pesquisa foi interrompida no meio. Os tubos continuam nos suportes, as anotações ficaram sobre as bancadas e a cultura ainda está na cuba. Foi aqui que Amie Lin morreu, depois de voltar para buscar máscaras para os colegas.
 
 ## O que se descobre aqui
 

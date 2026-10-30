@@ -20,19 +20,27 @@ Os nomes devem estar exatamente como no grupo DETETIVE do Canvas.
 
 ## A história
 
-Há vários anos, o mundo entrou em colapso após a disseminação de um agente biológico desconhecido, a **Amostra 47**. Durante uma busca por suprimentos, um sobrevivente encontra o **Complexo Helix**, laboratório evacuado na noite em que o surto começou.
+Há vários anos, o mundo entrou em colapso após a disseminação de um agente biológico desconhecido, a **Amostra 47**. O surto começou no **Complexo Helix**, um laboratório de pesquisa que foi trancado na noite do incidente: ninguém conseguiu fugir, e todos os funcionários morreram.
+
+Anos depois, **Giulia Pistori**, filha do chefe de segurança Giovani Pistori, recebe uma pista: se quiser descobrir o que aconteceu com o pai, precisa ir até o Complexo Helix, onde há indícios de que o surto começou. Indignada e em conflito com o rumo da morte do pai, ela decide investigar.
 
 Os registros indicam que o desastre talvez não tenha sido um acidente: alguém retirou a Amostra 47 da contenção, registros foram apagados e uma mensagem de emergência foi interrompida.
+
+A investigação acontece no presente, nas ruínas do complexo. Durante o jogo, **flashbacks jogáveis** mostram momentos de antes do acidente.
 
 **Missão:** descobrir **quem** foi responsável pelo vazamento, **qual procedimento/item** permitiu a liberação e **em que setor** tudo começou.
 
 ### Estrutura em três atos
 
-1. **A descoberta** — o sobrevivente recupera um terminal parcialmente funcional que revela os sete funcionários e os setores em que trabalhavam.
+1. **A descoberta** — Giulia recupera um terminal parcialmente funcional que revela os sete funcionários e os setores em que trabalhavam.
 2. **As contradições** — o jogador investiga ambientes, coleta documentos e registros de acesso que confirmam ou eliminam hipóteses.
 3. **A reconstrução** — o jogador identifica o responsável, como a amostra foi liberada e onde começou a propagação, com uma acusação compatível com as pistas.
 
 ## Personagens
+
+**Protagonista:** Giulia Pistori, filha de Giovani Pistori.
+
+Os sete funcionários abaixo morreram no incidente:
 
 | # | Nome | Função | Papel na investigação |
 |---|------|--------|-----------------------|

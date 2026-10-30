@@ -35,7 +35,7 @@ Sala quadrada com uma **única porta dupla, ao sul**. A parede norte inteira é 
 | **Relatório de acesso:** horários, setores visitados e tentativas de entrada; mostra que Otávio saiu antes da liberação | W | Premissa 8 |
 | O relatório só é compatível com quatro hipóteses: Fernando, Otávio, Beatrice ou invasão | Y ∨ O ∨ B ∨ I | Premissa 10 |
 | **Crachá de acesso:** quem entrou nos setores restritos e quando | — | Item 1 |
-| Depoimento de Giovani: não houve arrombamento | T (≡ ¬A) | Premissa 5 |
+| Registro de Giovani: não houve arrombamento | T (≡ ¬A) | Premissa 5 |
 
 ## Na prova
 

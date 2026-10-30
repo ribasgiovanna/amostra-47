@@ -13,9 +13,15 @@
 
 Clara era responsável pela inspeção dos equipamentos de segurança da contenção. Meticulosa e reservada, era a pessoa que perceberia primeiro se algo estivesse errado com a câmara.
 
-E percebeu. Pouco antes da evacuação, Clara notou uma alteração na pressão da câmara e registrou uma **anomalia nos parâmetros de contenção**. O sensor de pressão recuperado no complexo confirma o registro. É essa evidência que localiza o início de tudo: a alteração manual aconteceu na **Câmara de contenção**.
+E percebeu. Pouco antes do alarme, Clara notou uma alteração na pressão da câmara e registrou uma **anomalia nos parâmetros de contenção**. O sensor de pressão recuperado no complexo confirma o registro. É essa evidência que localiza o início de tudo: a alteração manual aconteceu na **Câmara de contenção**.
 
 Clara **detectou e documentou** a mudança; não há nada no caso que a coloque como autora. Nos registros do horário da liberação, ela aparece em outro setor.
+
+## Destino
+
+Clara morreu na noite do incidente, junto com os demais funcionários. O complexo estava trancado, e ela ficou perto de uma das portas, tentando fugir.
+
+**Item pessoal:** [maleta de amostras](../../itens/pessoais/maleta-de-amostras/), encontrada na Câmara de contenção. Giulia precisa abri-la para encontrar o sensor de pressão.
 
 ## Na investigação
 

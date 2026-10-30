@@ -11,7 +11,7 @@
 
 ## O que revela
 
-Uma cópia parcial dos registros do experimento e informações recuperadas dos sistemas, incluindo o **registro decisivo da autorização administrativa** feita com a conta da direção.
+Uma cópia parcial dos registros do experimento e informações recuperadas dos sistemas, incluindo o **registro decisivo da autorização administrativa** feita com a conta da direção. O pendrive pertencia a Angela Torres e também guarda evidências de que a diretoria manipulou informações, como o aval de Beatrice na ordem de manutenção.
 
 ## Na prova
 

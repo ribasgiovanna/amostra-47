@@ -11,7 +11,7 @@
 
 ## O que revela
 
-Uma ordem de serviço da ventilação com inconsistências, que **não partiu de Beatrice Salles**.
+Uma ordem de serviço da ventilação com inconsistências, que **não partiu de Beatrice Salles**: o aval dela foi manipulado pela diretoria. As evidências dessa manipulação estão no [pendrive criptografado](../pendrive-criptografado/).
 
 ## Na prova
 

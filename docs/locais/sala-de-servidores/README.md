@@ -35,6 +35,7 @@ Sala quadrada com portas duplas ao norte e ao sul. As grelhas de ventilação no
 | O sistema registrou uma autorização administrativa para alterar a contenção | R | Premissa 3 (registro do sistema) |
 | O comando foi executado com uma conta da direção | S | Premissa 4 (análise de Angela) |
 | **Pendrive criptografado:** cópia parcial dos registros do experimento e dados recuperados dos sistemas | Z | Premissa 14 → linha 29 |
+| Registro do envio da **mensagem de emergência interrompida**: revela que foi Angela quem mandou o alerta para Giovani, a mensagem que trouxe Giulia ao complexo | — | História da Giulia |
 
 ## Na prova
 
