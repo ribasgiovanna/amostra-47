@@ -1,6 +1,8 @@
 # Câmara de contenção
 
-![Mapa da Câmara de contenção](mapa.webp)
+| Pós-incidente | Versão limpa |
+|---|---|
+| ![Mapa da Câmara de contenção, pós-incidente](mapa.webp) | ![Mapa da Câmara de contenção, versão limpa](mapa-limpo.webp) |
 
 | | |
 |---|---|

@@ -1,6 +1,8 @@
 # Sala de servidores
 
-![Mapa da Sala de servidores](mapa.webp)
+| Pós-incidente | Versão limpa |
+|---|---|
+| ![Mapa da Sala de servidores, pós-incidente](mapa.webp) | ![Mapa da Sala de servidores, versão limpa](mapa-limpo.webp) |
 
 | | |
 |---|---|

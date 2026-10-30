@@ -4,6 +4,18 @@ O Complexo Helix foi evacuado na noite em que a Amostra 47 escapou. O sobreviven
 
 Os mapas são pixel art 2D em vista de cima (*top-down*), seguindo a [direção de arte dos cenários](guia-de-estilo.md). A [prancha geral](prancha-cenarios-e-objetos.webp) reúne os seis ambientes, os objetos investigativos e de ambientação, e os elementos padrão (portas, pisos, paredes e sinalização). Os itens estão documentados em [`../itens`](../itens/README.md).
 
+## Mapa do complexo
+
+Os seis ambientes reunidos num único mapa, nas versões pós-incidente e limpa:
+
+| Pós-incidente | Versão limpa |
+|---|---|
+| ![Mapa do Complexo Helix, pós-incidente](mapa-complexo-pos-incidente.webp) | ![Mapa do Complexo Helix, versão limpa](mapa-complexo-limpo.webp) |
+
+- **Norte:** Central de segurança (oeste) e Sala de servidores (leste).
+- **Centro:** a Câmara de contenção, cortada por um corredor norte–sul que liga todos os setores. À esquerda fica o Laboratório de análises; à direita, a Sala de evacuação.
+- **Sul:** o Túnel de ventilação, com ramais para os dois lados e uma saída no extremo sul.
+
 ## Ambientes
 
 | # | Local | O que guarda | Personagens | Proposições |
@@ -20,11 +32,14 @@ Os mapas são pixel art 2D em vista de cima (*top-down*), seguindo a [direção 
 ```
 docs/locais/
 ├── README.md                                ← este índice
-├── guia-de-estilo.md    ← direção de arte (vale para todos os mapas)
+├── guia-de-estilo.md                        ← direção de arte (vale para todos os mapas)
 ├── prancha-cenarios-e-objetos.webp          ← prancha geral de cenários e objetos
+├── mapa-complexo-pos-incidente.webp         ← mapa consolidado, pós-incidente
+├── mapa-complexo-limpo.webp                 ← mapa consolidado, versão limpa
 └── <local>/
     ├── README.md                            ← descrição do espaço, pistas e papel na prova
-    └── mapa.webp                            ← mapa top-down (1254 × 1254)
+    ├── mapa.webp                            ← mapa top-down pós-incidente (1254 × 1254)
+    └── mapa-limpo.webp                      ← mesmo mapa, sem sinais do incidente
 ```
 
 ## Fontes
@@ -38,4 +53,5 @@ docs/locais/
 - Definir em qual local fica cada item investigativo (ver sugestões em [`../itens`](../itens/README.md)).
 - Definir quais pistas dependem de outras para serem reveladas.
 - Definir pistas de apoio para a Sala de evacuação.
-- O logo da Umbrella, de *Resident Evil*, aparece no terminal e no piso da Central de segurança e na sinalização da prancha. A direção de arte pede inspiração no jogo, mas um logo de marca registrada deve ser trocado por um símbolo próprio do Complexo Helix.
+- Na versão limpa da Câmara de contenção, o vidro do tanque já aparece rachado; confirmar se essa versão representa o estado anterior ao incidente.
+- O logo da Umbrella, de *Resident Evil*, aparece no terminal e no piso da Central de segurança, no painel do tanque e num monitor da Câmara de contenção (versão limpa) e na sinalização da prancha. A direção de arte pede inspiração no jogo, mas um logo de marca registrada deve ser trocado por um símbolo próprio do Complexo Helix.

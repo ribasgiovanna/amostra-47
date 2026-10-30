@@ -1,6 +1,8 @@
 # Sala de evacuação
 
-![Mapa da Sala de evacuação](mapa.webp)
+| Pós-incidente | Versão limpa |
+|---|---|
+| ![Mapa da Sala de evacuação, pós-incidente](mapa.webp) | ![Mapa da Sala de evacuação, versão limpa](mapa-limpo.webp) |
 
 | | |
 |---|---|
