@@ -15,7 +15,13 @@ Otávio circulava por diferentes setores do Complexo Helix e conhecia a rotina d
 
 Ele afirma ter deixado o laboratório antes do incidente. Mesmo assim, um registro de acesso encontrado no complexo coloca seu nome entre as quatro hipóteses compatíveis com o horário da liberação, e por isso ele é um dos primeiros suspeitos.
 
-Ao confrontar o álibi com o **relatório de acesso**, o sobrevivente confirma que Otávio realmente saiu antes da liberação da amostra. Se ele fosse o responsável, não poderia ter saído antes. Otávio está fora.
+Ao confrontar o álibi com o **relatório de acesso**, Giulia confirma que Otávio realmente saiu antes da liberação da amostra. Se ele fosse o responsável, não poderia ter saído antes. Otávio está fora.
+
+## Destino
+
+Otávio saiu do laboratório antes da liberação, mas ainda estava dentro do complexo quando ele foi trancado. Morreu junto com os demais funcionários, perto de uma das portas, tentando fugir.
+
+**Item pessoal:** a [gravata](../../itens/pessoais/gravata/), encontrada na Sala de evacuação.
 
 ## Na investigação
 

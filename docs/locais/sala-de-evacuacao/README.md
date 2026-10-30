@@ -8,7 +8,7 @@
 |---|---|
 | **Função no complexo** | Ponto de reunião para evacuação; comunicados de emergência |
 | **Papel no caso** | Documentos deixados pelos funcionários na fuga; a mensagem de emergência interrompida |
-| **Personagens ligados** | Todos os sete funcionários, evacuados na noite do surto |
+| **Personagens ligados** | Todos os sete funcionários, que morreram tentando fugir do complexo trancado |
 | **Proposições** | — (contexto e pistas de apoio) |
 
 ## O espaço
@@ -27,13 +27,14 @@ Sala ampla com portas duplas ao norte e ao sul e o centro aberto para circulaç�
   - **rastros de sangue** entre os bancos;
   - bolsas abertas, sapatos, um casaco largado sobre um banco e uma caneca esquecida.
 
-**Leitura visual:** as pessoas saíram correndo e largaram tudo. O sangue e a maca indicam que houve feridos durante a evacuação.
+**Leitura visual:** os funcionários correram para as saídas e largaram tudo pelo caminho. O complexo estava trancado: ninguém conseguiu sair, e o sangue e a maca marcam onde eles ficaram presos, perto das portas.
 
 ## O que se descobre aqui
 
 | Evidência | Proposição | Fonte no caso |
 |---|---|---|
 | Comunicados de emergência e documentos deixados pelos funcionários | — | Locais, item 6 |
-| Mensagem de emergência interrompida | — | README (premissa da história) |
+| [Gravata de Otávio Ferraz](../../itens/pessoais/gravata/) (item pessoal) | — | Itens pessoais |
+| Mensagem de emergência interrompida (quem a enviou é revelado na [Sala de servidores](../sala-de-servidores/)) | — | README (premissa da história) |
 
 > O caso não liga nenhuma premissa da prova a esta sala. Ela funciona como ambientação e pode guardar pistas de apoio, que ainda precisam ser definidas.

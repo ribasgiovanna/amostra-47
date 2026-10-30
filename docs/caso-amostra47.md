@@ -6,19 +6,23 @@ Documento do caso: história, personagens, itens, locais, proposições e prova 
 
 Há vários anos, o mundo entrou em colapso após a disseminação de um agente biológico desconhecido, identificado nos registros científicos como **Amostra 47**. As cidades foram abandonadas, as comunicações entraram em colapso e os poucos sobreviventes passaram a viver entre as ruínas.
 
-O jogador assume o papel de um sobrevivente que, durante uma busca por suprimentos, encontra o **Complexo Helix**, um enorme laboratório de pesquisa evacuado na noite em que o surto começou.
+O surto começou no **Complexo Helix**, um enorme laboratório de pesquisa. Na noite do incidente, o complexo foi trancado: ninguém conseguiu fugir, e todos os funcionários morreram, a maioria perto das portas, tentando sair.
 
-Entre corredores destruídos, computadores danificados, documentos queimados e câmaras de contenção rompidas, o sobrevivente encontra evidências de que o desastre pode não ter sido um acidente.
+Anos depois, o jogador assume o papel de **Giulia Pistori**, filha do chefe de segurança Giovani Pistori. Ela recebe uma pista: se quiser descobrir o que aconteceu com o pai, precisa ir até o Complexo Helix, onde há indícios de que o surto começou. Indignada e em conflito com o rumo da morte do pai, decide investigar.
 
-Os registros indicam que a Amostra 47 foi liberada antes da evacuação. Há arquivos apagados, depoimentos contraditórios e uma ordem de manutenção suspeita. Sete funcionários estavam ligados ao laboratório, e todos podem fornecer informações importantes para reconstruir os acontecimentos.
+Entre corredores destruídos, computadores danificados, documentos queimados e câmaras de contenção rompidas, Giulia encontra evidências de que o desastre pode não ter sido um acidente.
 
-Agora, o sobrevivente precisa investigar o complexo, encontrar pistas e cruzar as informações para descobrir **quem** foi responsável pela liberação da amostra, **como** o incidente aconteceu e **em qual setor** do laboratório tudo começou.
+Os registros indicam que a Amostra 47 foi liberada de propósito. Há arquivos apagados, registros contraditórios e uma ordem de manutenção suspeita. Sete funcionários estavam ligados ao laboratório, e o que cada um deixou para trás ajuda a reconstruir os acontecimentos.
+
+Agora, Giulia precisa investigar o complexo, encontrar pistas e cruzar as informações para descobrir **quem** foi responsável pela liberação da amostra, **como** o incidente aconteceu e **em qual setor** do laboratório tudo começou.
+
+A investigação acontece no presente. Durante o jogo, **flashbacks jogáveis** mostram momentos de antes do acidente.
 
 **Objetivo principal:** solucionar o mistério por meio da investigação e da aplicação da lógica matemática.
 
 ## 2. Etapas da investigação
 
-**Ato I — A descoberta.** O sobrevivente encontra o Complexo Helix e recupera um terminal parcialmente funcional. Os primeiros arquivos revelam a identidade dos sete funcionários e os setores em que trabalhavam.
+**Ato I — A descoberta.** Giulia encontra o Complexo Helix e recupera um terminal parcialmente funcional. Os primeiros arquivos revelam a identidade dos sete funcionários e os setores em que trabalhavam.
 
 **Ato II — As contradições.** O jogador investiga diferentes ambientes, coleta documentos, examina objetos e encontra registros de acesso. As pistas ajudam a confirmar ou eliminar hipóteses sobre os funcionários e suas ações.
 
@@ -26,12 +30,16 @@ Agora, o sobrevivente precisa investigar o complexo, encontrar pistas e cruzar a
 
 ## 3. Personagens
 
+**Protagonista: Giulia Pistori.** Filha de Giovani Pistori. Anos depois do surto, aos 21 anos, vai ao Complexo Helix descobrir o que aconteceu com o pai.
+
+Os sete funcionários do complexo morreram no incidente:
+
 1. **Dra. Amie Lin — Virologista.** Responsável pelo estudo da Amostra 47. Tinha autorização para acessar a câmara de contenção e conhecia os riscos do agente biológico. Seus relatórios científicos podem esclarecer se o experimento foi realizado de acordo com os protocolos de segurança.
 2. **Giovani Pistori — Chefe de segurança.** Controlava os acessos físicos e supervisionava as câmeras do complexo. Conhecia os pontos cegos da vigilância e pode esclarecer se houve invasão, uso indevido de credenciais ou interrupção deliberada do monitoramento.
 3. **Angela Torres — Engenheira de sistemas.** Administrava os terminais, os registros digitais e as permissões do sistema. Possuía conhecimento técnico para identificar alterações nos arquivos, mas isso não significa que tenha sido responsável por elas.
 4. **Dr. Fernando Almeida — Diretor científico.** Aprovava experimentos e supervisionava os protocolos de pesquisa. Há indícios de que pretendia antecipar os testes para apresentar resultados, mesmo diante de alertas sobre os riscos da Amostra 47.
 5. **Otávio Ferraz — Estagiário.** Circulava por diferentes setores e conhecia a rotina dos pesquisadores. Afirma ter deixado o laboratório antes do incidente, mas um registro de acesso encontrado no complexo inicialmente levanta suspeitas.
-6. **Clara Costa — Técnica de contenção.** Era responsável pela inspeção dos equipamentos de segurança. Percebeu uma alteração na pressão da câmara pouco antes da evacuação e registrou uma anomalia nos parâmetros de contenção.
+6. **Clara Costa — Técnica de contenção.** Era responsável pela inspeção dos equipamentos de segurança. Percebeu uma alteração na pressão da câmara pouco antes do alarme e registrou uma anomalia nos parâmetros de contenção.
 7. **Beatrice Salles — Técnica de manutenção.** Conhecia os dutos de ventilação, os geradores e as rotas de serviço. Uma ordem de manutenção relacionada à ventilação apresenta inconsistências que podem ajudar a explicar a propagação do agente.
 
 ## 4. Itens investigativos
@@ -109,9 +117,9 @@ As pistas são independentes e complementares; nenhuma evidência isolada entreg
 | 2 | Q | Gravador de áudio |
 | 3 | R | Registro do sistema (Sala de servidores) |
 | 4 | S | Análise de Angela Torres |
-| 5 | T, ou seja, ¬A | Depoimento de Giovani Pistori |
+| 5 | T, ou seja, ¬A | Registro de Giovani Pistori (Central de segurança) |
 | 6 | U | Sensor de pressão / registro de Clara Costa |
-| 7 | V | Ordem de manutenção / depoimento de Beatrice Salles |
+| 7 | V | Ordem de manutenção / registro de Beatrice Salles |
 | 8 | W | Relatório de acesso (saída de Otávio) |
 | 9 | (Q ∧ R ∧ S ∧ P) → X | Antecipação + autorização + conta da direção, apesar do alerta, indicam liberação autorizada pela direção |
 | 10 | Y ∨ O ∨ B ∨ I | O relatório de acesso só é compatível com quatro hipóteses: Fernando, Otávio, Beatrice ou invasão externa |

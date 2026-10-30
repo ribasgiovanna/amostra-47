@@ -8,7 +8,7 @@
 |---|---|
 | **Função no complexo** | Armazenamento da Amostra 47 |
 | **Papel no caso** | Setor onde tudo começou |
-| **Personagens ligados** | [Clara Costa](../../personagens/clara-costa/) (inspeção da contenção), [Amie Lin](../../personagens/amie-lin/) (acesso autorizado), [Giovani Pistori](../../personagens/giovani-pistori/) (depoimento sobre a ausência de arrombamento) |
+| **Personagens ligados** | [Clara Costa](../../personagens/clara-costa/) (inspeção da contenção), [Amie Lin](../../personagens/amie-lin/) (acesso autorizado), [Giovani Pistori](../../personagens/giovani-pistori/) (registro sobre a ausência de arrombamento) |
 | **Proposições** | K, U, T (≡ ¬A) |
 
 ## O espaço
