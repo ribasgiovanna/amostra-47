@@ -1,6 +1,8 @@
 # Laboratório de análises
 
-![Mapa do Laboratório de análises](mapa.webp)
+| Pós-incidente | Versão limpa |
+|---|---|
+| ![Mapa do Laboratório de análises, pós-incidente](mapa.webp) | ![Mapa do Laboratório de análises, versão limpa](mapa-limpo.webp) |
 
 | | |
 |---|---|

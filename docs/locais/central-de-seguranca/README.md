@@ -1,6 +1,8 @@
 # Central de segurança
 
-![Mapa da Central de segurança](mapa.webp)
+| Pós-incidente | Versão limpa |
+|---|---|
+| ![Mapa da Central de segurança, pós-incidente](mapa.webp) | ![Mapa da Central de segurança, versão limpa](mapa-limpo.webp) |
 
 | | |
 |---|---|
