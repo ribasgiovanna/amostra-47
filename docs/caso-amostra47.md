@@ -42,6 +42,7 @@ Agora, o sobrevivente precisa investigar o complexo, encontrar pistas e cruzar a
 4. **Frasco de contenção:** ajuda a verificar se houve retirada manual da amostra e a reconstruir o estado da câmara.
 5. **Relatório de acesso:** apresenta horários, setores visitados e tentativas de entrada.
 6. **Sensor de pressão:** registra alterações nas condições de contenção antes do incidente.
+7. **Ordem de manutenção da ventilação:** ordem de serviço com inconsistências, que não partiu de Beatrice Salles.
 
 Cada item revela uma informação específica e contribui para confirmar ou eliminar pelo menos uma hipótese.
 

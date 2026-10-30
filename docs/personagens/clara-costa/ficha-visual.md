@@ -4,7 +4,7 @@
 **Função:** técnica de contenção do Complexo Helix  
 **Documento:** especificação visual para geração consistente de pixel art (personagem e card)  
 **Versão:** 1.0 — 29/10/2026  
-**Estilo obrigatório:** [`GUIA_ESTILO_SPRITES_AMOSTRA47.md`](../GUIA_ESTILO_SPRITES_AMOSTRA47.md)  
+**Estilo obrigatório:** [`guia-de-estilo.md`](../guia-de-estilo.md)  
 **Âncora visual de apresentação:** card final de **Amie Lin** usado na conversa (fundo azul-carvão, logo AMOSTRA 47 e painéis de HUD); anexar a imagem à IA durante a geração.
 
 > **Fontes e hierarquia:** (1) roteiro do repositório = fatos narrativos; (2) instruções e imagens da usuária = aparência desejada; (3) card pixel art gerado = interpretação gráfica a validar. **Nunca tratar detalhes inventados pelo gerador (idades numéricas, alturas, biografias adicionais, códigos) como fatos oficiais.**

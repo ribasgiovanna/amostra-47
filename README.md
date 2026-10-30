@@ -6,6 +6,18 @@ Trabalho Prático RA2 — **Detetive** (Equivalência Lógica e Inferência Lóg
 Engenharia de Software · Resolução de Problemas com Lógica Matemática · PUCPR
 Prof.ª Maria Angela Roveredo
 
+## Integrantes
+
+| # | Nome completo |
+|---|---|
+| 1 | Giovanna Ribas *(conferir nome completo)* |
+| 2 | *a preencher* |
+| 3 | *a preencher* |
+| 4 | *a preencher* |
+| 5 | *a preencher* |
+
+Os nomes devem estar exatamente como no grupo DETETIVE do Canvas.
+
 ## A história
 
 Há vários anos, o mundo entrou em colapso após a disseminação de um agente biológico desconhecido, a **Amostra 47**. Durante uma busca por suprimentos, um sobrevivente encontra o **Complexo Helix**, laboratório evacuado na noite em que o surto começou.
@@ -38,7 +50,7 @@ História, papel na prova lógica, ficha visual e card de cada personagem: [docs
 
 ## Itens
 
-Crachá de acesso · Pendrive criptografado · Gravador de áudio · Frasco de contenção · Relatório de acesso · Sensor de pressão
+Crachá de acesso · Pendrive criptografado · Gravador de áudio · Frasco de contenção · Relatório de acesso · Sensor de pressão · Ordem de manutenção da ventilação
 
 O que cada item revela, sua arte e seu papel na prova lógica: [docs/itens](docs/itens/README.md).
 
@@ -56,14 +68,33 @@ O documento completo do caso, com as proposições, as premissas iniciais, o enc
 
 ## Entregas
 
-- [ ] Slides (`.pptx`) — abertura, equipe, história, personagens, itens, locais, 10 proposições, premissas iniciais, dedução, premissas finais e conclusão
-- [ ] Painel (`.pptx`, slide único conforme template)
-- [ ] Jogo em Python (`.py`) — randomização, pontuação, decisões do jogador e final explícito
+Cada entrega tem sua pasta em [`entregas/`](entregas/README.md).
+
+- [ ] Slides (`.pptx`) em [`entregas/slides/`](entregas/slides/): abertura, equipe, história, personagens, itens, locais, 10 proposições, premissas iniciais, dedução, premissas finais e conclusão
+- [ ] Painel (`.pptx`, slide único conforme template) em [`entregas/painel/`](entregas/painel/)
+- [ ] Jogo em Python (`.py`) em [`entregas/jogo/`](entregas/jogo/): randomização, pontuação, decisões do jogador e final explícito
+
+## Estrutura do repositório
+
+```
+├── README.md
+├── docs/
+│   ├── caso-amostra47.md       ← história, proposições e prova lógica
+│   ├── personagens/            ← guia de estilo + uma pasta por personagem
+│   ├── locais/                 ← guia de estilo + prancha + uma pasta por local
+│   └── itens/                  ← guia de estilo + uma pasta por item
+└── entregas/
+    ├── slides/
+    ├── painel/
+    └── jogo/
+```
+
+Padrão de nomes: pastas e arquivos em `minusculas-com-hifen`. Cada pasta de seção tem um `README.md` de índice e um `guia-de-estilo.md`. Cada elemento tem a sua subpasta com um `README.md` e a imagem (`ficha-card.webp`, `mapa.webp` ou `arte.webp`).
 
 ## Como executar o jogo
 
 ```bash
-python amostra47.py
+python entregas/jogo/amostra47.py
 ```
 
 *(em desenvolvimento)*

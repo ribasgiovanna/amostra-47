@@ -3,14 +3,14 @@
 **Projeto:** *Amostra 47 — O Início do Fim*  
 **Tipo:** bíblia visual, especificação de produção e prompts reutilizáveis  
 **Versão:** 1.0 — 29/10/2026  
-**Referências de estilo:** [`GUIA_ESTILO_SPRITES_AMOSTRA47.md`](../personagens/GUIA_ESTILO_SPRITES_AMOSTRA47.md) e [`DIRECAO_DE_ARTE_CENARIOS_AMOSTRA47.md`](../locais/DIRECAO_DE_ARTE_CENARIOS_AMOSTRA47.md)  
+**Referências de estilo:** [`guia-de-estilo.md`](../personagens/guia-de-estilo.md) e [`guia-de-estilo.md`](../locais/guia-de-estilo.md)  
 **Fonte de narrativa:** `README.md` e `docs/caso-amostra47.md` do repositório
 
 > **Objetivo:** criar uma coleção coerente de objetos 2D para um jogo investigativo ambientado no Complexo Helix. Cada objeto deve ter uma versão pequena vista **de cima (bird's-eye / top-down)**, compatível com os mapas, e uma versão maior de **inventário/exame**, compatível com o pixel art dos personagens. Nunca confundir ilustração conceitual com asset técnico pronto para a engine.
 
 ## 1. O que é canônico e o que é proposta de arte
 
-A documentação do caso enumera **seis itens investigativos oficiais**: crachá de acesso, pendrive criptografado, gravador de áudio, frasco de contenção, relatório de acesso e sensor de pressão. Também descreve **uma ordem de manutenção da ventilação** como evidência fundamental ligada a Beatrice Salles. Neste guia, a ordem é tratada como o **sétimo objeto visual a produzir**, sem alegar que foi incluída na enumeração original de itens.
+A documentação do caso enumera **sete itens investigativos oficiais**: crachá de acesso, pendrive criptografado, gravador de áudio, frasco de contenção, relatório de acesso, sensor de pressão e ordem de manutenção da ventilação. A ordem de manutenção é a evidência ligada a Beatrice Salles (proposição V).
 
 Os nomes, a função das pistas e as relações lógicas descritas abaixo vêm da história. **Cores, tamanho, material aparente, modelo do objeto e posição nos mapas são propostas artísticas**, sujeitas à validação. A documentação não determina dimensões finais, localização fixa das pistas, layout de inventário nem textos completos dos documentos.
 
@@ -156,11 +156,13 @@ Cada guia fica junto do conteúdo que descreve:
 
 ```text
 docs/
-  personagens/GUIA_ESTILO_SPRITES_AMOSTRA47.md
-  locais/DIRECAO_DE_ARTE_CENARIOS_AMOSTRA47.md
+  personagens/guia-de-estilo.md
+  locais/guia-de-estilo.md
   itens/
-    GUIA_ESTILO_OBJETOS_AMOSTRA47.md
-    <objeto>.webp           # versão de inspeção/inventário
+    guia-de-estilo.md
+    <objeto>/
+      README.md             # o que revela e papel na prova
+      arte.webp             # versão de inspeção/inventário
 ```
 
 Quando as versões de mundo (top-down) e os PNGs técnicos forem produzidos, eles podem ir para `assets/objetos/mundo/` e `assets/objetos/inventario/`.
@@ -169,13 +171,13 @@ Quando as versões de mundo (top-down) e os PNGs técnicos forem produzidos, ele
 
 | ID | Objeto | Arquivo | Inspeção (arte atual) | Mundo (top-down) |
 |---|---|---|---|---|
-| OBJ-01 | Crachá de acesso | [`cracha-de-acesso.webp`](cracha-de-acesso.webp) | ✅ | pendente |
-| OBJ-02 | Pendrive criptografado | [`pendrive-criptografado.webp`](pendrive-criptografado.webp) | ✅ | pendente |
-| OBJ-03 | Gravador de áudio | [`gravador-de-audio.webp`](gravador-de-audio.webp) | ✅ | pendente |
-| OBJ-04 | Frasco de contenção | [`frasco-de-contencao.webp`](frasco-de-contencao.webp) | ✅ | pendente |
-| OBJ-05 | Relatório de acesso | [`relatorio-de-acesso.webp`](relatorio-de-acesso.webp) | ✅ | pendente |
-| OBJ-06 | Sensor de pressão | [`sensor-de-pressao.webp`](sensor-de-pressao.webp) | ✅ | pendente |
-| OBJ-07 | Ordem de manutenção da ventilação | [`ordem-de-manutencao.webp`](ordem-de-manutencao.webp) | ✅ | pendente |
+| OBJ-01 | Crachá de acesso | [`cracha-de-acesso/arte.webp`](cracha-de-acesso/arte.webp) | ✅ | pendente |
+| OBJ-02 | Pendrive criptografado | [`pendrive-criptografado/arte.webp`](pendrive-criptografado/arte.webp) | ✅ | pendente |
+| OBJ-03 | Gravador de áudio | [`gravador-de-audio/arte.webp`](gravador-de-audio/arte.webp) | ✅ | pendente |
+| OBJ-04 | Frasco de contenção | [`frasco-de-contencao/arte.webp`](frasco-de-contencao/arte.webp) | ✅ | pendente |
+| OBJ-05 | Relatório de acesso | [`relatorio-de-acesso/arte.webp`](relatorio-de-acesso/arte.webp) | ✅ | pendente |
+| OBJ-06 | Sensor de pressão | [`sensor-de-pressao/arte.webp`](sensor-de-pressao/arte.webp) | ✅ | pendente |
+| OBJ-07 | Ordem de manutenção da ventilação | [`ordem-de-manutencao/arte.webp`](ordem-de-manutencao/arte.webp) | ✅ | pendente |
 
 As versões de mundo pequenas aparecem só na [prancha de cenários e objetos](../locais/prancha-cenarios-e-objetos.webp), ainda não como arquivos separados.
 

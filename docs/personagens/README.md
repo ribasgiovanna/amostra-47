@@ -23,7 +23,7 @@ Esta pasta reúne, para cada personagem, a história e o papel na investigação
 ```
 docs/personagens/
 ├── README.md                          ← este índice
-├── GUIA_ESTILO_SPRITES_AMOSTRA47.md   ← guia mestre de pixel art (vale para todos)
+├── guia-de-estilo.md   ← guia mestre de pixel art (vale para todos)
 └── <personagem>/
     ├── README.md                      ← história, papel na investigação e na prova lógica
     ├── ficha-visual.md                ← especificação visual, paleta, prompts e critérios
@@ -33,7 +33,7 @@ docs/personagens/
 ## Fontes e cânone
 
 - **Fatos narrativos** (nome, função, evidência, papel na prova) vêm de [`../caso-amostra47.md`](../caso-amostra47.md).
-- **Aparência** vem das fichas visuais e dos cards, que seguem o [guia de estilo](GUIA_ESTILO_SPRITES_AMOSTRA47.md).
+- **Aparência** vem das fichas visuais e dos cards, que seguem o [guia de estilo](guia-de-estilo.md).
 - **Idades** mostradas nos cards são ilustrativas e não fazem parte do cânone.
 
 ## Pendências de arte

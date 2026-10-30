@@ -4,7 +4,7 @@
 **Função:** técnica de manutenção do Complexo Helix  
 **Documento:** descrição canônica de aparência para geração consistente de pixel art  
 **Versão:** 1.0 — 23/10/2026  
-**Estilo obrigatório:** [`GUIA_ESTILO_SPRITES_AMOSTRA47.md`](../GUIA_ESTILO_SPRITES_AMOSTRA47.md)
+**Estilo obrigatório:** [`guia-de-estilo.md`](../guia-de-estilo.md)
 
 ## 1. Papel no enredo — informação confirmada
 

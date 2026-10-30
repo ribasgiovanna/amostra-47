@@ -2,7 +2,7 @@
 
 O Complexo Helix foi evacuado na noite em que a Amostra 47 escapou. O sobrevivente escolhe quais ambientes investigar, e cada um guarda pistas próprias. Algumas informações só se revelam depois que outra evidência é encontrada.
 
-Os mapas são pixel art 2D em vista de cima (*top-down*), seguindo a [direção de arte dos cenários](DIRECAO_DE_ARTE_CENARIOS_AMOSTRA47.md). A [prancha geral](prancha-cenarios-e-objetos.webp) reúne os seis ambientes, os objetos investigativos e de ambientação, e os elementos padrão (portas, pisos, paredes e sinalização). Os itens estão documentados em [`../itens`](../itens/README.md).
+Os mapas são pixel art 2D em vista de cima (*top-down*), seguindo a [direção de arte dos cenários](guia-de-estilo.md). A [prancha geral](prancha-cenarios-e-objetos.webp) reúne os seis ambientes, os objetos investigativos e de ambientação, e os elementos padrão (portas, pisos, paredes e sinalização). Os itens estão documentados em [`../itens`](../itens/README.md).
 
 ## Ambientes
 
@@ -20,7 +20,7 @@ Os mapas são pixel art 2D em vista de cima (*top-down*), seguindo a [direção 
 ```
 docs/locais/
 ├── README.md                                ← este índice
-├── DIRECAO_DE_ARTE_CENARIOS_AMOSTRA47.md    ← direção de arte (vale para todos os mapas)
+├── guia-de-estilo.md    ← direção de arte (vale para todos os mapas)
 ├── prancha-cenarios-e-objetos.webp          ← prancha geral de cenários e objetos
 └── <local>/
     ├── README.md                            ← descrição do espaço, pistas e papel na prova
