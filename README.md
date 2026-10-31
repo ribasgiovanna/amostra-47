@@ -10,7 +10,7 @@ Prof.ª Maria Angela Roveredo
 
 | # | Nome completo | GitHub |
 |---|---|---|
-| 1 | Ana Beatriz Patussi Reolon | — |
+| 1 | Ana Beatriz Patussi Reolon | [@anaapatussi-prog](https://github.com/anaapatussi-prog) |
 | 2 | Ana Clara Ernandes | [@anaernandes08](https://github.com/anaernandes08) |
 | 3 | Emelize Bonfim Mlot | [@liz-whs](https://github.com/liz-whs) |
 | 4 | Giovanna Ribas dos Reis | [@ribasgiovanna](https://github.com/ribasgiovanna) |
