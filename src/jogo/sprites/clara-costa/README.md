@@ -11,4 +11,4 @@ Sprites de **parado** e **andando**, de frente, lado e costas, no formato da [es
 | `andando-frente.png`, `andando-lado.png`, `andando-costas.png` | Tiras de andando, 4 quadros (256 × 64 px) |
 | `quadros/` | Os 18 quadros soltos, nomeados `<direção>-<animação>-<n>.png` |
 | [`preview-andando.gif`](preview-andando.gif) | Prévia animada do ciclo de andar, ampliada 3× |
-| [`PROMPT.md`](../../../../docs/personagens/clara-costa/sprites/PROMPT.md) | Prompt usado para gerar os sprites (fica em `docs/`) |
+| [`prompt.md`](../../../../docs/personagens/clara-costa/sprites/prompt.md) | Prompt usado para gerar os sprites (fica em `docs/`) |

@@ -2,7 +2,7 @@
 
 > ⚠️ **Contém pistas fortes sobre a solução do caso.**
 
-![Caderno de Fernando, fechado](fechado.png)
+![Caderno de Fernando, fechado](arte-fechado.png)
 
 | | |
 |---|---|

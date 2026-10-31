@@ -47,12 +47,12 @@ docs/personagens/
     ├── README.md                      ← história, papel na investigação e na prova lógica
     ├── ficha-visual.md                ← especificação visual, paleta, prompts e critérios
     ├── ficha-card.webp                ← card: turnaround, retratos, expressões e sprites
-    └── sprites/PROMPT.md              ← prompt para gerar os sprites
+    └── sprites/prompt.md              ← prompt para gerar os sprites
 ```
 
 ## Sprites de jogo
 
-Os sprites de **parado** e **andando**, de frente, lado e costas, seguem a [especificação dos sprites](sprites-especificacao.md): quadros de 64 × 64 px numa folha de 3 linhas × 6 colunas. Cada personagem tem o prompt de geração em `<personagem>/sprites/PROMPT.md`. Os sprites prontos ficam no código do jogo, em [`src/jogo/sprites/`](../../src/jogo/sprites/).
+Os sprites de **parado** e **andando**, de frente, lado e costas, seguem a [especificação dos sprites](sprites-especificacao.md): quadros de 64 × 64 px numa folha de 3 linhas × 6 colunas. Cada personagem tem o prompt de geração em `<personagem>/sprites/prompt.md`. Os sprites prontos ficam no código do jogo, em [`src/jogo/sprites/`](../../src/jogo/sprites/).
 
 ## Fontes e cânone
 

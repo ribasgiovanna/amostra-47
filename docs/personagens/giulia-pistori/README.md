@@ -43,4 +43,4 @@ Cachos loiro-mel volumosos e sardas herdados da mãe; raiz escura, sobrancelhas 
 |---|---|
 | [`ficha-visual.md`](ficha-visual.md) | Especificação visual completa: herança dos traços, roupa, paleta, prompts e critérios de aprovação |
 | [`ficha-card.webp`](ficha-card.webp) | Card de personagem: turnaround, paleta, detalhes, retratos, expressões e sprites de exemplo |
-| [`sprites/PROMPT.md`](sprites/PROMPT.md) | Prompt dos sprites; os sprites prontos ficam em [`src/jogo/sprites/giulia-pistori/`](../../../src/jogo/sprites/giulia-pistori/) |
+| [`sprites/prompt.md`](sprites/prompt.md) | Prompt dos sprites; os sprites prontos ficam em [`src/jogo/sprites/giulia-pistori/`](../../../src/jogo/sprites/giulia-pistori/) |

@@ -1,6 +1,6 @@
 # Especificação dos sprites de jogo
 
-Padrão para os sprites de **parado** e **andando** de todos os personagens, nas direções **frente, lado e costas**. Cada personagem tem o seu prompt em `<personagem>/sprites/PROMPT.md`.
+Padrão para os sprites de **parado** e **andando** de todos os personagens, nas direções **frente, lado e costas**. Cada personagem tem o seu prompt em `<personagem>/sprites/prompt.md`.
 
 > **Status:** proposta. O guia de estilo ainda não fixava resolução, grid nem pivô; os valores abaixo passam a valer quando o grupo aprovar.
 
@@ -47,7 +47,7 @@ costas  [        ][        ][       ][       ][       ][       ]
 
 ## Arquivos
 
-O **prompt** fica na documentação, em `docs/personagens/<personagem>/sprites/PROMPT.md`.
+O **prompt** fica na documentação, em `docs/personagens/<personagem>/sprites/prompt.md`.
 
 Os **sprites** ficam no código do jogo, em [`src/jogo/sprites/<personagem>/`](../../src/jogo/sprites/):
 

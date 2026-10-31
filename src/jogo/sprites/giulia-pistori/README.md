@@ -12,4 +12,4 @@ Sprites de **parado** e **andando**, de frente, lado e costas, no formato da [es
 | `quadros/` | Os 18 quadros soltos, nomeados `<direção>-<animação>-<n>.png` |
 | [`preview-andando.gif`](preview-andando.gif) | Prévia animada do ciclo de andar, ampliada 3× |
 | [`fonte-alta-resolucao.webp`](fonte-alta-resolucao.webp) | Arte original em alta resolução |
-| [`PROMPT.md`](../../../../docs/personagens/giulia-pistori/sprites/PROMPT.md) | Prompt usado para gerar os sprites (fica em `docs/`) |
+| [`prompt.md`](../../../../docs/personagens/giulia-pistori/sprites/prompt.md) | Prompt usado para gerar os sprites (fica em `docs/`) |

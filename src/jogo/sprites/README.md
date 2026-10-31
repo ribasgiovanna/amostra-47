@@ -13,7 +13,7 @@ Sprites de **parado** e **andando**, de frente, lado e costas, de cada personage
 | [Giovani Pistori](giovani-pistori/) | `giovani-sheet.png` |
 | [Clara Costa](clara-costa/) | `clara-sheet.png` |
 
-Cada pasta tem um `README.md` com os arquivos e a conferência técnica daquele personagem. Os prompts de geração ficam em `docs/personagens/<personagem>/sprites/PROMPT.md`.
+Cada pasta tem um `README.md` com os arquivos e a conferência técnica daquele personagem. Os prompts de geração ficam em `docs/personagens/<personagem>/sprites/prompt.md`.
 
 ## Estrutura
 
