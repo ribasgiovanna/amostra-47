@@ -1,5 +1,7 @@
 # Giulia Pistori — Protagonista
 
+![Ficha visual de Giulia Pistori](ficha-card.webp)
+
 | | |
 |---|---|
 | **Papel no jogo** | Protagonista: é quem investiga o Complexo Helix |
@@ -31,6 +33,14 @@ A investigação acontece no presente. Durante o jogo, **flashbacks jogáveis** 
 
 Um dos primeiros itens que ela encontra, na Central de segurança, é o crachá do pai: de um lado, a foto de identificação; do outro, uma foto dos dois juntos.
 
-## Pendências
+## Visual
 
-- Ficha visual e card de personagem.
+Cachos loiro-mel volumosos e sardas herdados da mãe; raiz escura, sobrancelhas marcadas e olhar sério herdados do pai. Veste cardigã oversized marrom, camiseta preta, calça wide-leg preta, tênis pretos de sola branca e uma ecobag creme. Detalhes, paleta e prompts na [ficha visual](ficha-visual.md); sprites em [`src/jogo/sprites/giulia-pistori/`](../../../src/jogo/sprites/giulia-pistori/).
+
+## Arquivos
+
+| Arquivo | Conteúdo |
+|---|---|
+| [`ficha-visual.md`](ficha-visual.md) | Especificação visual completa: herança dos traços, roupa, paleta, prompts e critérios de aprovação |
+| [`ficha-card.webp`](ficha-card.webp) | Card de personagem: turnaround, paleta, detalhes, retratos, expressões e sprites de exemplo |
+| [`sprites/PROMPT.md`](sprites/PROMPT.md) | Prompt dos sprites; os sprites prontos ficam em [`src/jogo/sprites/giulia-pistori/`](../../../src/jogo/sprites/giulia-pistori/) |
