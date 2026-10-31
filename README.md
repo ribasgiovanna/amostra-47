@@ -8,15 +8,13 @@ Prof.ª Maria Angela Roveredo
 
 ## Integrantes
 
-| # | Nome completo |
-|---|---|
-| 1 | Ana Beatriz Patussi Reolon |
-| 2 | Ana Clara Ernandes |
-| 3 | Emelize Bonfim Mlot |
-| 4 | Giovanna Ribas dos Reis |
-| 5 | Otavio Brito Fonseca |
-
-Os nomes devem estar exatamente como no grupo DETETIVE do Canvas.
+| # | Nome completo | GitHub |
+|---|---|---|
+| 1 | Ana Beatriz Patussi Reolon | — |
+| 2 | Ana Clara Ernandes | [@anaernandes08](https://github.com/anaernandes08) |
+| 3 | Emelize Bonfim Mlot | [@liz-whs](https://github.com/liz-whs) |
+| 4 | Giovanna Ribas dos Reis | [@ribasgiovanna](https://github.com/ribasgiovanna) |
+| 5 | Otavio Brito Fonseca | [@rodavio](https://github.com/rodavio) |
 
 ## A história
 
