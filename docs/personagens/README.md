@@ -30,7 +30,7 @@ Cada funcionário deixou um item pessoal, que Giulia pode coletar:
 |---|---|---|
 | Amie Lin | Bolsa de campo com o gravador | Laboratório de análises |
 | Giovani Pistori | Crachá com a foto de identificação e, no verso, uma foto com Giulia (um dos primeiros itens) | Central de segurança |
-| Angela Torres | Caderno de anotações (**obrigatório**): dicionário dos símbolos lógicos | — |
+| Angela Torres | Caderno de anotações (**obrigatório**): dicionário dos símbolos lógicos | Central de segurança |
 | Fernando Almeida | Caderno com anotações suspeitas | Qualquer local |
 | Otávio Ferraz | Gravata | Sala de evacuação |
 | Clara Costa | Maleta de amostras com o sensor de pressão | Câmara de contenção |

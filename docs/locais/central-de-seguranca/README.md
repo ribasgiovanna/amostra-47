@@ -35,6 +35,7 @@ Sala quadrada com uma **única porta dupla, ao sul**. A parede norte inteira é 
 | **Relatório de acesso:** horários, setores visitados e tentativas de entrada; mostra que Otávio saiu antes da liberação | W | Premissa 8 |
 | O relatório e as provas divulgadas só são compatíveis com cinco hipóteses: Fernando, Giovani, Otávio, Beatrice ou invasão | Y ∨ G ∨ O ∨ B ∨ I | Premissa 10 |
 | **Crachá de acesso:** quem entrou nos setores restritos e quando | — | Item 1 |
+| [Caderno de anotações de Angela](../../itens/pessoais/caderno-de-simbolos/) (item pessoal, **obrigatório**): dicionário dos símbolos lógicos | — | Itens pessoais |
 | Registro de Giovani: não houve arrombamento | T (≡ ¬A) | Premissa 5 |
 
 ## Na prova
