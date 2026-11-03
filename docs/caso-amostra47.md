@@ -8,7 +8,7 @@ Há quatorze anos, um agente biológico desconhecido, identificado nos registros
 
 Mesmo com o complexo trancado, o agente chegou ao mundo inteiro e virou uma pandemia. Cidades pararam ao redor do mundo, e milhões de pessoas morreram antes que uma cura fosse desenvolvida. Só depois de alguns anos o mundo começou a se reconstruir.
 
-As provas encontradas depois apontaram **Giovani Pistori**, chefe de segurança do complexo, como o responsável pelo vazamento. O nome dele foi difamado pela imprensa e virou alvo de grupos de ódio, e a filha dele, Giulia, precisou sumir para escapar de quem queria se vingar.
+As provas encontradas depois apontaram **Giovani Pistori**, chefe de segurança do complexo, como o responsável pelo vazamento. O nome dele foi difamado pela imprensa e virou alvo de grupos de ódio, e a filha dele, Giulia, cresceu carregando esse nome, alvo do preconceito de quem queria se vingar.
 
 Quatorze anos depois, o jogador assume o papel de **Giulia Pistori**. Cansada do preconceito na cidade onde todos sabem quem ela é, decide se mudar. Arrumando as coisas, encontra no notebook do pai um e-mail que ele nunca leu: um alerta enviado na noite do incidente, com um código de acesso e algo como *"se acontecer alguma coisa, está tudo no Helix"*. Decidida a descobrir a verdade e limpar o nome do pai, ela entra no Complexo Helix.
 

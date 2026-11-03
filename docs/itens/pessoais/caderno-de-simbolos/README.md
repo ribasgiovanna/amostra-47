@@ -7,9 +7,13 @@
 | | |
 |---|---|
 | **Dona** | [Angela Torres](../../../personagens/angela-torres/) |
-| **Onde** | a definir |
+| **Onde** | [Central de segurança](../../../locais/central-de-seguranca/) |
 | **Obrigatório** | Sim |
 | **Contém** | Dicionário dos símbolos lógicos |
+
+## Por que está aqui
+
+Angela trabalhava lado a lado com Giovani e passava boa parte dos turnos na Central de segurança. Na noite do incidente, deixou o caderno na mesa ao lado dos monitores antes de correr para as portas. Giulia o encontra logo no Ato I, junto com o crachá do pai, e reconhece as setinhas que Angela lhe ensinou na infância. Como o caderno é obrigatório e ensina a linguagem da investigação, ele precisa aparecer logo no começo do jogo.
 
 ## Como funciona
 

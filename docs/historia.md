@@ -189,7 +189,7 @@ A investigação segue os três atos do caso. A ordem dos locais abaixo é uma *
 Giulia atravessa a entrada depredada, entre paredes pichadas com o rosto do pai e a palavra **ASSASSINO**. Usa o código do e-mail para abrir os setores internos, ainda lacrados. As luzes de emergência ainda funcionam. Num terminal parcialmente funcional, ela encontra a lista dos sete funcionários e os setores em que trabalhavam.
 
 - **Central de segurança.** O primeiro lugar que ela procura é o setor do pai. Lá encontra o **crachá de Giovani**: de um lado a foto de identificação, do outro uma foto dos dois abraçados. É o momento emocional que abre o jogo: pela primeira vez em anos, Giulia vê o rosto do pai nítido, e não borrado pela memória. Também encontra o **relatório de acesso** e o **registro de Giovani** confirmando que a câmara de contenção não foi arrombada. E percebe a primeira rachadura na versão oficial: o relatório de acesso verdadeiro coloca o crachá do pai **em outro setor** no horário em que o mundo diz que ele estava na Câmara de contenção. Existem dois registros, e um deles é mentira.
-- **O caderno de Angela.** Perto da Central, Giulia encontra o **caderno de símbolos lógicos** de Angela e reconhece as setinhas da infância. É o item obrigatório que ensina ao jogador a linguagem da investigação.
+- **O caderno de Angela.** Na Central de segurança, Giulia encontra o **caderno de símbolos lógicos** de Angela e reconhece as setinhas da infância. É o item obrigatório que ensina ao jogador a linguagem da investigação.
 - **Flashback jogável:** Giovani na Central de segurança, olhando os monitores apagados, hesitando antes de questionar a direção.
 
 ### Ato II — As contradições
@@ -235,6 +235,7 @@ Um último **flashback** fecha o jogo: Giovani, no painel de segurança, tentand
 - Fernando trancou o complexo para calar os funcionários e deixou um plano B com provas falsas contra Giovani.
 - Giovani foi chamado por um **alarme automático de segurança**, disparado quando as câmeras caíram.
 - Fernando escondeu as páginas do caderno pelo complexo.
+- O caderno de Angela fica na Central de segurança e é encontrado no Ato I.
 - A equipe, menos Fernando, se considerava uma família e cuidava de Giulia quando Giovani precisava levá-la ao complexo. Giulia encontra uma foto de todos juntos, destruída.
 - O vírus virou uma pandemia mundial, como a Covid-19: cidades pararam, milhões morreram antes da cura, e depois de alguns anos o mundo começou a se reconstruir.
 - Giovani foi difamado. O Helix foi **abandonado**, sem vigilância, e depredado, com pichações de Giovani e "assassino".
@@ -247,7 +248,6 @@ Um último **flashback** fecha o jogo: Giovani, no painel de segurança, tentand
 **Proposto neste documento, a confirmar:**
 
 - A ordem de visita dos locais e o momento em que cada item aparece.
-- O caderno de Angela encontrado perto da Central de segurança, no Ato I.
 - O conteúdo de cada flashback.
 - A última página do caderno de Fernando aparecendo só depois da acusação.
 - O final com a reabilitação de Giovani e o flashback dele no painel.

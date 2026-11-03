@@ -27,7 +27,7 @@ Cada funcionário deixou um item pessoal. Alguns guardam um item investigativo d
 | 3 | [Óculos de proteção quebrados](pessoais/oculos-de-protecao/) | Beatrice Salles | Túnel de ventilação (dutos) | — |
 | 4 | [Maleta de amostras](pessoais/maleta-de-amostras/) | Clara Costa | Câmara de contenção | Sensor de pressão |
 | 5 | [Gravata](pessoais/gravata/) | Otávio Ferraz | Sala de evacuação | — |
-| 6 | [Caderno de anotações](pessoais/caderno-de-simbolos/) (**obrigatório**) | Angela Torres | a definir | Dicionário dos símbolos lógicos |
+| 6 | [Caderno de anotações](pessoais/caderno-de-simbolos/) (**obrigatório**) | Angela Torres | Central de segurança | Dicionário dos símbolos lógicos |
 | 7 | [Caderno de Fernando](pessoais/caderno-do-fernando/) ⚠️ | Fernando Almeida | Páginas espalhadas (qualquer local) | Seis páginas de anotações suspeitas |
 | 8 | [Foto da família do Helix](pessoais/foto-da-equipe/) | A equipe (menos Fernando) | Sala de evacuação | — |
 

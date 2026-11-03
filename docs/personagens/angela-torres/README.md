@@ -43,7 +43,7 @@ Angela é o contraponto solar do elenco: acessível, bem-humorada e calorosa, se
 
 Angela morreu na noite do incidente, junto com os demais funcionários. O complexo estava trancado, e ela ficou perto de uma das portas, tentando fugir.
 
-**Item pessoal:** [caderno de anotações](../../itens/pessoais/caderno-de-simbolos/), **obrigatório**. Funciona como um dicionário dos símbolos das operações lógicas (~, ∨, ∧, →, ↔).
+**Item pessoal:** [caderno de anotações](../../itens/pessoais/caderno-de-simbolos/), **obrigatório**. Funciona como um dicionário dos símbolos das operações lógicas (~, ∨, ∧, →, ↔). Fica na Central de segurança, onde Angela passava boa parte dos turnos ao lado de Giovani.
 
 ## Na investigação
 
