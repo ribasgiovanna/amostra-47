@@ -18,13 +18,17 @@ Prof.ª Maria Angela Roveredo
 
 ## A história
 
-Há vários anos, o mundo entrou em colapso após a disseminação de um agente biológico desconhecido, a **Amostra 47**. O surto começou no **Complexo Helix**, um laboratório de pesquisa que foi trancado na noite do incidente: ninguém conseguiu fugir, e todos os funcionários morreram.
+Há quatorze anos, um agente biológico desconhecido, a **Amostra 47**, escapou da contenção no **Complexo Helix**, um laboratório de pesquisa. Naquela noite, o complexo foi trancado: ninguém conseguiu fugir, e todos os funcionários morreram lá dentro. Mesmo assim, o agente chegou ao mundo inteiro. Virou uma pandemia: cidades pararam ao redor do mundo, e milhões de pessoas morreram antes que uma cura fosse desenvolvida. Hoje, o mundo ainda se reconstrói.
 
-Anos depois, **Giulia Pistori**, filha do chefe de segurança Giovani Pistori, recebe uma pista: se quiser descobrir o que aconteceu com o pai, precisa ir até o Complexo Helix, onde há indícios de que o surto começou. Indignada e em conflito com o rumo da morte do pai, ela decide investigar.
+As provas encontradas depois apontaram um culpado: **Giovani Pistori**, o chefe de segurança do complexo. O nome dele foi crucificado pela imprensa e virou alvo de grupos de ódio.
 
-Os registros indicam que o desastre talvez não tenha sido um acidente: alguém retirou a Amostra 47 da contenção, registros foram apagados e uma mensagem de emergência foi interrompida.
+Quatorze anos depois, **Giulia Pistori**, filha de Giovani, que cresceu numa cidade pequena onde todos a culpam pelo pai, decide ir embora. Arrumando as coisas, encontra um e-mail que ele nunca leu: um alerta enviado na noite do incidente. Decidida a descobrir a verdade e limpar o nome do pai, ela entra no Complexo Helix.
 
-A investigação acontece no presente, nas ruínas do complexo. Durante o jogo, **flashbacks jogáveis** mostram momentos de antes do acidente.
+Os registros indicam que o desastre talvez não tenha sido um acidente: alguém alterou de propósito a contenção da Amostra 47, registros foram apagados e uma mensagem de emergência foi interrompida.
+
+A investigação acontece no presente, quatorze anos depois, no complexo abandonado. Durante o jogo, **flashbacks jogáveis** mostram momentos de antes do acidente.
+
+O rumo completo da história, do Complexo Helix sob Francisco ao desfecho do jogo, está em [docs/historia.md](docs/historia.md) (contém a solução do caso).
 
 **Missão:** descobrir **quem** foi responsável pelo vazamento, **qual procedimento/item** permitiu a liberação e **em que setor** tudo começou.
 
@@ -86,6 +90,7 @@ Detalhes de cada entrega em [`entregas/`](entregas/README.md).
 ├── README.md
 ├── docs/                             ← documentação do caso e da arte
 │   ├── caso-amostra47.md             ← história, proposições e prova lógica
+│   ├── historia.md                   ← rumo completo da história (contém a solução)
 │   ├── personagens/
 │   │   ├── guia-de-estilo.md
 │   │   ├── sprites-especificacao.md

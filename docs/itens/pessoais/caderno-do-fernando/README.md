@@ -12,7 +12,7 @@
 
 ## Como funciona
 
-Giulia encontra o caderno com **páginas arrancadas**, espalhadas pelos locais do complexo. Cada página acrescenta uma parte da história. Sozinhas, elas levantam suspeitas, mas não provam a liberação: a solução continua dependendo da prova lógica.
+Giulia encontra o caderno com **páginas arrancadas**, espalhadas pelos locais do complexo. Foi o próprio Fernando quem as arrancou e escondeu, com medo de que alguém encontrasse o caderno inteiro. Cada página acrescenta uma parte da história. Sozinhas, elas levantam suspeitas, mas não provam a liberação: a solução continua dependendo da prova lógica.
 
 A **página 6** é quase uma confissão de que o complexo foi trancado de propósito, por isso deve aparecer só no fim, depois de Giulia chegar à conclusão.
 

@@ -7,7 +7,7 @@
 
 ## 1. Contexto narrativo obrigatório
 
-*Amostra 47* é um jogo narrativo de investigação e lógica matemática ambientado após o colapso da humanidade, provocado pela disseminação de um agente biológico desconhecido. Um sobrevivente investiga o Complexo Helix, laboratório científico abandonado na noite do incidente, para reconstruir a origem do desastre. Os personagens são funcionários do complexo: cientistas, segurança, tecnologia, contenção e manutenção.
+*Amostra 47* é um jogo narrativo de investigação e lógica matemática ambientado após o colapso da humanidade, provocado por um agente biológico que escapou do Complexo Helix. Anos depois, a filha de um dos funcionários investiga o laboratório abandonado para reconstruir o que aconteceu. Os personagens são funcionários do complexo: cientistas, segurança, tecnologia, contenção e manutenção.
 
 **Consequência para o design:** cada sprite deve comunicar uma profissão, ter visual crível para uma instalação de pesquisa e preservar o tom sombrio de mistério e ficção científica pós-apocalíptica. Não transformar o universo inteiro em fantasia steampunk. Elementos de latão/couro podem fazer parte do estilo *individual* de um personagem, sem se tornar uniforme obrigatório do elenco.
 

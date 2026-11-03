@@ -33,7 +33,7 @@ Sala quadrada com uma **única porta dupla, ao sul**. A parede norte inteira é 
 | Evidência | Proposição | Fonte no caso |
 |---|---|---|
 | **Relatório de acesso:** horários, setores visitados e tentativas de entrada; mostra que Otávio saiu antes da liberação | W | Premissa 8 |
-| O relatório só é compatível com quatro hipóteses: Fernando, Otávio, Beatrice ou invasão | Y ∨ O ∨ B ∨ I | Premissa 10 |
+| O relatório e as provas divulgadas só são compatíveis com cinco hipóteses: Fernando, Giovani, Otávio, Beatrice ou invasão | Y ∨ G ∨ O ∨ B ∨ I | Premissa 10 |
 | **Crachá de acesso:** quem entrou nos setores restritos e quando | — | Item 1 |
 | Registro de Giovani: não houve arrombamento | T (≡ ¬A) | Premissa 5 |
 
@@ -41,4 +41,4 @@ Sala quadrada com uma **única porta dupla, ao sul**. A parede norte inteira é 
 
 - **Otávio:** com W e O → ¬W, Dupla Negação e Modus Tollens dão **¬O**.
 - **Invasão:** com ¬A e I → A, Modus Tollens dá **¬I**.
-- **Resultado:** os dois descartes alimentam ¬(O ∨ B ∨ I), que leva a Y.
+- **Resultado:** os dois descartes alimentam ¬(G ∨ O ∨ B ∨ I), que leva a Y.
