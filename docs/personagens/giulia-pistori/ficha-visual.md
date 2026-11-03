@@ -31,7 +31,7 @@ A Giulia mistura os traços dos dois: da **mãe estrangeira** vêm os cachos dou
 
 ### Roupa (a partir da referência de outfit)
 
-- **Peça central:** **cardigã oversized de tricô grosso marrom-chocolate**, longo até o meio da coxa, com botões escuros, mangas compridas e largas com punho canelado. Usado aberto.
+- **Peça central:** **cardigã oversized de tricô grosso marrom-chocolate**, longo até o meio da coxa, com botões escuros, mangas compridas e largas com punho canelado. Usado aberto. **É o cardigã do pai**, um casaco de homem: por isso fica grande nela, com as mangas cobrindo parte das mãos.
 - **Por baixo:** **camiseta preta** justa e lisa.
 - **Parte inferior:** **calça jeans wide-leg preta desbotada** (cinza-chumbo), cintura alta, comprimento até o chão.
 - **Calçado:** **tênis de lona preto, com faixa lateral branca e sola branca**, sem logotipo de marca.
@@ -41,6 +41,7 @@ A Giulia mistura os traços dos dois: da **mãe estrangeira** vêm os cachos dou
 
 - **Essenciais:** ecobag de lona creme.
 - **De história:** o **crachá do pai**, que ela encontra no começo do jogo, pode passar a ficar preso na alça da ecobag.
+- **De rua:** **lenço vermelho** amarrado no rosto, cobrindo nariz e boca e deixando só os olhos à mostra. Ela usa para não ser reconhecida na cidade onde mora. Dentro do Complexo Helix, pode ficar no pescoço ou na ecobag.
 - **Opcionais:** óculos de sol redondos de armação fina, usados no topo da cabeça (só no card, não nos sprites).
 - **Não acrescentar:** jaleco, colete tático, uniforme, armas, piercing ou joias chamativas, maquiagem marcada, logotipos de marcas reais.
 
@@ -99,7 +100,7 @@ Em pé, postura firme e um pouco tensa, uma das mãos no bolso do cardigã ou se
 
 ## 7. Prompt individual — usar JUNTO do guia mestre e imagem-âncora
 
-> **PERSONAGEM: GIULIA PISTORI.** Protagonista do jogo *Amostra 47 — O Início do Fim*. Criar **sprite individual 2D em pixel art**, corpo inteiro, com o mesmo pixel grid aparente, contorno escuro, proporções adultas estilizadas e sombras em clusters da imagem-âncora aprovada. Mulher de 21 anos, sobrevivente num mundo pós-colapso, que vai investigar o laboratório onde o pai morreu. **Cabelo cacheado muito volumoso, loiro-mel dourado com a raiz um pouco mais escura**, cachos pequenos e médios bem definidos, franja de cachos, comprimento um pouco abaixo dos ombros. Pele morena clara dourada, sardas discretas no nariz, **sobrancelhas escuras e marcadas**, olhos castanho-claros, lábios cheios, expressão séria e determinada. **Cardigã oversized de tricô marrom-chocolate**, longo e aberto, com botões escuros e punhos canelados, sobre **camiseta preta**. **Calça jeans wide-leg preta desbotada** até o chão e **tênis de lona preto com faixa lateral e sola brancas**, sem logotipo. **Ecobag de lona creme** no ombro direito. Paleta dessaturada e quente. Não usar jaleco, uniforme, colete, armas, maquiagem marcada, joias chamativas nem logotipos de marcas. Não se parecer com nenhuma pessoa real. Não fazer pintura digital, 3D, anime ou chibi.
+> **PERSONAGEM: GIULIA PISTORI.** Protagonista do jogo *Amostra 47 — O Início do Fim*. Criar **sprite individual 2D em pixel art**, corpo inteiro, com o mesmo pixel grid aparente, contorno escuro, proporções adultas estilizadas e sombras em clusters da imagem-âncora aprovada. Mulher de 21 anos, que vai investigar sozinha o laboratório onde o pai morreu. **Cabelo cacheado muito volumoso, loiro-mel dourado com a raiz um pouco mais escura**, cachos pequenos e médios bem definidos, franja de cachos, comprimento um pouco abaixo dos ombros. Pele morena clara dourada, sardas discretas no nariz, **sobrancelhas escuras e marcadas**, olhos castanho-claros, lábios cheios, expressão séria e determinada. **Cardigã oversized de tricô marrom-chocolate**, longo e aberto, com botões escuros e punhos canelados, sobre **camiseta preta**. **Calça jeans wide-leg preta desbotada** até o chão e **tênis de lona preto com faixa lateral e sola brancas**, sem logotipo. **Ecobag de lona creme** no ombro direito. Paleta dessaturada e quente. Não usar jaleco, uniforme, colete, armas, maquiagem marcada, joias chamativas nem logotipos de marcas. Não se parecer com nenhuma pessoa real. Não fazer pintura digital, 3D, anime ou chibi.
 
 ### 7.1 Prompt complementar — ficha/card no mesmo template de Amie Lin
 

@@ -44,6 +44,10 @@ Apesar disso, ela permaneceu no projeto. Parte dela ainda acreditava que poderia
 
 Foi essa decisão que a manteve no Complexo Helix até a liberação da Amostra 47. E, quando os protocolos que tanto defendera finalmente foram violados, Amie percebeu que todos os seus alertas haviam sido em vão. O desastre que ela temia estava prestes a se tornar realidade.
 
+## A família do Helix
+
+Amie chegou ao Helix sozinha, longe de uma família que nunca aceitou suas escolhas. Foi na equipe que encontrou outra. E foi Giulia, a filha de Giovani, a primeira pessoa no complexo a fazê-la rir. Quando a menina aparecia, Amie deixava os relatórios de lado para mostrar a ela a lupa e as lâminas coloridas, sempre nas áreas seguras do laboratório. Está na foto da festinha de sete anos de Giulia, ao lado de todos.
+
 ## História
 
 Amie era a cientista que mais conhecia a Amostra 47. Responsável pelo estudo do agente, tinha autorização para entrar na câmara de contenção e sabia exatamente o que aconteceria se algo saísse do controle.

@@ -18,7 +18,7 @@ O caso tem **sete itens investigativos**. Cada um revela uma informação espec�
 
 ## Itens pessoais
 
-Cada funcionário deixou um item pessoal. Alguns guardam um item investigativo dentro.
+Cada funcionário deixou um item pessoal. Alguns guardam um item investigativo dentro. A foto da família do Helix pertence à equipe toda.
 
 | # | Item pessoal | Dona/dono | Onde | Contém |
 |---|---|---|---|---|
@@ -29,6 +29,7 @@ Cada funcionário deixou um item pessoal. Alguns guardam um item investigativo d
 | 5 | [Gravata](pessoais/gravata/) | Otávio Ferraz | Sala de evacuação | — |
 | 6 | [Caderno de anotações](pessoais/caderno-de-simbolos/) (**obrigatório**) | Angela Torres | a definir | Dicionário dos símbolos lógicos |
 | 7 | [Caderno de Fernando](pessoais/caderno-do-fernando/) ⚠️ | Fernando Almeida | Páginas espalhadas (qualquer local) | Seis páginas de anotações suspeitas |
+| 8 | [Foto da família do Helix](pessoais/foto-da-equipe/) | A equipe (menos Fernando) | Sala de evacuação | — |
 
 ## Estrutura
 

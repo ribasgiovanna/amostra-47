@@ -15,6 +15,6 @@ Uma cópia parcial dos registros do experimento e informações recuperadas dos 
 
 ## Na prova
 
-Premissa 14, S → Z. Com S (premissa 4), Modus Ponens dá **Z** (linha 29), um dos quatro termos da conclusão final.
+Premissa 14, S → Z. Com S (premissa 4), Modus Ponens dá **Z** (linha 32), um dos quatro termos da conclusão final.
 
 \* O caso não define em que sala o item é encontrado; a sugestão ainda precisa ser confirmada.

@@ -35,6 +35,7 @@ Sala ampla com portas duplas ao norte e ao sul e o centro aberto para circulaç�
 |---|---|---|
 | Comunicados de emergência e documentos deixados pelos funcionários | — | Locais, item 6 |
 | [Gravata de Otávio Ferraz](../../itens/pessoais/gravata/) (item pessoal) | — | Itens pessoais |
+| [Foto da família do Helix](../../itens/pessoais/foto-da-equipe/): a equipe reunida na festinha de sete anos de Giulia | — | Itens pessoais |
 | Mensagem de emergência interrompida (quem a enviou é revelado na [Sala de servidores](../sala-de-servidores/)) | — | README (premissa da história) |
 
 > O caso não liga nenhuma premissa da prova a esta sala. Ela funciona como ambientação e pode guardar pistas de apoio, que ainda precisam ser definidas.

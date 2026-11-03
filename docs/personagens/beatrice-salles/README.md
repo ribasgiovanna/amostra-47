@@ -37,11 +37,15 @@ No trabalho, parece séria e pouco acessível, mas demonstra afeto em pequenas a
 
 Beatrice não demonstra, mas sente carinho por todos os colegas e encontrou neles uma espécie de família. Seria trágico se algo mudasse e acabasse com isso.
 
+## A família do Helix
+
+Com os adultos, Beatrice era séria e de poucas palavras. Com Giulia, era outra pessoa. Consertava os brinquedos da menina sem que ninguém pedisse e montou para ela um cintinho de ferramentas de plástico, para que as duas "trabalhassem juntas". Está na foto da festinha de sete anos de Giulia, a família que ela escolheu depois de sair de casa.
+
 ## História
 
 Beatrice conhecia o Complexo Helix por dentro: dutos de ventilação, geradores e rotas de serviço. Prática e observadora, sabia por onde passar quando os corredores principais estavam fechados.
 
-Entre os documentos encontrados, há uma **ordem de manutenção da ventilação** com inconsistências, e o túnel de ventilação conecta os setores do complexo, o que poderia explicar como o agente se espalhou. Isso coloca Beatrice entre as quatro hipóteses compatíveis com o relatório de acesso.
+Entre os documentos encontrados, há uma **ordem de manutenção da ventilação** com inconsistências, e o túnel de ventilação conecta os setores do complexo, o que poderia explicar como o agente se espalhou. Isso coloca Beatrice entre as cinco hipóteses compatíveis com o relatório de acesso.
 
 A investigação mostra que **a ordem não partiu dela**: o aval de Beatrice foi manipulado pela diretoria para que a ordem parecesse sua. Se Beatrice fosse a responsável, a ordem teria saído dela. Como não saiu, ela está descartada, embora seu trabalho continue ligado a um sistema importante para entender a propagação.
 
@@ -65,8 +69,8 @@ Quando o alarme soou e o complexo foi trancado, Beatrice não correu direto para
 |---|---|---|
 | Premissa 7 | V | A ordem de manutenção da ventilação não partiu de Beatrice. |
 | Premissa 12 | B → ¬V | Se fosse a responsável, a ordem teria partido dela. |
-| Linha 22 | ¬(¬V) | Dupla Negação. |
-| Linha 23 | ¬B | Modus Tollens (12, 22): Beatrice não foi a responsável. |
+| Linha 23 | ¬(¬V) | Dupla Negação. |
+| Linha 24 | ¬B | Modus Tollens (12, 23): Beatrice não foi a responsável. |
 
 ## Identidade visual
 

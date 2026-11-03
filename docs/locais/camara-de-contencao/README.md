@@ -34,7 +34,7 @@ Sala quadrada e simétrica, com duas portas duplas blindadas, uma ao norte e out
 |---|---|---|
 | Alteração manual dos parâmetros de contenção, registrada por Clara e confirmada pelo **sensor de pressão** | U | Premissa 6 |
 | A câmara não foi arrombada | T (≡ ¬A) | Premissa 5 |
-| A alteração manual ocorreu **nesta** câmara | K | Premissa 15 → linha 30 |
+| A alteração manual ocorreu **nesta** câmara | K | Premissa 15 → linha 33 |
 | **Frasco de contenção:** mostra se houve retirada manual da amostra e o estado da câmara | — | Item 4 |
 
 ## Na prova
