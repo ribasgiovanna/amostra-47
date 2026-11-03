@@ -16,6 +16,6 @@ Horários, setores visitados e tentativas de entrada.
 ## Na prova
 
 - Origem da premissa 8, **W**: Otávio saiu antes da liberação. Com O → ¬W, Modus Tollens dá **¬O**.
-- Base da premissa 10, **Y ∨ O ∨ B ∨ I**: só quatro hipóteses são compatíveis com os registros.
+- Base da premissa 10, **Y ∨ G ∨ O ∨ B ∨ I**: só cinco hipóteses são compatíveis com os registros e as provas divulgadas.
 
 \* O caso não define em que sala o item é encontrado; a sugestão ainda precisa ser confirmada.

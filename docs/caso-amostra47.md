@@ -4,15 +4,17 @@ Documento do caso: história, personagens, itens, locais, proposições e prova 
 
 ## 1. Premissa da história
 
-Há vários anos, o mundo entrou em colapso após a disseminação de um agente biológico desconhecido, identificado nos registros científicos como **Amostra 47**. As cidades foram abandonadas, as comunicações entraram em colapso e os poucos sobreviventes passaram a viver entre as ruínas.
+Há quatorze anos, um agente biológico desconhecido, identificado nos registros científicos como **Amostra 47**, escapou da contenção no **Complexo Helix**, um enorme laboratório de pesquisa. Na noite do incidente, o complexo foi trancado: ninguém conseguiu fugir, e todos os funcionários morreram, a maioria perto das portas, tentando sair.
 
-O surto começou no **Complexo Helix**, um enorme laboratório de pesquisa. Na noite do incidente, o complexo foi trancado: ninguém conseguiu fugir, e todos os funcionários morreram, a maioria perto das portas, tentando sair.
+Mesmo com o complexo trancado, o agente chegou ao mundo inteiro e virou uma pandemia. Cidades pararam ao redor do mundo, e milhões de pessoas morreram antes que uma cura fosse desenvolvida. Só depois de alguns anos o mundo começou a se reconstruir.
 
-Anos depois, o jogador assume o papel de **Giulia Pistori**, filha do chefe de segurança Giovani Pistori. Ela recebe uma pista: se quiser descobrir o que aconteceu com o pai, precisa ir até o Complexo Helix, onde há indícios de que o surto começou. Indignada e em conflito com o rumo da morte do pai, decide investigar.
+As provas encontradas depois apontaram **Giovani Pistori**, chefe de segurança do complexo, como o responsável pelo vazamento. O nome dele foi difamado pela imprensa e virou alvo de grupos de ódio, e a filha dele, Giulia, precisou sumir para escapar de quem queria se vingar.
+
+Quatorze anos depois, o jogador assume o papel de **Giulia Pistori**. Cansada do preconceito na cidade onde todos sabem quem ela é, decide se mudar. Arrumando as coisas, encontra no notebook do pai um e-mail que ele nunca leu: um alerta enviado na noite do incidente, com um código de acesso e algo como *"se acontecer alguma coisa, está tudo no Helix"*. Decidida a descobrir a verdade e limpar o nome do pai, ela entra no Complexo Helix.
 
 Entre corredores destruídos, computadores danificados, documentos queimados e câmaras de contenção rompidas, Giulia encontra evidências de que o desastre pode não ter sido um acidente.
 
-Os registros indicam que a Amostra 47 foi liberada de propósito. Há arquivos apagados, registros contraditórios e uma ordem de manutenção suspeita. Sete funcionários estavam ligados ao laboratório, e o que cada um deixou para trás ajuda a reconstruir os acontecimentos.
+Os registros indicam que a contenção da Amostra 47 foi alterada de propósito, e não por acidente. Há arquivos apagados, registros contraditórios e uma ordem de manutenção suspeita. Sete funcionários estavam ligados ao laboratório, e o que cada um deixou para trás ajuda a reconstruir os acontecimentos.
 
 Agora, Giulia precisa investigar o complexo, encontrar pistas e cruzar as informações para descobrir **quem** foi responsável pela liberação da amostra, **como** o incidente aconteceu e **em qual setor** do laboratório tudo começou.
 
@@ -30,7 +32,7 @@ A investigação acontece no presente. Durante o jogo, **flashbacks jogáveis** 
 
 ## 3. Personagens
 
-**Protagonista: Giulia Pistori.** Filha de Giovani Pistori. Anos depois do surto, aos 21 anos, vai ao Complexo Helix descobrir o que aconteceu com o pai.
+**Protagonista: Giulia Pistori.** Filha de Giovani Pistori. Quatorze anos depois do surto, aos 21 anos, vai ao Complexo Helix descobrir o que aconteceu com o pai.
 
 Os sete funcionários do complexo morreram no incidente:
 
@@ -106,6 +108,7 @@ As pistas são independentes e complementares; nenhuma evidência isolada entreg
 | A | Houve arrombamento da câmara de contenção. |
 | Z | O pendrive criptografado contém o registro decisivo da autorização administrativa. |
 | K | O setor associado à alteração manual foi a Câmara de contenção. |
+| G | Giovani Pistori foi responsável pela liberação da amostra. |
 
 ## 8. Dedução lógica
 
@@ -122,52 +125,56 @@ As pistas são independentes e complementares; nenhuma evidência isolada entreg
 | 7 | V | Ordem de manutenção / registro de Beatrice Salles |
 | 8 | W | Relatório de acesso (saída de Otávio) |
 | 9 | (Q ∧ R ∧ S ∧ P) → X | Antecipação + autorização + conta da direção, apesar do alerta, indicam liberação autorizada pela direção |
-| 10 | Y ∨ O ∨ B ∨ I | O relatório de acesso só é compatível com quatro hipóteses: Fernando, Otávio, Beatrice ou invasão externa |
+| 10 | Y ∨ G ∨ O ∨ B ∨ I | O relatório de acesso e as provas divulgadas depois do surto só são compatíveis com cinco hipóteses: Fernando, Giovani, Otávio, Beatrice ou invasão externa |
 | 11 | O → ¬W | Se Otávio fosse o responsável, não teria saído antes da liberação |
 | 12 | B → ¬V | Se Beatrice fosse a responsável, a ordem de manutenção teria partido dela |
 | 13 | I → A | Se houvesse invasão externa, teria havido arrombamento |
 | 14 | S → Z | O uso da conta da direção está registrado no pendrive criptografado |
 | 15 | U → K | A alteração manual dos parâmetros ocorreu na Câmara de contenção |
+| 16 | G → ¬S | Se Giovani fosse o responsável, os comandos não teriam sido executados com a conta da direção: ele só tinha credenciais da segurança |
 
-**Por que só quatro hipóteses na premissa 10?** O relatório de acesso só registra, no horário da liberação, credenciais compatíveis com Fernando (conta da direção), Otávio (registro de acesso suspeito), Beatrice (ordem de manutenção) ou uma entrada não autorizada. Amie, Giovani, Angela e Clara aparecem nos registros em outros setores e atuam como fontes das evidências.
+**Por que cinco hipóteses na premissa 10?** O relatório de acesso só registra, no horário da liberação, credenciais compatíveis com Fernando (conta da direção), Otávio (registro de acesso suspeito), Beatrice (ordem de manutenção) ou uma entrada não autorizada. Giovani entra na lista porque é o culpado oficial: as provas divulgadas depois do surto, forjadas pelo plano B de Fernando, apontam para ele, e o jogador precisa descartá-lo pela lógica. Amie, Angela e Clara aparecem nos registros em outros setores e atuam como fontes das evidências.
 
 ### 8.2 Encadeamento da prova
 
 | Linha | Expressão | Regra | Usa |
 |---|---|---|---|
-| 16 | P ∧ Q ∧ R ∧ S | Introdução da Conjunção | 1, 2, 3, 4 |
-| 17 | Q ∧ R ∧ S ∧ P | Comutação (equivalência) | 16 |
-| 18 | X | Modus Ponens | 9, 17 |
-| 19 | ¬A | Substituição por equivalência (T ≡ ¬A) | 5 |
-| 20 | ¬(¬W) | Dupla Negação (equivalência) | 8 |
-| 21 | ¬O | Modus Tollens | 11, 20 |
-| 22 | ¬(¬V) | Dupla Negação (equivalência) | 7 |
-| 23 | ¬B | Modus Tollens | 12, 22 |
-| 24 | ¬I | Modus Tollens | 13, 19 |
-| 25 | ¬O ∧ ¬B ∧ ¬I | Introdução da Conjunção | 21, 23, 24 |
-| 26 | ¬(O ∨ B ∨ I) | Lei de De Morgan (equivalência) | 25 |
-| 27 | Y ∨ (O ∨ B ∨ I) | Associação (equivalência) | 10 |
-| 28 | Y | Silogismo Disjuntivo | 27, 26 |
-| 29 | Z | Modus Ponens | 14, 4 |
-| 30 | K | Modus Ponens | 15, 6 |
-| 31 | X ∧ Y ∧ Z ∧ K | Introdução da Conjunção | 18, 28, 29, 30 |
+| 17 | P ∧ Q ∧ R ∧ S | Introdução da Conjunção | 1, 2, 3, 4 |
+| 18 | Q ∧ R ∧ S ∧ P | Comutação (equivalência) | 17 |
+| 19 | X | Modus Ponens | 9, 18 |
+| 20 | ¬A | Substituição por equivalência (T ≡ ¬A) | 5 |
+| 21 | ¬(¬W) | Dupla Negação (equivalência) | 8 |
+| 22 | ¬O | Modus Tollens | 11, 21 |
+| 23 | ¬(¬V) | Dupla Negação (equivalência) | 7 |
+| 24 | ¬B | Modus Tollens | 12, 23 |
+| 25 | ¬I | Modus Tollens | 13, 20 |
+| 26 | ¬(¬S) | Dupla Negação (equivalência) | 4 |
+| 27 | ¬G | Modus Tollens | 16, 26 |
+| 28 | ¬G ∧ ¬O ∧ ¬B ∧ ¬I | Introdução da Conjunção | 27, 22, 24, 25 |
+| 29 | ¬(G ∨ O ∨ B ∨ I) | Lei de De Morgan (equivalência) | 28 |
+| 30 | Y ∨ (G ∨ O ∨ B ∨ I) | Associação (equivalência) | 10 |
+| 31 | Y | Silogismo Disjuntivo | 30, 29 |
+| 32 | Z | Modus Ponens | 14, 4 |
+| 33 | K | Modus Ponens | 15, 6 |
+| 34 | X ∧ Y ∧ Z ∧ K | Introdução da Conjunção | 19, 31, 32, 33 |
 
 **Explicação dos passos principais**
 
-- **Linhas 16–18 (como):** os fatos P, Q, R e S, reunidos e reordenados por Comutação, satisfazem o antecedente da premissa 9. Logo, a liberação foi autorizada pela direção.
-- **Linhas 20–21 (Otávio):** W afirma que Otávio saiu antes; pela Dupla Negação, W ≡ ¬(¬W). Como O → ¬W, por Modus Tollens, Otávio não foi o responsável.
-- **Linhas 22–23 (Beatrice):** V afirma que a ordem não partiu dela; pela Dupla Negação e Modus Tollens sobre B → ¬V, Beatrice não foi a responsável.
-- **Linhas 19 e 24 (invasão):** não houve arrombamento (¬A). Como I → A, por Modus Tollens, não houve invasão externa.
-- **Linhas 25–26:** a conjunção das três negações equivale, por De Morgan, a ¬(O ∨ B ∨ I): nenhuma das hipóteses alternativas explica o caso.
-- **Linhas 27–28 (quem):** reagrupando a premissa 10 por Associação e aplicando o Silogismo Disjuntivo com a linha 26, resta apenas Y: Fernando Almeida foi o responsável.
-- **Linhas 29–30 (item e setor):** por Modus Ponens, o pendrive criptografado contém o registro decisivo (Z) e a Câmara de contenção foi o setor da alteração (K).
+- **Linhas 17–19 (como):** os fatos P, Q, R e S, reunidos e reordenados por Comutação, satisfazem o antecedente da premissa 9. Logo, a liberação foi autorizada pela direção.
+- **Linhas 21–22 (Otávio):** W afirma que Otávio saiu antes; pela Dupla Negação, W ≡ ¬(¬W). Como O → ¬W, por Modus Tollens, Otávio não foi o responsável.
+- **Linhas 23–24 (Beatrice):** V afirma que a ordem não partiu dela; pela Dupla Negação e Modus Tollens sobre B → ¬V, Beatrice não foi a responsável.
+- **Linhas 20 e 25 (invasão):** não houve arrombamento (¬A). Como I → A, por Modus Tollens, não houve invasão externa.
+- **Linhas 26–27 (Giovani):** S afirma que os comandos foram executados com a conta da direção; pela Dupla Negação, S ≡ ¬(¬S). Como G → ¬S, por Modus Tollens, Giovani não foi o responsável: as provas que o mundo usou contra ele não se sustentam.
+- **Linhas 28–29:** a conjunção das quatro negações equivale, por De Morgan, a ¬(G ∨ O ∨ B ∨ I): nenhuma das hipóteses alternativas explica o caso.
+- **Linhas 30–31 (quem):** reagrupando a premissa 10 por Associação e aplicando o Silogismo Disjuntivo com a linha 29, resta apenas Y: Fernando Almeida foi o responsável.
+- **Linhas 32–33 (item e setor):** por Modus Ponens, o pendrive criptografado contém o registro decisivo (Z) e a Câmara de contenção foi o setor da alteração (K).
 
 ### 8.3 Premissas finais
 
 | Expressão | Significado |
 |---|---|
 | X | A liberação da Amostra 47 foi autorizada pela direção (**procedimento**). |
-| ¬(O ∨ B ∨ I) | Otávio, Beatrice e uma invasão externa estão descartados. |
+| ¬(G ∨ O ∨ B ∨ I) | Giovani, Otávio, Beatrice e uma invasão externa estão descartados. |
 | Y | Fernando Almeida foi o responsável (**quem**). |
 | Z | O pendrive criptografado contém o registro decisivo (**item**). |
 | K | A alteração ocorreu na Câmara de contenção (**setor**). |
@@ -183,4 +190,4 @@ Regras utilizadas:
 - **Inferência:** Introdução da Conjunção, Modus Ponens, Modus Tollens, Silogismo Disjuntivo.
 - **Equivalência:** Comutação, Associação, Dupla Negação, Lei de De Morgan.
 
-A validade da prova foi conferida por tabela-verdade: o conjunto das 15 premissas tem um único modelo verdadeiro, e nele X ∧ Y ∧ Z ∧ K é verdadeira.
+A validade da prova foi conferida por tabela-verdade: o conjunto das 16 premissas tem um único modelo verdadeiro, e nele X ∧ Y ∧ Z ∧ K é verdadeira.

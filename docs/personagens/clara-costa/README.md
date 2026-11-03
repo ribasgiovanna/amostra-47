@@ -9,6 +9,10 @@
 | **Papel na investigação** | Fonte de evidência: alteração dos parâmetros de contenção |
 | **Proposição** | U |
 
+## A família do Helix
+
+Clara era reservada com todo mundo, menos com Giulia. Quando Giovani levava a filha para o complexo, Clara trançava os cachos dela com uma paciência infinita e guardava uma caixa de lápis de cor na gaveta só para ela. Está na foto da festinha de sete anos de Giulia, junto com o resto da equipe.
+
 ## História
 
 Clara era responsável pela inspeção dos equipamentos de segurança da contenção. Meticulosa e reservada, era a pessoa que perceberia primeiro se algo estivesse errado com a câmara.
@@ -35,7 +39,7 @@ Clara morreu na noite do incidente, junto com os demais funcionários. O complex
 |---|---|---|
 | Premissa 6 | U | Clara registrou a alteração manual dos parâmetros de contenção. |
 | Premissa 15 | U → K | A alteração manual ocorreu na Câmara de contenção. |
-| Linha 30 | K | Modus Ponens (15, 6): o setor foi a Câmara de contenção. |
+| Linha 33 | K | Modus Ponens (15, 6): o setor foi a Câmara de contenção. |
 
 ## Identidade visual
 

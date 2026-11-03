@@ -17,6 +17,8 @@ Giovani liderava a **segurança do Complexo Helix**, supervisionando acessos fí
 
 ## 2. Descrição visual — referências e direções aprováveis
 
+- **Altura:** muito alto, **mais de 1,90 m** (canônico). Nos sprites, pode ficar um pouco mais alto que os outros personagens, sem sair do quadro de 64 px.
+
 ### Cabelo e rosto
 
 - **Cabelo:** castanho-escuro, **curto**, com leve textura e acabamento simples de corte masculino; nunca penteado longo.
@@ -116,6 +118,6 @@ Além das regras do guia mestre:
 
 ## 9. Limites do documento
 
-O cargo e envolvimento nos acessos/câmeras vêm do caso. Cabelo, barba e vestuário foram elaborados a partir das três referências fotográficas e do card gerado; idade, altura, nome de corpo policial e treinamento militar **não foram definidos como cânone**.
+O cargo e envolvimento nos acessos/câmeras vêm do caso. Cabelo, barba e vestuário foram elaborados a partir das três referências fotográficas e do card gerado; idade, nome de corpo policial e treinamento militar **não foram definidos como cânone**.
 
 **Status do design:** proposta documentada a partir das instruções e artes produzidas. A aprovação visual final requer comparar com as imagens de referência enviadas pela usuária. Para produção real, especificar depois resolução nativa, grid, alinhamento, pivô, paleta fechada e exportação de PNGs transparentes.
