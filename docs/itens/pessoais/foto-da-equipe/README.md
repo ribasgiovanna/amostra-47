@@ -1,20 +1,22 @@
 # Item pessoal — Foto da família do Helix
 
+![Foto da família do Helix no porta-retrato destruído](arte.webp)
+
 | | |
 |---|---|
 | **Dono** | A equipe do Complexo Helix |
-| **Onde** | [Sala de evacuação](../../../locais/sala-de-evacuacao/), no chão, perto dos armários de funcionários |
+| **Onde** | [Sala de servidores](../../../locais/sala-de-servidores/), num porta-retrato sobre a mesa da estação de Angela |
 | **Contém** | — |
 
 ## O que é
 
-Uma foto tirada na **festinha surpresa de sete anos de Giulia**, poucos meses antes do incidente, na área de espera da Sala de evacuação. Nela estão todos juntos: **Giovani, Angela, Amie, Beatrice, Clara e Otávio** e, no meio, **Giulia**, sorrindo, enrolada no cardigã marrom de lã do pai, quase sumindo dentro dele. Fernando não aparece: nunca fez parte daquela família.
+Uma foto tirada na **festinha surpresa de sete anos de Giulia**, poucos meses antes do incidente, na Sala de servidores, organizada por Angela. Nela estão todos juntos: **Giovani, Angela, Amie, Beatrice, Clara e Otávio** e, no meio, **Giulia**, sorrindo, enrolada no cardigã marrom de lã do pai, quase sumindo dentro dele. Fernando não aparece: nunca fez parte daquela família.
 
 A foto ficava presa num dos armários da sala.
 
 ## Por que está aqui
 
-Na noite do incidente, os funcionários correram para as portas da Sala de evacuação e morreram ali, a poucos metros de onde a foto foi tirada. Na correria, a foto caiu do armário e ficou no chão por quatorze anos.
+Angela imprimiu a foto e a colocou num porta-retrato de metal sobre a mesa da estação de trabalho dela. Ficou ali por quatorze anos, perto do pendrive que guardava a verdade, enquanto a sala apodrecia em volta.
 
 ## Na história
 
@@ -24,6 +26,4 @@ Giulia não lembra daquele dia. Ao encontrar a foto, se vê no meio de todos, en
 
 ## A arte
 
-Foto impressa em papel fotográfico, numa moldura simples com o **vidro trincado**. Um canto rasgado, manchas de sujeira e umidade, cores desbotadas. Os rostos ainda são reconhecíveis pelas marcas visuais de cada personagem: os cachos dourados de Giulia, o colete de Giovani, o cabelo curto de Angela, o jaleco de Amie, os goggles de Beatrice, o cabelo vinho de Clara e a gravata vermelha de Otávio.
-
-> A arte ainda não foi criada. O prompt para gerá-la está em [`prompt.md`](prompt.md).
+Porta-retrato de mesa em metal escuro, enferrujado, com o vidro trincado em teia num canto e respingos de sangue seco na moldura. A foto, desbotada e manchada de umidade, tem um canto rasgado e dobrado. Dentro dela, a festinha na Sala de servidores: Giovani de colete tático com as mãos nos ombros de Giulia, enrolada no cardigã do pai, Angela rindo, Amie, Beatrice, Clara e Otávio em volta do bolo com sete velinhas. Fernando não aparece.

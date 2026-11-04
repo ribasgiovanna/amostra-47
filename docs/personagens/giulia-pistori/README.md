@@ -25,7 +25,7 @@ Quando a vizinha não podia, Giovani não tinha com quem deixá-la e a levava pa
 
 Só o diretor, **Fernando**, ficava de fora. Achava "pouco profissional" uma criança no complexo.
 
-No aniversário de sete anos, poucos meses antes do incidente, a equipe fez uma festinha surpresa para ela no complexo. A sala estava fria, e o pai a enrolou no próprio cardigã marrom de lã. Alguém tirou uma foto de todos juntos, com Giulia no meio, quase sumindo dentro do casaco. Ela não guardou nenhuma lembrança desse dia. Anos depois, vai encontrar essa foto destruída no chão da Sala de evacuação.
+No aniversário de sete anos, poucos meses antes do incidente, a equipe fez uma festinha surpresa para ela na Sala de servidores. A sala estava fria por causa das máquinas, e o pai a enrolou no próprio cardigã marrom de lã. Alguém tirou uma foto de todos juntos, com Giulia no meio, quase sumindo dentro do casaco. Ela não guardou nenhuma lembrança desse dia. Anos depois, vai encontrar essa foto destruída, ainda no porta-retrato sobre a mesa de Angela.
 
 Na noite do incidente, Giulia tinha **sete anos**. Um alarme automático de segurança tocou no telefone do pai; ele deixou a filha com a vizinha e, já na porta, se abaixou e prometeu: *"Volto antes de você acordar."* Ela ficou na porta, olhando ele ir embora às pressas, e depois passou a noite inteira acordada, esperando o barulho da chave. Ele nunca voltou.
 
