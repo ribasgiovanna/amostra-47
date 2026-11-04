@@ -36,6 +36,7 @@ Sala quadrada com portas duplas ao norte e ao sul. As grelhas de ventilação no
 | O comando foi executado com uma conta da direção | S | Premissa 4 (análise de Angela) |
 | **Pendrive criptografado:** cópia parcial dos registros do experimento e dados recuperados dos sistemas | Z | Premissa 14 → linha 32 |
 | Registro do envio da **mensagem de emergência interrompida**: revela que foi Angela quem mandou o alerta para Giovani, a mensagem que trouxe Giulia ao complexo | — | História da Giulia |
+| [Foto da família do Helix](../../itens/pessoais/foto-da-equipe/): a equipe reunida na festinha de sete anos de Giulia, num porta-retrato sobre a mesa de Angela | — | Itens pessoais |
 
 ## Na prova
 

@@ -27,7 +27,7 @@ Angela não confiava mais na direção, mas também não tinha provas suficiente
 
 ## A família do Helix
 
-Para Angela, a equipe do Helix era uma família, e Giulia era a sobrinha que ela escolheu. Sempre que Giovani precisava levar a filha para o complexo, Angela dividia com ela o chocolate quente da garrafa térmica e abria o caderno de símbolos para ensinar as setinhas. Foi Angela quem organizou a festinha surpresa de sete anos de Giulia, e está na foto de todos juntos.
+Para Angela, a equipe do Helix era uma família, e Giulia era a sobrinha que ela escolheu. Sempre que Giovani precisava levar a filha para o complexo, Angela dividia com ela o chocolate quente da garrafa térmica e abria o caderno de símbolos para ensinar as setinhas. Foi Angela quem organizou a festinha surpresa de sete anos de Giulia, na Sala de servidores, e quem guardou a foto de todos juntos num porta-retrato sobre a mesa dela.
 
 ## História
 

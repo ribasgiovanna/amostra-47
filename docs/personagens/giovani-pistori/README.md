@@ -31,7 +31,7 @@ Na noite do incidente, Giovani estava em casa quando o **alarme automático de s
 
 ## A família do Helix
 
-Quando a vizinha não podia ficar com Giulia, Giovani não tinha com quem deixá-la e a levava para o complexo. Nunca precisou se preocupar: Angela, Beatrice, Clara, Amie e Otávio disputavam quem ia cuidar dela. Para Giovani, que nunca teve família por perto, aquela equipe virou exatamente isso. A foto da festinha de sete anos de Giulia, com todos juntos, ficava presa num dos armários da Sala de evacuação.
+Quando a vizinha não podia ficar com Giulia, Giovani não tinha com quem deixá-la e a levava para o complexo. Nunca precisou se preocupar: Angela, Beatrice, Clara, Amie e Otávio disputavam quem ia cuidar dela. Para Giovani, que nunca teve família por perto, aquela equipe virou exatamente isso. A foto da festinha de sete anos de Giulia, com todos juntos, ficava num porta-retrato sobre a mesa de Angela, na Sala de servidores.
 
 ## História
 

@@ -54,7 +54,7 @@ Os dois logo entram para a família. **Amie**, longe da própria família e acos
 
 Só **Fernando** fica de fora. Acha "pouco profissional" uma criança no complexo e nunca aparece quando a equipe se reúne. Ele nunca fez parte da família.
 
-Poucos meses antes do incidente, a equipe organiza uma **festinha surpresa de sete anos** para Giulia, improvisada na área de espera da Sala de evacuação, o único espaço grande o bastante. A sala é fria, e Giovani tira o próprio **cardigã marrom** de lã, o casaco de folga que ele usava por cima do uniforme, e enrola a filha nele. Alguém tira uma **foto de todos juntos**: Giovani, Angela, Amie, Beatrice, Clara, Otávio e, no meio, Giulia, sorrindo, quase sumindo dentro do cardigã do pai. A foto fica presa num dos armários da sala.
+Poucos meses antes do incidente, a equipe organiza uma **festinha surpresa de sete anos** para Giulia, improvisada pela Angela na **Sala de servidores**, o território dela, entre os racks e as telas. A sala é fria por causa das máquinas, e Giovani tira o próprio **cardigã marrom** de lã, o casaco de folga que ele usava por cima do uniforme, e enrola a filha nele. Alguém tira uma **foto de todos juntos**: Giovani, Angela, Amie, Beatrice, Clara, Otávio e, no meio, Giulia, sorrindo, quase sumindo dentro do cardigã do pai. A Angela imprime a foto e a coloca num porta-retrato sobre a mesa da estação de trabalho dela.
 
 Nos bastidores, tudo muda:
 
@@ -200,7 +200,6 @@ Giulia percorre o complexo. Cada setor guarda a história de alguém, e cada ite
 - **Câmara de contenção.** O tanque rompido, mas as portas intactas. A **maleta de amostras de Clara**, com o **sensor de pressão** que registrou a alteração manual, e o **frasco de contenção** vazio. *Flashback:* Clara percebendo a pressão cair.
 - **Túnel de ventilação.** Os **óculos quebrados de Beatrice** nos dutos onde ela morreu, e a **ordem de manutenção** com o aval dela, que ela nunca deu. *Flashback:* Beatrice voltando aos corredores de serviço para procurar alguém.
 - **Sala de evacuação.** O lugar onde quase todos morreram, perto das portas. A **gravata de Otávio** e os comunicados de emergência. O relatório de acesso confirma que ele tinha saído do laboratório antes da liberação.
-- **A foto da família.** No chão da Sala de evacuação, perto dos armários, Giulia encontra a **foto de todos juntos** na festinha de sete anos: rasgada num canto, manchada, desbotada, com o vidro da moldura trincado. Ela não lembrava daquele dia. Não lembrava de nenhum deles direito. Mas lá está ela, no meio de todos, enrolada no cardigã do pai, o mesmo que ela está vestindo agora. É ali que Giulia entende que não perdeu só o pai naquela noite: perdeu uma família inteira, e todos morreram juntos, a poucos metros de onde a foto foi tirada. *Flashback:* a festinha surpresa, com todos reunidos.
 - **Páginas do caderno de Fernando.** Escondidas pelo próprio Fernando em lugares diferentes do complexo, as páginas arrancadas mostram, aos poucos, os contratos, o cronograma riscado, as anotações sobre a equipe e a relação com o pai.
 
 Ao longo do ato, as hipóteses caem uma a uma: Otávio saiu antes, a ordem de manutenção não partiu de Beatrice, não houve invasão vinda de fora e as provas contra Giovani não se sustentam: os comandos saíram da conta da direção, e ele só tinha credenciais da segurança.
@@ -208,6 +207,7 @@ Ao longo do ato, as hipóteses caem uma a uma: Otávio saiu antes, a ordem de ma
 ### Ato III — A reconstrução
 
 - **Sala de servidores.** O último setor guarda as respostas. Fernando não terminou de apagar tudo: nos servidores sobraram **vestígios** da autorização administrativa feita com a **conta da direção**, incompletos demais para provar algo sozinhos. A prova completa está no **pendrive criptografado de Angela**, com o registro decisivo da autorização e as provas de que a diretoria manipulou o aval de Beatrice.
+- **A foto da família.** Num porta-retrato sobre a mesa da estação de Angela, Giulia encontra a **foto de todos juntos** na festinha de sete anos: rasgada num canto, manchada, desbotada, com o vidro da moldura trincado. Ela não lembrava daquele dia. Não lembrava de nenhum deles direito. Mas lá está ela, no meio de todos, enrolada no cardigã do pai, o mesmo que ela está vestindo agora. É ali que Giulia entende que não perdeu só o pai naquela noite: perdeu uma família inteira. *Flashback:* a festinha surpresa, com todos reunidos entre os servidores.
 - **A revelação da mensagem.** Nos registros, Giulia descobre quem mandou o e-mail para o pai: **Angela**. A amiga que ensinou a ela as setinhas foi a última pessoa a tentar salvar Giovani.
 - **A conclusão lógica.** Cruzando todas as evidências, o jogador monta a prova: **Fernando Almeida** liberou a Amostra 47 por meio de uma autorização administrativa com a conta da direção, registrada no **pendrive criptografado**, e tudo começou na **Câmara de contenção**.
 - **A última página.** Só depois da acusação, Giulia encontra a página final do caderno de Fernando: *"Ninguém pode sair antes de eu apagar tudo."* É a confirmação emocional do que a lógica já tinha provado.
@@ -251,7 +251,7 @@ Um último **flashback** fecha o jogo: Giovani, no painel de segurança, tentand
 - O conteúdo de cada flashback.
 - A última página do caderno de Fernando aparecendo só depois da acusação.
 - O final com a reabilitação de Giovani e o flashback dele no painel.
-- A foto da família tirada na festinha de sete anos de Giulia, encontrada na Sala de evacuação, e o que cada um fazia com ela (chocolate quente, cintinho de ferramentas, tranças, lâminas coloridas, esconde-esconde).
+- A foto da família tirada na festinha de sete anos de Giulia, encontrada na Sala de servidores, ao lado da estação de Angela, e o que cada um fazia com ela (chocolate quente, cintinho de ferramentas, tranças, lâminas coloridas, esconde-esconde).
 - Os dois registros de acesso (o forjado, que o mundo viu, e o verdadeiro, que Giulia encontra) e a cópia de segurança externa onde Fernando deixou as provas falsas.
 - O e-mail cortado porque a direção derrubou a rede interna.
 - Fernando preso pelo próprio bloqueio enquanto apagava os registros, e os vestígios que sobraram nos servidores.
