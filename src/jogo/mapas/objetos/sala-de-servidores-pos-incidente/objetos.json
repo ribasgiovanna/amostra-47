@@ -1,0 +1,138 @@
+[
+ {
+  "imagem": "racks-com-mesa.png",
+  "retangulo": [
+   269.5,
+   164.6,
+   191.3,
+   182.4
+  ],
+  "bases": [
+   [
+    0.02,
+    0.1,
+    0.96,
+    0.8
+   ]
+  ],
+  "linha": 0.85
+ },
+ {
+  "imagem": "fileira-de-racks.png",
+  "retangulo": [
+   265.4,
+   382.6,
+   199.5,
+   133.8
+  ],
+  "bases": [
+   [
+    0.04,
+    0.15,
+    0.92,
+    0.75
+   ]
+  ],
+  "linha": 0.85
+ },
+ {
+  "imagem": "mesa-monitores.png",
+  "retangulo": [
+   87.4,
+   51.4,
+   82.3,
+   51.4
+  ],
+  "pe": 0.45
+ },
+ {
+  "imagem": "estacao-canto-direita.png",
+  "retangulo": [
+   550.3,
+   46.3,
+   82.3,
+   83.5
+  ],
+  "pe": 0.45
+ },
+ {
+  "imagem": "rack-de-vidro.png",
+  "retangulo": [
+   95.7,
+   213.9,
+   39.1,
+   185.1
+  ],
+  "pe": 0.25
+ },
+ {
+  "imagem": "rack-de-vidro-direita.png",
+  "retangulo": [
+   585.3,
+   213.9,
+   39.1,
+   185.1
+  ],
+  "pe": 0.25
+ },
+ {
+  "imagem": "carrinho-terminal.png",
+  "retangulo": [
+   176.9,
+   298.3,
+   46.3,
+   70.8
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "carrinho-terminal.png",
+  "retangulo": [
+   493.7,
+   298.3,
+   46.3,
+   70.8
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "armario-eletrico.png",
+  "retangulo": [
+   82.3,
+   582.2,
+   63.8,
+   55.7
+  ],
+  "pe": 0.4
+ },
+ {
+  "imagem": "rack-servidor.png",
+  "retangulo": [
+   43.2,
+   90.5,
+   30.9,
+   65.1
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "rack-servidor.png",
+  "retangulo": [
+   645.9,
+   90.5,
+   30.9,
+   65.1
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "rack-servidor.png",
+  "retangulo": [
+   156.3,
+   582.2,
+   30.9,
+   65.1
+  ],
+  "pe": 0.3
+ }
+]

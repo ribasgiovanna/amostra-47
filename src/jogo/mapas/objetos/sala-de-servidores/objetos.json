@@ -1,0 +1,506 @@
+[
+ {
+  "id": "obj_001",
+  "imagem": "novo-rack.png",
+  "retangulo": [
+   270.5,
+   173.3,
+   35.3,
+   113.0
+  ],
+  "pe": 0.3,
+  "linha": 1.003
+ },
+ {
+  "id": "obj_002",
+  "imagem": "novo-rack.png",
+  "retangulo": [
+   315.8,
+   173.3,
+   35.3,
+   113.0
+  ],
+  "pe": 0.3,
+  "linha": 1.003
+ },
+ {
+  "id": "obj_003",
+  "imagem": "novo-rack.png",
+  "retangulo": [
+   362.8,
+   173.3,
+   35.3,
+   113.0
+  ],
+  "pe": 0.3,
+  "linha": 1.003
+ },
+ {
+  "id": "obj_004",
+  "imagem": "novo-rack.png",
+  "retangulo": [
+   410.5,
+   173.3,
+   35.3,
+   113.0
+  ],
+  "pe": 0.3,
+  "linha": 1.003
+ },
+ {
+  "id": "obj_005",
+  "imagem": "novo-rack.png",
+  "retangulo": [
+   270.5,
+   391.7,
+   35.3,
+   113.0
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_006",
+  "imagem": "novo-rack.png",
+  "retangulo": [
+   315.8,
+   391.7,
+   35.3,
+   113.0
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_007",
+  "imagem": "novo-rack.png",
+  "retangulo": [
+   362.8,
+   391.7,
+   35.3,
+   113.0
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_008",
+  "imagem": "novo-rack.png",
+  "retangulo": [
+   410.5,
+   391.7,
+   35.3,
+   113.0
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_009",
+  "imagem": "novo-terminal.png",
+  "retangulo": [
+   292.3,
+   283.0,
+   134.3,
+   88.3
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_010",
+  "imagem": "novo-console.png",
+  "retangulo": [
+   81.3,
+   63.7,
+   78.6,
+   83.7
+  ],
+  "pe": 0.3,
+  "linha": 1.004
+ },
+ {
+  "id": "obj_011",
+  "imagem": "novo-console-espelhado.png",
+  "retangulo": [
+   561.3,
+   63.7,
+   78.6,
+   83.7
+  ],
+  "pe": 0.3,
+  "linha": 1.004
+ },
+ {
+  "id": "obj_012",
+  "imagem": "novo-rack.png",
+  "retangulo": [
+   205.8,
+   59.7,
+   22.1,
+   70.7
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_013",
+  "imagem": "novo-rack.png",
+  "retangulo": [
+   236.8,
+   59.7,
+   22.1,
+   70.7
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_014",
+  "imagem": "novo-rack.png",
+  "retangulo": [
+   467.4,
+   59.7,
+   22.1,
+   70.7
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_015",
+  "imagem": "novo-rack.png",
+  "retangulo": [
+   499.8,
+   59.7,
+   22.1,
+   70.7
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_016",
+  "imagem": "novo-vitrine.png",
+  "retangulo": [
+   93.0,
+   224.5,
+   42.3,
+   189.1
+  ],
+  "pe": 0.3,
+  "linha": 0.998
+ },
+ {
+  "id": "obj_017",
+  "imagem": "novo-vitrine.png",
+  "retangulo": [
+   586.7,
+   224.5,
+   42.3,
+   189.1
+  ],
+  "pe": 0.3,
+  "linha": 0.998
+ },
+ {
+  "id": "obj_018",
+  "imagem": "novo-rack.png",
+  "retangulo": [
+   51.3,
+   98.7,
+   18.7,
+   59.7
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_019",
+  "imagem": "novo-rack.png",
+  "retangulo": [
+   646.0,
+   98.7,
+   18.7,
+   59.7
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_020",
+  "imagem": "novo-carrinho.png",
+  "retangulo": [
+   178.0,
+   305.2,
+   46.0,
+   81.8
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_021",
+  "imagem": "novo-carrinho.png",
+  "retangulo": [
+   495.0,
+   303.7,
+   45.1,
+   80.3
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_024",
+  "imagem": "armario_tres_portas.png",
+  "retangulo": [
+   93.0,
+   585.7,
+   47.7,
+   71.7
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_025",
+  "imagem": "novo-rack.png",
+  "retangulo": [
+   57.8,
+   588.0,
+   18.4,
+   59.0
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_026",
+  "imagem": "novo-quadro.png",
+  "retangulo": [
+   158.3,
+   594.1,
+   26.3,
+   63.9
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_027",
+  "imagem": "armario_tres_portas.png",
+  "retangulo": [
+   577.0,
+   587.3,
+   40.3,
+   67.7
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_028",
+  "imagem": "novo-rack.png",
+  "retangulo": [
+   645.3,
+   586.7,
+   19.4,
+   62.0
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_029",
+  "imagem": "maca_emergencia.png",
+  "retangulo": [
+   597.0,
+   614.3,
+   57.3,
+   58.7
+  ],
+  "pe": 0.3,
+  "linha": 1.0
+ },
+ {
+  "id": "obj_030",
+  "imagem": "papeis_espalhados_a.png",
+  "retangulo": [
+   69.0,
+   135.0,
+   14.3,
+   12.7
+  ],
+  "bases": [],
+  "linha": -1000
+ },
+ {
+  "id": "obj_031",
+  "imagem": "papeis_espalhados_a.png",
+  "retangulo": [
+   132.0,
+   155.0,
+   14.3,
+   12.7
+  ],
+  "bases": [],
+  "linha": -1000
+ },
+ {
+  "id": "obj_032",
+  "imagem": "papeis_espalhados_a.png",
+  "retangulo": [
+   619.0,
+   156.7,
+   14.3,
+   12.7
+  ],
+  "bases": [],
+  "linha": -1000
+ },
+ {
+  "id": "obj_033",
+  "imagem": "papeis_espalhados_a.png",
+  "retangulo": [
+   657.0,
+   147.7,
+   14.3,
+   12.7
+  ],
+  "bases": [],
+  "linha": -1000
+ },
+ {
+  "id": "obj_034",
+  "imagem": "papeis_espalhados_a.png",
+  "retangulo": [
+   109.0,
+   488.7,
+   14.3,
+   12.7
+  ],
+  "bases": [],
+  "linha": -1000
+ },
+ {
+  "id": "obj_035",
+  "imagem": "papeis_espalhados_a.png",
+  "retangulo": [
+   136.7,
+   508.0,
+   14.3,
+   12.7
+  ],
+  "bases": [],
+  "linha": -1000
+ },
+ {
+  "id": "obj_036",
+  "imagem": "papeis_espalhados_a.png",
+  "retangulo": [
+   580.0,
+   484.7,
+   14.3,
+   12.7
+  ],
+  "bases": [],
+  "linha": -1000
+ },
+ {
+  "id": "obj_037",
+  "imagem": "papeis_espalhados_a.png",
+  "retangulo": [
+   632.7,
+   631.7,
+   14.3,
+   12.7
+  ],
+  "bases": [],
+  "linha": -1000
+ },
+ {
+  "id": "obj_038",
+  "imagem": "papeis_espalhados_a.png",
+  "retangulo": [
+   581.7,
+   647.7,
+   14.3,
+   12.7
+  ],
+  "bases": [],
+  "linha": -1000
+ },
+ {
+  "id": "obj_039",
+  "imagem": "vegetacao_manchas.png",
+  "retangulo": [
+   359.3,
+   141.7,
+   28.7,
+   24.0
+  ],
+  "bases": [],
+  "linha": -1000
+ },
+ {
+  "id": "obj_040",
+  "imagem": "vegetacao_manchas.png",
+  "retangulo": [
+   539.7,
+   228.7,
+   28.7,
+   24.0
+  ],
+  "bases": [],
+  "linha": -1000
+ },
+ {
+  "id": "obj_041",
+  "imagem": "vegetacao_manchas.png",
+  "retangulo": [
+   561.7,
+   362.3,
+   28.7,
+   24.0
+  ],
+  "bases": [],
+  "linha": -1000
+ },
+ {
+  "id": "obj_042",
+  "imagem": "vegetacao_manchas.png",
+  "retangulo": [
+   152.0,
+   348.7,
+   28.7,
+   24.0
+  ],
+  "bases": [],
+  "linha": -1000
+ },
+ {
+  "id": "obj_043",
+  "imagem": "vegetacao_manchas.png",
+  "retangulo": [
+   219.3,
+   539.7,
+   28.7,
+   24.0
+  ],
+  "bases": [],
+  "linha": -1000
+ },
+ {
+  "id": "obj_044",
+  "imagem": "pendrive_criptografado.png",
+  "retangulo": [
+   402.3,
+   336.3,
+   13.7,
+   7.3
+  ],
+  "bases": [],
+  "linha": -1000
+ }
+]

@@ -6,7 +6,6 @@ Sprites de **parado** e **andando**, de frente, lado e costas, de cada personage
 |---|---|
 | [Giulia Pistori](giulia-pistori/) | `giulia-sheet.png` |
 | [Amie Lin](amie-lin/) | `amie-sheet.png` |
-| [Angela Torres](angela-torres/) | `angela-sheet.png` |
 | [Beatrice Salles](beatrice-salles/) | `beatrice-sheet.png` |
 | [Otávio Ferraz](otavio-ferraz/) | `otavio-sheet.png` |
 | [Fernando Almeida](fernando-almeida/) | `fernando-sheet.png` |

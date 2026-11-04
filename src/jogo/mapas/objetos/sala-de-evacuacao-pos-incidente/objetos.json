@@ -1,0 +1,182 @@
+[
+ {
+  "imagem": "armarios-canto.png",
+  "retangulo": [
+   71.8,
+   13.7,
+   152.0,
+   152.8
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "banco.png",
+  "retangulo": [
+   246.9,
+   249.2,
+   91.9,
+   52.2
+  ],
+  "pe": 0.35
+ },
+ {
+  "imagem": "banco.png",
+  "retangulo": [
+   381.8,
+   249.2,
+   91.9,
+   52.2
+  ],
+  "pe": 0.35
+ },
+ {
+  "imagem": "banco.png",
+  "retangulo": [
+   246.9,
+   401.4,
+   91.9,
+   52.2
+  ],
+  "pe": 0.35
+ },
+ {
+  "imagem": "banco.png",
+  "retangulo": [
+   381.8,
+   401.4,
+   91.9,
+   52.2
+  ],
+  "pe": 0.35
+ },
+ {
+  "imagem": "vaso-planta.png",
+  "retangulo": [
+   213.6,
+   237.7,
+   37.9,
+   49.4
+  ],
+  "pe": 0.4
+ },
+ {
+  "imagem": "vaso-planta.png",
+  "retangulo": [
+   469.7,
+   239.3,
+   36.7,
+   47.8
+  ],
+  "pe": 0.4
+ },
+ {
+  "imagem": "vaso-planta.png",
+  "retangulo": [
+   213.6,
+   392.7,
+   37.9,
+   49.4
+  ],
+  "pe": 0.4
+ },
+ {
+  "imagem": "vaso-planta.png",
+  "retangulo": [
+   469.7,
+   394.3,
+   36.7,
+   47.8
+  ],
+  "pe": 0.4
+ },
+ {
+  "imagem": "estante-suprimentos.png",
+  "retangulo": [
+   508.1,
+   41.9,
+   117.7,
+   98.8
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "luminaria.png",
+  "retangulo": [
+   140.7,
+   233.2,
+   25.8,
+   62.5
+  ],
+  "pe": 0.2
+ },
+ {
+  "imagem": "luminaria.png",
+  "retangulo": [
+   566.6,
+   298.6,
+   23.7,
+   57.4
+  ],
+  "pe": 0.2
+ },
+ {
+  "imagem": "estante-estreita.png",
+  "retangulo": [
+   97.2,
+   165.7,
+   34.2,
+   132.9
+  ],
+  "pe": 0.25
+ },
+ {
+  "imagem": "estante-estreita.png",
+  "retangulo": [
+   600.0,
+   244.4,
+   28.7,
+   111.6
+  ],
+  "pe": 0.25
+ },
+ {
+  "imagem": "maca.png",
+  "retangulo": [
+   565.6,
+   629.9,
+   68.9,
+   39.0
+  ],
+  "pe": 0.4
+ },
+ {
+  "imagem": "mochilas.png",
+  "retangulo": [
+   574.2,
+   346.2,
+   51.7,
+   75.8
+  ],
+  "pe": 0.4
+ },
+ {
+  "imagem": "mochilas.png",
+  "retangulo": [
+   110.8,
+   490.2,
+   39.6,
+   58.1
+  ],
+  "pe": 0.4
+ },
+ {
+  "imagem": "mesa-suprimentos.png",
+  "retangulo": [
+   548,
+   490,
+   55,
+   42.4
+  ],
+  "pe": 0.35
+ }
+]

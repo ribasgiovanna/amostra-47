@@ -1,0 +1,172 @@
+[
+ {
+  "imagem": "bancada-pia.png",
+  "retangulo": [
+   195.4,
+   228.3,
+   74.1,
+   176.7
+  ],
+  "bases": [
+   [
+    0.2,
+    0.08,
+    0.6,
+    0.88
+   ]
+  ],
+  "linha": 0.96
+ },
+ {
+  "imagem": "bancada-cultura.png",
+  "retangulo": [
+   300.3,
+   218.1,
+   121.4,
+   217.6
+  ],
+  "bases": [
+   [
+    0.22,
+    0.08,
+    0.56,
+    0.88
+   ]
+  ],
+  "linha": 0.96
+ },
+ {
+  "imagem": "bancada-centrifuga.png",
+  "retangulo": [
+   450.5,
+   231.4,
+   65.8,
+   154.7
+  ],
+  "bases": [
+   [
+    0.05,
+    0.08,
+    0.9,
+    0.88
+   ]
+  ],
+  "linha": 0.96
+ },
+ {
+  "imagem": "estacao-microscopio.png",
+  "retangulo": [
+   82.3,
+   176.9,
+   82.3,
+   157.5
+  ],
+  "bases": [
+   [
+    0.0,
+    0.05,
+    0.55,
+    0.9
+   ]
+  ],
+  "linha": 0.95
+ },
+ {
+  "imagem": "estacao-microscopio-direita.png",
+  "retangulo": [
+   557.5,
+   176.9,
+   82.3,
+   157.5
+  ],
+  "bases": [
+   [
+    0.45,
+    0.05,
+    0.55,
+    0.9
+   ]
+  ],
+  "linha": 0.95
+ },
+ {
+  "imagem": "geladeira-vidro.png",
+  "retangulo": [
+   37.0,
+   82.3,
+   41.1,
+   112.0
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "geladeira-vidro.png",
+  "retangulo": [
+   643.9,
+   82.3,
+   41.1,
+   112.0
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "armario-amostras.png",
+  "retangulo": [
+   137.8,
+   59.7,
+   32.9,
+   92.4
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "armario-amostras.png",
+  "retangulo": [
+   553.4,
+   59.7,
+   32.9,
+   92.4
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "carrinho-laboratorio.png",
+  "retangulo": [
+   154.3,
+   403.2,
+   46.3,
+   55.7
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "carrinho-laboratorio.png",
+  "retangulo": [
+   563.7,
+   423.8,
+   46.3,
+   55.7
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "armario-risco-biologico.png",
+  "retangulo": [
+   111.1,
+   582.2,
+   80.2,
+   59.2
+  ],
+  "pe": 0.35
+ },
+ {
+  "imagem": "pia-de-parede.png",
+  "retangulo": [
+   604.8,
+   582.2,
+   53.5,
+   69.1
+  ],
+  "pe": 0.35
+ }
+]

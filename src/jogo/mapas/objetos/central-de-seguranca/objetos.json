@@ -1,0 +1,158 @@
+[
+ {
+  "imagem": "painel-de-video.png",
+  "retangulo": [
+   199,
+   13,
+   322,
+   190.7
+  ],
+  "bases": [
+   [
+    0,
+    0,
+    1,
+    0.78
+   ]
+  ],
+  "linha": 0.8
+ },
+ {
+  "imagem": "ilha-central.png",
+  "retangulo": [
+   220,
+   255,
+   280,
+   229.2
+  ],
+  "bases": [
+   [
+    0.05,
+    0.03,
+    0.9,
+    0.85
+   ]
+  ],
+  "linha": 0.88
+ },
+ {
+  "imagem": "rack-de-vidro.png",
+  "retangulo": [
+   92,
+   213,
+   66,
+   215
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "rack-de-vidro-direito.png",
+  "retangulo": [
+   562,
+   213,
+   66,
+   215
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "rack-servidor.png",
+  "retangulo": [
+   92,
+   46,
+   37,
+   89.4
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "rack-servidor.png",
+  "retangulo": [
+   43,
+   106,
+   30,
+   72.5
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "rack-servidor.png",
+  "retangulo": [
+   577,
+   48,
+   32,
+   77.3
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "rack-servidor.png",
+  "retangulo": [
+   647,
+   106,
+   30,
+   72.5
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "rack-servidor.png",
+  "retangulo": [
+   98,
+   425,
+   32,
+   77.3
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "mesa-monitores.png",
+  "retangulo": [
+   578,
+   118,
+   60,
+   50.6
+  ],
+  "pe": 0.45
+ },
+ {
+  "imagem": "carrinho-terminal.png",
+  "retangulo": [
+   142,
+   432,
+   40,
+   74.9
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "carrinho-equipamentos.png",
+  "retangulo": [
+   560,
+   428,
+   60,
+   65.4
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "balcao-radio.png",
+  "retangulo": [
+   52,
+   462,
+   70,
+   41.1
+  ],
+  "pe": 0.4
+ },
+ {
+  "imagem": "cadeira.png",
+  "retangulo": [
+   128,
+   492,
+   20,
+   33.5
+  ],
+  "pe": 0.3
+ }
+]
