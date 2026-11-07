@@ -4,12 +4,16 @@
 - ``pista.wav``: pista coletada (duas notas de sino, com eco);
 - ``menu-mover.wav``: batida grave de bumbo ao passar entre opções do menu;
 - ``menu-confirmar.wav``: bipe curto, mais agudo que a batida, ao escolher uma opção;
-- ``ambiente.wav``: zumbido do laboratório em loop (rede elétrica + ventilação), 8 s.
+- ``tecla-1..3.wav``: toque macio ao escrever nas anotações;
+- ``ambiente.wav``: zumbido do laboratório em loop (rede elétrica + ventilação), 8 s;
+- ``floresta.wav``: floresta em loop (vento, folhas, pássaros e insetos), 40 s.
 
 Uso (na pasta src/jogo):
-    python ferramentas/gerar_sons.py
+    python ferramentas/gerar_sons.py            # todos
+    python ferramentas/gerar_sons.py floresta   # só a floresta
 """
 import os
+import sys
 import wave
 
 import numpy as np
@@ -104,14 +108,94 @@ def menu_confirmar():
     return suavizar(onda * envelope, 3)
 
 
+def tecla(frequencia):
+    # Toque de escrever: um "tic" leve e agudo de tecla, curtinho, sem peso grave.
+    t = tempo(0.025)
+    clique = np.sin(2 * np.pi * frequencia * t) * np.exp(-t * 260)
+    estalo = suavizar(sorteio.normal(size=len(t)), 2) * np.exp(-t * 900) * 0.35
+    return (clique + estalo) * np.minimum(1, t * 6000)
+
+
+def ruido_em_loop(rng, n, filtro):
+    """Ruído filtrado que emenda sem clique no fim do loop (pontas cruzadas)."""
+    extra = int(1.0 * TAXA)
+    ruido = filtro(rng.normal(size=n + extra))
+    mistura = np.linspace(0, 1, extra)
+    saida = ruido[:n].copy()
+    saida[:extra] = ruido[n:] * (1 - mistura) + saida[:extra] * mistura
+    return saida / (np.abs(saida).max() or 1)
+
+
+def passa_baixa(onda, corte):
+    """Filtro de um polo (mais suave que a média móvel), via FFT para ser rápido."""
+    espectro = np.fft.rfft(onda)
+    f = np.fft.rfftfreq(len(onda), 1 / TAXA)
+    return np.fft.irfft(espectro / np.sqrt(1 + (f / corte) ** 2), len(onda))
+
+
+def passa_faixa(onda, baixo, alto):
+    espectro = np.fft.rfft(onda)
+    f = np.fft.rfftfreq(len(onda), 1 / TAXA)
+    espectro[(f < baixo) | (f > alto)] = 0
+    return np.fft.irfft(espectro, len(onda))
+
+
+def colocar(destino, som, inicio):
+    """Soma o som em ``destino`` a partir de ``inicio``, dando a volta no fim (loop)."""
+    idx = (inicio + np.arange(len(som))) % len(destino)
+    np.add.at(destino, idx, som)
+
+
+def floresta():
+    rng = np.random.default_rng(470)
+    duracao = 40.0
+    t = tempo(duracao)
+    n = len(t)
+    # Vento: ruído grave que sobe e desce devagar (ciclos inteiros em 40 s).
+    vento = ruido_em_loop(rng, n, lambda r: passa_baixa(r, 350))
+    vento *= 0.55 + 0.25 * np.sin(2 * np.pi * t / 20) + 0.2 * np.sin(2 * np.pi * t / 8 + 1)
+    # Folhas: rajadas de chiado agudo que acompanham o vento.
+    folhas = np.zeros(n)
+    for _ in range(26):
+        d = rng.uniform(0.6, 2.2)
+        tt = tempo(d)
+        envelope = np.sin(np.pi * tt / d) ** 2
+        rajada = passa_faixa(rng.normal(size=len(tt)), 1500, 6000) * envelope * rng.uniform(0.3, 1)
+        colocar(folhas, rajada, rng.integers(n))
+    # Pássaros: frases de 2 a 6 pios com subida/descida de altura.
+    passaros = np.zeros(n)
+    for _ in range(16):
+        base = rng.uniform(2200, 4200)
+        inicio = rng.integers(n)
+        for k in range(rng.integers(2, 7)):
+            d = rng.uniform(0.05, 0.16)
+            tt = tempo(d)
+            curva = base * (1 + rng.uniform(-0.25, 0.35) * tt / d)
+            fase = 2 * np.pi * np.cumsum(curva) / TAXA
+            pio = np.sin(fase) * np.sin(np.pi * tt / d) ** 1.5
+            pio += 0.3 * np.sin(2 * fase) * np.sin(np.pi * tt / d) ** 2  # harmônico
+            colocar(passaros, pio * rng.uniform(0.25, 0.7), inicio + int(k * TAXA * rng.uniform(0.12, 0.25)))
+    # Insetos: zumbido agudo pulsando (grilos), bem baixo e contínuo.
+    pulso = (np.sin(2 * np.pi * 32 * t) > 0.2).astype(float)
+    pulso = suavizar(pulso, 60) * (0.6 + 0.4 * np.sin(2 * np.pi * t / 10) ** 2)
+    insetos = np.sin(2 * np.pi * 4600 * t) * pulso
+    return vento * 0.5 + folhas * 0.12 + passaros * 0.35 + insetos * 0.04
+
+
 def main():
     os.makedirs(PASTA, exist_ok=True)
+    if sys.argv[1:] == ["floresta"]:
+        salvar("floresta.wav", floresta(), 0.6)
+        return
     for n, frequencia in enumerate((780, 860, 940), 1):
         salvar(f"tic-{n}.wav", tic(frequencia), 0.6)
     salvar("pista.wav", pista(), 0.7)
     salvar("menu-mover.wav", menu_mover(), 0.6)
     salvar("menu-confirmar.wav", menu_confirmar(), 0.7)
     salvar("ambiente.wav", ambiente(), 0.6)
+    salvar("floresta.wav", floresta(), 0.6)
+    for n, frequencia in enumerate((1900, 2150, 2400), 1):
+        salvar(f"tecla-{n}.wav", tecla(frequencia), 0.5)
 
 
 if __name__ == "__main__":

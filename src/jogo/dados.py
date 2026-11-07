@@ -34,6 +34,7 @@ PERSONAGENS = {
     "amie-lin": {
         "nome": "Amie Lin",
         "pasta_sprites": "sprites/amie-lin-pixellab",
+        "escala": 0.9,  # um pouco menor que os outros
         "velocidade": 105,  # pixels por segundo
         "fps_andando": 10,
         "balanco": False,
@@ -264,136 +265,237 @@ MAPAS = {
 # ela acha que é, em poucas palavras, e aparece no mapa mental.
 # Onde cada item aparece é sorteado a cada partida (ver mapas/locais-itens.json).
 ITENS = {
+    # Textos de amostra47_textos_itens.md:
+    # "fala" = Descrição (aparece ao coletar); "palpite" = Observação de Giulia (mapa mental);
+    # "texto" = Inspecionar / Ler / Ouvir (tela de inspeção; uma linha por item da lista).
     "cracha-de-acesso": {
         "id": "OBJ-01",
-        "nome": "Crachá de acesso",
+        "nome": "Crachá de acesso de Giovani Pistori",
         "imagem": "itens/cracha-de-acesso.png",
-        "mensagem": "Permite reconstruir quem entrou nos setores restritos e em quais horários.",
-        "fala": "Um crachá do complexo... Espera. Essa foto. É o meu pai.",
-        "palpite": "O crachá do meu pai.",
+        "fala": "Um crachá antigo do Complexo Helix, preso a um suporte de plástico rígido. O cartão está desgastado, "
+                "com manchas escuras próximas às bordas. A foto funcional ainda é reconhecível.",
+        "palpite": "Ele carregava essa foto para o trabalho... o tempo todo?",
+        "texto": [
+            "COMPLEXO HELIX — IDENTIFICAÇÃO FUNCIONAL",
+            "GIOVANI PISTORI",
+            "Setor: Segurança",
+            "Função: Chefe de Segurança",
+            "Credencial: Acesso interno de segurança",
+            "Código de identificação: [parcialmente ilegível]",
+            "",
+            "Verso: uma pequena fotografia mostra Giovani abraçando Giulia ainda criança. Os dois sorriem. "
+            "A imagem foi colocada no verso do crachá, onde não deveria haver nada além da identificação técnica.",
+        ],
     },
     "pendrive-criptografado": {
         "id": "OBJ-02",
-        "nome": "Pendrive criptografado",
+        "nome": "Pendrive criptografado de Angela Torres",
         "imagem": "itens/pendrive-criptografado.png",
-        "mensagem": "Cópia parcial dos registros do experimento, com a autorização feita pela conta da direção.",
-        "fala": "Um pendrive. Tem um cadeado gravado nele... alguém quis muito esconder o que tem aqui dentro.",
-        "palpite": "Um pendrive trancado. Segredos?",
+        "fala": "Um pendrive industrial protegido por uma carcaça de metal. O lacre de segurança está gasto, mas o "
+                "dispositivo parece intacto. Não é possível ler seus arquivos sem um terminal compatível.",
+        "palpite": "Isso registra uma autorização. Mas quem estava usando a conta?",
+        "texto": [
+            "UNIDADE DE ARMAZENAMENTO EXTERNO",
+            "Conteúdo: CRIPTOGRAFADO",
+            "Última verificação: [indisponível]",
+            "Acesso aos registros: NEGADO",
+        ],
     },
     "gravador-de-audio": {
         "id": "OBJ-03",
-        "nome": "Gravador de áudio",
+        "nome": "Gravador de áudio de Amie Lin",
         "imagem": "itens/gravador-de-audio.png",
-        "mensagem": "Gravações de Amie Lin sobre inconsistências e o pedido de antecipação do experimento.",
-        "fala": "Tem um compartimento por dentro... um gravadorzinho de voz, preso numa alça. Quem será que falava aqui?",
+        "fala": "Um gravador portátil encontrado dentro da bolsa de campo de Amie. Os botões estão gastos e a carcaça "
+                "apresenta riscos. Uma gravação anterior ao alarme geral ainda pode ser reproduzida.",
         "dentro_de": "bolsa-de-campo",
-        "palpite": "Um gravador. Vozes de alguém.",
+        "palpite": "Ela avisou. E alguém decidiu continuar mesmo assim.",
+        "audio": "sons/gravador-amie-lin.mp3",  # E na inspeção toca a gravação
+        "texto": [
+            "[Ruído de equipamento ao fundo. Passos no corredor.]",
+            "AMIE: “Os resultados ainda precisam ser revisados. Não terminamos as verificações de segurança.”",
+            "VOZ MASCULINA: “O cronograma foi antecipado. A direção quer a próxima etapa preparada.”",
+            "AMIE: “Eu já registrei os riscos. Antecipar o experimento nessas condições não é seguro.”",
+            "VOZ MASCULINA: “A solicitação veio do doutor Fernando.”",
+            "AMIE: “Então quero essa orientação documentada.”",
+            "[Clique. Fim da gravação.]",
+        ],
     },
     "frasco-de-contencao": {
         "id": "OBJ-04",
         "nome": "Frasco de contenção",
         "imagem": "itens/frasco-de-contencao.png",
-        "mensagem": "Ajuda a verificar se houve retirada manual da amostra. O frasco está vazio.",
-        "fala": "Um frasco lacrado... e vazio. O que quer que estivesse aqui dentro, saiu.",
-        "palpite": "Um frasco vazio. Vazio demais.",
+        "fala": "Um pequeno recipiente de vidro técnico, com tampa metálica e rótulo de risco biológico parcialmente "
+                "rasgado. Há marcas de manuseio na superfície. O frasco está vazio.",
+        "palpite": "Não parece quebrado. Alguém pode ter retirado o conteúdo.",
+        "texto": [
+            "COMPLEXO HELIX — MATERIAL SOB CONTENÇÃO",
+            "Identificação: AMOSTRA 47",
+            "Manuseio: somente por pessoal autorizado",
+            "Condição atual: RECIPIENTE VAZIO",
+            "Registro de retirada: [não localizado no recipiente]",
+        ],
     },
     "relatorio-de-acesso": {
         "id": "OBJ-05",
         "nome": "Relatório de acesso",
         "imagem": "itens/relatorio-de-acesso.png",
-        "mensagem": "Horários, setores visitados e tentativas de entrada.",
-        "fala": "Folhas cheias de horários e nomes de setores. Parece um controle de quem entrava e saía.",
-        "palpite": "Uma lista de quem entrou e saiu.",
+        "fala": "Uma prancheta com folhas de controle de entrada e saída. Parte da tinta desapareceu e algumas linhas "
+                "foram assinaladas à mão. Ainda é possível reconstruir a sequência de movimentações.",
+        "palpite": "Otávio saiu do laboratório antes da liberação. Então por que ainda havia suspeitas sobre ele?",
+        "texto": [
+            "COMPLEXO HELIX — CENTRAL DE SEGURANÇA",
+            "RELATÓRIO DE ACESSOS E OCORRÊNCIAS",
+            "Período: horas anteriores ao alarme geral",
+            "",
+            "• Credencial de Otávio Ferraz — Laboratório de análises — Saída registrada antes da liberação",
+            "• Credencial de segurança — Áreas de monitoramento — Movimentação interna registrada",
+            "• Conta da direção — Sistema de contenção — Autorização administrativa indicada em registro complementar",
+            "• Evento não identificado — Acesso restrito — Origem a verificar",
+            "",
+            "NOTA DE CONFERÊNCIA: Os registros de circulação física e os comandos administrativos devem ser "
+            "analisados separadamente. A presença de um nome no controle de portas não identifica, por si só, "
+            "o autor de um comando de sistema.",
+        ],
     },
     "sensor-de-pressao": {
         "id": "OBJ-06",
-        "nome": "Sensor de pressão",
+        "nome": "Sensor de pressão de Clara Costa",
         "imagem": "itens/sensor-de-pressao.png",
-        "mensagem": (
-            "Sensor de pressão encontrado na maleta de Clara Costa: "
-            "registra uma alteração MANUAL dos parâmetros de contenção."
-        ),
-        "fala": "As travas cederam. Encaixado na espuma, um mostrador de metal... o ponteiro travou no vermelho.",
+        "fala": "Um manômetro metálico, retirado de um equipamento de contenção e guardado na maleta de Clara. "
+                "O ponteiro vermelho permanece próximo da faixa de alerta.",
         "dentro_de": "maleta-de-amostras",
-        "palpite": "Um medidor travado no vermelho.",
+        "palpite": "A mudança foi manual... e o registro aponta para a câmara.",
+        "texto": [
+            "CONTROLE DE CONTENÇÃO — INSPEÇÃO TÉCNICA",
+            "Setor: CÂMARA DE CONTENÇÃO",
+            "Responsável pelo registro: CLARA COSTA",
+            "Ocorrência: variação de pressão incompatível com a condição prevista",
+            "Histórico do controle: PARÂMETROS ALTERADOS MANUALMENTE",
+            "Procedimento recomendado: suspender a operação até verificação técnica",
+            "Valores numéricos: [não recuperados]",
+        ],
     },
     "ordem-de-manutencao": {
         "id": "OBJ-07",
         "nome": "Ordem de manutenção da ventilação",
         "imagem": "itens/ordem-de-manutencao.png",
-        "mensagem": "Ordem de serviço da ventilação com inconsistências; o aval de Beatrice foi manipulado.",
-        "fala": "Um papel de serviço da ventilação, assinado... mas essa assinatura parece meio torta.",
-        "palpite": "Papel da ventilação. Assinatura esquisita.",
+        "paginas": ["itens/ordem-de-manutencao-documento.jpg"],  # ao ampliar, mostra o documento preenchido
+        "fala": "Uma ordem de serviço presa a uma prancheta de metal envelhecido. O formulário indica uma intervenção "
+                "no sistema de ventilação, mas os campos de solicitação e aprovação apresentam sinais de inconsistência.",
+        "palpite": "O nome dela está aqui. Mas isso não prova que ela fez o pedido.",
+        "texto": [
+            "COMPLEXO HELIX — MANUTENÇÃO OPERACIONAL",
+            "ORDEM DE SERVIÇO — SISTEMA DE VENTILAÇÃO",
+            "Setor: Túneis e dutos de ventilação",
+            "Tipo de serviço: revisão / ajuste operacional",
+            "Solicitante declarado: setor de manutenção",
+            "Responsável técnico indicado: BEATRICE SALLES",
+            "Assinatura de autorização: [não verificável]",
+            "Origem eletrônica do pedido: [divergente do setor informado]",
+            "Estado da validação: PENDENTE DE CONFERÊNCIA",
+            "",
+            "OBSERVAÇÃO DE AUDITORIA: A origem da solicitação e o aval técnico não apresentam "
+            "correspondência verificável nos registros recuperados.",
+        ],
     },
-    # Itens pessoais dos funcionários (docs/itens/pessoais). Também sorteados, exceto a
-    # foto da família, que fica fixa,
-    # e os que vêm dentro de outros ("dentro_de"/"contem") ("fixo": sala -> posição do brilho, em cada fase).
     "bolsa-de-campo": {
         "id": "PES-01",
         "nome": "Bolsa de campo de Amie Lin",
         "imagem": "itens/bolsa-de-campo.png",
-        "mensagem": "Bolsa de campo de Amie Lin. Guardava o gravador de áudio dela.",
-        "fala": "Uma bolsa preta com o símbolo de risco biológico. Pesada... tem alguma coisa aqui dentro.",
+        "fala": "Bolsa de trabalho escura com o símbolo de risco biológico. Os zíperes estão endurecidos e há marcas "
+                "de uso nas alças. Era usada para transportar instrumentos pessoais de pesquisa.",
         "contem": "gravador-de-audio",
-        "palpite": "Bolsa de risco biológico. Tem algo dentro.",
+        "palpite": "Ela guardou isso com cuidado. Talvez tenha gravado algo importante.",
+        "texto": ["No compartimento central, preso por uma pequena alça, está um gravador de áudio."],
     },
     "caderno-de-simbolos": {
         "id": "PES-02",
-        "nome": "Caderno de anotações de Angela Torres",
+        "nome": "Caderno de símbolos de Angela Torres",
         "imagem": "itens/caderno-de-simbolos.png",
-        "mensagem": "Caderno de Angela com o dicionário dos símbolos lógicos usados na investigação.",
-        "fala": "Um caderno cheio de setinhas e sinais... ~, v, ^. Eu conheço isso. Alguém me ensinou essas setas.",
-        "palpite": "O caderno das setinhas. Eu conheço.",
+        "fala": "Caderno espiral de capa preta, com abas coloridas e anotações feitas à mão. Algumas páginas "
+                "apresentam pequenos exemplos de lógica.",
+        "palpite": "Angela me mostrava essas setinhas quando eu era pequena... Eu achava que era um jogo.",
         "paginas": ["itens/caderno-de-simbolos-aberto.png"],  # ao ampliar, abre na página dos símbolos
     },
-    "gravata": {
-        "id": "PES-03",
-        "nome": "Gravata de Otávio Ferraz",
-        "imagem": "itens/gravata.png",
-        "mensagem": "A gravata de Otávio, que morreu perto de uma das portas tentando fugir.",
-        "fala": "Uma gravata vermelha, ainda com o nó feito. Rasgada... quem usava não teve tempo de tirar.",
-        "palpite": "Gravata de alguém que tentou fugir.",
-    },
-    "maleta-de-amostras": {
-        "id": "PES-04",
-        "nome": "Maleta de amostras de Clara Costa",
-        "imagem": "itens/maleta-de-amostras.png",
-        "mensagem": "Maleta de Clara Costa. Guardava o sensor de pressão.",
-        "fala": "Uma maleta rígida, travada nas laterais. Risco biológico de novo... o que eles guardavam aqui?",
-        "contem": "sensor-de-pressao",
-        "palpite": "Maleta trancada de amostras.",
-    },
-    "oculos-de-protecao": {
-        "id": "PES-05",
-        "nome": "Óculos de proteção de Beatrice Salles",
-        "imagem": "itens/oculos-de-protecao.png",
-        "mensagem": "Os óculos de Beatrice, que voltou para ajudar e morreu nos dutos.",
-        "fala": "Óculos de proteção redondos, de bronze. Uma das lentes está estilhaçada.",
-        "palpite": "Óculos de bronze, uma lente quebrada.",
-    },
-    "foto-da-familia": {
-        "id": "PES-06",
-        "nome": "Foto da família do Helix",
-        "imagem": "itens/foto-da-familia.png",
-        "mensagem": "Foto da festinha de sete anos de Giulia, com toda a equipe. Destrava um flashback.",
-        "fala": "Um porta-retrato... sou eu? Com sete anos, enrolada no cardigã do meu pai. E todos eles em volta de mim.",
-        "palpite": "Minha festa de sete anos. Todos eles.",
-        # Sobre a mesa de monitores do fundo, à esquerda do teclado.
-        "fixo": {"central-de-seguranca": (300, 145), "central-de-seguranca-pos-incidente": (300, 140)},
-    },
     "caderno-do-fernando": {
-        "id": "PES-07",
+        "id": "PES-03",
         "nome": "Caderno de Fernando Almeida",
         "imagem": "itens/caderno-do-fernando.png",
-        "mensagem": "Caderno de Fernando com anotações suspeitas: negócios, cronograma, equipe, o pai e fragmentos.",
-        "fala": "Um caderno de capa escura, cheio de páginas arrancadas e enfiadas de volta. Anotações de alguém importante.",
-        "palpite": "Caderno de alguém, cheio de páginas soltas.",
-        # Páginas que dá para folhear (setas ou A/D) ao ampliar. A página 6, quase uma
-        # confissão, fica de fora até o fim da história.
+        "fala": "Caderno de anotações pessoais, com a lombada danificada e várias folhas arrancadas. As páginas "
+                "remanescentes não seguem uma ordem clara.",
+        "palpite": "Se ele arrancou essas páginas, o que estava tentando esconder?",
         "paginas": [f"itens/caderno-do-fernando-pagina-{n}.png" for n in range(1, 6)],
+    },
+    "foto-da-familia": {
+        "id": "PES-04",
+        "nome": "Fotografia da família do Helix",
+        "imagem": "itens/foto-da-familia.png",
+        "fala": "Um porta-retrato enferrujado com o vidro trincado. A fotografia desbotada mostra uma pequena festa "
+                "de aniversário no Complexo Helix. Ao centro está uma menina loira, cercada por seis adultos.",
+        "palpite": "Sou eu... Eu não lembrava que todos estavam lá.",
+        "fixo": {"central-de-seguranca": (300, 145), "central-de-seguranca-pos-incidente": (300, 140)},
+        "texto": [
+            "Giulia, sete anos. Giovani, Angela, Amie, Beatrice, Clara e Otávio. Sete velinhas no bolo. "
+            "A menina usa um cardigã marrom grande demais para ela. Fernando não aparece na fotografia.",
+        ],
+    },
+    "gravata": {
+        "id": "PES-05",
+        "nome": "Gravata de Otávio Ferraz",
+        "imagem": "itens/gravata.png",
+        "fala": "Uma gravata estreita vermelho-terracota, ainda com o nó formado. O tecido está sujo e rasgado "
+                "nas laterais.",
+        "palpite": "Ele esteve aqui, perto das saídas. O que aconteceu quando as portas fecharam?",
+        "texto": [
+            "O nó permanece intacto, como se a gravata tivesse sido arrancada ou retirada às pressas. "
+            "Não há bilhete nem identificação escrita.",
+        ],
+    },
+    "maleta-de-amostras": {
+        "id": "PES-06",
+        "nome": "Maleta de amostras de Clara Costa",
+        "imagem": "itens/maleta-de-amostras.png",
+        "fala": "Maleta rígida de inspeção, com travas metálicas e marca de risco biológico. A superfície está "
+                "arranhada, mas o interior permanece organizado.",
+        "contem": "sensor-de-pressao",
+        "palpite": "Clara estava verificando a contenção. Talvez o sensor guarde o que ela encontrou.",
+        "texto": [
+            "Duas divisórias de espuma. À esquerda está encaixado um sensor de pressão. À direita, um módulo "
+            "retangular sem identificação recuperável.",
+        ],
+    },
+    "oculos-de-protecao": {
+        "id": "PES-07",
+        "nome": "Óculos de proteção de Beatrice Salles",
+        "imagem": "itens/oculos-de-protecao.png",
+        "fala": "Óculos de proteção de armação metálica, com a lente direita estilhaçada e correia de couro bastante "
+                "gasta. Foram encontrados nos dutos de manutenção.",
+        "palpite": "Ela voltou para os dutos enquanto os outros procuravam as saídas... Talvez estivesse tentando ajudar alguém.",
+        "texto": ["A lente esquerda ainda está inteira. Não há inscrição nem documento preso aos óculos."],
     },
 }
 
+MAPAS["fachada-do-complexo"] = {
+    "nome": "Fachada do Complexo Helix",
+    # Área externa depois da abertura; a porta principal leva para dentro do complexo.
+    # Imagem 1122x1402 em 640 unidades de largura, para preencher a tela.
+    "imagem": "mapas/fachada-do-complexo.png",
+    "tamanho": (640, 800),  # fachada em cima e a trilha da floresta embaixo
+    "area_andavel": (0, 0, 640, 800),
+    "obstaculos": [],
+    "mascara": "mapas/fachada-do-complexo-paredes.png",
+    "inicio": (325, 787),  # começo da trilha, embaixo
+    "escala_personagens": 0.58,  "velocidade_personagens": 0.75,  # Giulia menor, proporcional ao carro
+    # Gerador: começa desligado; a Giulia liga para a porta do complexo funcionar.
+    "pasta_objetos": "mapas/objetos/fachada-do-complexo",
+    "pixels_por_unidade_objetos": 1.75,
+    "objetos": [
+        {"id": "gerador", "imagem": "gerador-desligado.png", "imagem_ligado": "gerador-ligado.png",
+         "retangulo": (205, 234, 57, 34), "pe": 0.35},
+    ],
+    "portas": [(327, 222)],
+    "brilho_portas": [(327, 194)],
+}
 
 # Portas de cada sala: ponto no piso em frente (x, y, em unidades) e o meio da porta
 # desenhada, onde aparece o brilho. Perto de uma delas, E abre o menu de destinos;

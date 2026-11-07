@@ -60,11 +60,22 @@ class Mapa:
                                  round(fw * largura), round(fh * altura)) for fx, fy, fw, fh in fracoes]
             # Linha que decide se o personagem está atrás (pés acima) ou na frente.
             linha = y + altura * objeto["linha"] if "linha" in objeto else max(b.bottom for b in bases)
-            self.objetos.append({"original": imagem, "retangulo": objeto["retangulo"],
-                                 "bases": bases, "linha": linha})
+            novo = {"original": imagem, "retangulo": objeto["retangulo"], "bases": bases, "linha": linha,
+                    "id": objeto.get("id")}
+            if "imagem_ligado" in objeto:  # segunda arte (ex.: gerador ligado), trocada por ligar()
+                ligado = pygame.image.load(os.path.join(caminho(pasta), objeto["imagem_ligado"])).convert_alpha()
+                novo["original_ligado"] = pygame.transform.smoothscale(ligado, imagem.get_size())
+            self.objetos.append(novo)
         # Entre si, os objetos também seguem a profundidade: quem está mais embaixo fica na frente.
         self.objetos.sort(key=lambda objeto: objeto["linha"])
         self.zoom_objetos = None
+
+    def ligar(self, id_objeto):
+        """Troca a arte do objeto pela versão ligada."""
+        for objeto in self.objetos:
+            if objeto["id"] == id_objeto and "original_ligado" in objeto:
+                objeto["original"] = objeto["original_ligado"]
+                self.zoom_objetos = None  # reescala na próxima vez
 
     def livre(self, retangulo):
         """True se o retângulo estiver dentro do piso e fora dos obstáculos."""
@@ -127,6 +138,7 @@ class Jogador:
                 self.animacoes[(estado, direcao)] = carregar_tira(arquivo)
         self.fps_andando = dados.get("fps_andando", 8)
         self.balanco = dados.get("balanco", True)
+        self.escala = dados.get("escala", 1.0)  # tamanho relativo do sprite (1 = normal)
         self.direcao = "frente"
         self.espelhado = False  # o "lado" da folha olha para a direita
         self.andando = False
@@ -178,7 +190,7 @@ class Jogador:
         quadro = quadros[indice]
         # Fator inteiro mantém os pixels do sprite todos do mesmo tamanho.
         escala = max(1, round(zoom))
-        tamanho = quadro.get_width() * escala
+        tamanho = round(quadro.get_width() * escala * self.escala)
         quadro = pygame.transform.scale(quadro, (tamanho, tamanho))
         if self.espelhado:
             quadro = pygame.transform.flip(quadro, True, False)
@@ -194,7 +206,7 @@ class Item:
     def __init__(self, dados, posicao):
         self.id = dados["id"]
         self.nome = dados["nome"]
-        self.mensagem = dados["mensagem"]
+        self.mensagem = dados["fala"]
         # A arte só aparece na tela de inspeção; no mapa o item é um brilho.
         self.imagem = pygame.image.load(caminho(dados["imagem"])).convert_alpha()
         self.posicao = pygame.Vector2(posicao)
