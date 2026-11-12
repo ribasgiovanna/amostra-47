@@ -274,7 +274,7 @@ ITENS = {
         "imagem": "itens/cracha-de-acesso.png",
         "fala": "Um crachá antigo do Complexo Helix, preso a um suporte de plástico rígido. O cartão está desgastado, "
                 "com manchas escuras próximas às bordas. A foto funcional ainda é reconhecível.",
-        "palpite": "Ele carregava essa foto para o trabalho... o tempo todo?",
+        "palpite": "Ele carregava essa foto para o trabalho... o tempo todo? Talvez eu possa usar para acessar as câmeras.",
         "texto": [
             "COMPLEXO HELIX — IDENTIFICAÇÃO FUNCIONAL",
             "GIOVANI PISTORI",
@@ -294,6 +294,12 @@ ITENS = {
         "fala": "Um pendrive industrial protegido por uma carcaça de metal. O lacre de segurança está gasto, mas o "
                 "dispositivo parece intacto. Não é possível ler seus arquivos sem um terminal compatível.",
         "palpite": "Isso registra uma autorização. Mas quem estava usando a conta?",
+        # "premissas" aparecem abaixo da observação; "premissas_cameras" as substituem depois de ver as câmeras.
+        "premissas_cameras": [
+            "X = A liberação da Amostra 47 foi autorizada pela direção.",
+            "R = O sistema registrou uma autorização administrativa para alterar a contenção.",
+            "Z = O pendrive contém o registro decisivo da autorização administrativa.",
+        ],
         "texto": [
             "UNIDADE DE ARMAZENAMENTO EXTERNO",
             "Conteúdo: CRIPTOGRAFADO",
@@ -308,7 +314,11 @@ ITENS = {
         "fala": "Um gravador portátil encontrado dentro da bolsa de campo de Amie. Os botões estão gastos e a carcaça "
                 "apresenta riscos. Uma gravação anterior ao alarme geral ainda pode ser reproduzida.",
         "dentro_de": "bolsa-de-campo",
-        "palpite": "Ela avisou. E alguém decidiu continuar mesmo assim.",
+        "palpite": "Amie avisou. Mas Fernando decidiu continuar mesmo assim.",
+        "premissas": [
+            "P = Amie Lin alertou sobre o risco de acelerar o experimento.",
+            "Q = Fernando Almeida solicitou a antecipação do experimento.",
+        ],
         "audio": "sons/gravador-amie-lin.mp3",  # E na inspeção toca a gravação
         "texto": [
             "[Ruído de equipamento ao fundo. Passos no corredor.]",
@@ -342,6 +352,7 @@ ITENS = {
         "fala": "Uma prancheta com folhas de controle de entrada e saída. Parte da tinta desapareceu e algumas linhas "
                 "foram assinaladas à mão. Ainda é possível reconstruir a sequência de movimentações.",
         "palpite": "Otávio saiu do laboratório antes da liberação. Então por que ainda havia suspeitas sobre ele?",
+        "premissas": ["W = Otávio Ferraz deixou o laboratório de análises antes da liberação da amostra."],
         "texto": [
             "COMPLEXO HELIX — CENTRAL DE SEGURANÇA",
             "RELATÓRIO DE ACESSOS E OCORRÊNCIAS",
@@ -365,6 +376,10 @@ ITENS = {
                 "O ponteiro vermelho permanece próximo da faixa de alerta.",
         "dentro_de": "maleta-de-amostras",
         "palpite": "A mudança foi manual... e o registro aponta para a câmara.",
+        "premissas": [
+            "K = O setor associado à alteração manual foi a Câmara de Contenção.",
+            "~A = Não houve arrombamento da câmara de contenção.",
+        ],
         "texto": [
             "CONTROLE DE CONTENÇÃO — INSPEÇÃO TÉCNICA",
             "Setor: CÂMARA DE CONTENÇÃO",
@@ -382,7 +397,12 @@ ITENS = {
         "paginas": ["itens/ordem-de-manutencao-documento.jpg"],  # ao ampliar, mostra o documento preenchido
         "fala": "Uma ordem de serviço presa a uma prancheta de metal envelhecido. O formulário indica uma intervenção "
                 "no sistema de ventilação, mas os campos de solicitação e aprovação apresentam sinais de inconsistência.",
-        "palpite": "O nome dela está aqui. Mas isso não prova que ela fez o pedido.",
+        "palpite": "O nome de Beatrice Salles está aqui. Mas isso não prova que ela fez o pedido.",
+        "premissas": ["V = A ordem de manutenção da ventilação partiu de Beatrice Salles."],
+        "premissas_cameras": [
+            "~V = A ordem de manutenção da ventilação não partiu de Beatrice Salles.",
+            "S = Angela Torres identificou que o comando foi executado com uma conta da direção.",
+        ],
         "texto": [
             "COMPLEXO HELIX — MANUTENÇÃO OPERACIONAL",
             "ORDEM DE SERVIÇO — SISTEMA DE VENTILAÇÃO",
@@ -405,7 +425,7 @@ ITENS = {
         "fala": "Bolsa de trabalho escura com o símbolo de risco biológico. Os zíperes estão endurecidos e há marcas "
                 "de uso nas alças. Era usada para transportar instrumentos pessoais de pesquisa.",
         "contem": "gravador-de-audio",
-        "palpite": "Ela guardou isso com cuidado. Talvez tenha gravado algo importante.",
+        "palpite": "Amie guardou isso com cuidado. Talvez tenha gravado algo importante.",
         "texto": ["No compartimento central, preso por uma pequena alça, está um gravador de áudio."],
     },
     "caderno-de-simbolos": {
@@ -431,7 +451,7 @@ ITENS = {
         "nome": "Fotografia da família do Helix",
         "imagem": "itens/foto-da-familia.png",
         "fala": "Um porta-retrato enferrujado com o vidro trincado. A fotografia desbotada mostra uma pequena festa "
-                "de aniversário no Complexo Helix. Ao centro está uma menina loira, cercada por seis adultos.",
+                "de aniversário no Complexo Helix. Ao centro está uma menina loira, cercada por seis adultos... sou eu.",
         "palpite": "Sou eu... Eu não lembrava que todos estavam lá.",
         "fixo": {"central-de-seguranca": (300, 145), "central-de-seguranca-pos-incidente": (300, 140)},
         "texto": [
@@ -459,6 +479,7 @@ ITENS = {
                 "arranhada, mas o interior permanece organizado.",
         "contem": "sensor-de-pressao",
         "palpite": "Clara estava verificando a contenção. Talvez o sensor guarde o que ela encontrou.",
+        "premissas": ["U = Clara Costa registrou a alteração manual dos parâmetros de contenção."],
         "texto": [
             "Duas divisórias de espuma. À esquerda está encaixado um sensor de pressão. À direita, um módulo "
             "retangular sem identificação recuperável.",
@@ -470,7 +491,7 @@ ITENS = {
         "imagem": "itens/oculos-de-protecao.png",
         "fala": "Óculos de proteção de armação metálica, com a lente direita estilhaçada e correia de couro bastante "
                 "gasta. Foram encontrados nos dutos de manutenção.",
-        "palpite": "Ela voltou para os dutos enquanto os outros procuravam as saídas... Talvez estivesse tentando ajudar alguém.",
+        "palpite": "Beatrice voltou para os dutos enquanto os outros procuravam as saídas... Talvez estivesse tentando ajudar alguém.",
         "texto": ["A lente esquerda ainda está inteira. Não há inscrição nem documento preso aos óculos."],
     },
 }

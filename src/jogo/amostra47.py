@@ -13,7 +13,7 @@ from types import SimpleNamespace
 import pygame
 
 from dados import ITENS, MAPAS, PERSONAGENS
-from cutscene import CaixaTexto, Cutscene
+from cutscene import CaixaTexto, Cutscene, VideoAbertura, desenhar_legenda
 from flashback import Flashback
 from entidades import Item, Jogador, Mapa, caminho, desenhar_brilho
 
@@ -69,6 +69,17 @@ ALTURA_VISIVEL = 360
 ALTURA_BASE_UI = 540  # tamanhos de fonte e margens abaixo valem para esta altura
 FPS = 60
 TECLAS_INTERAGIR = (pygame.K_e,)
+AVISO = 4.0  # segundos do aviso no topo da tela (ex.: "Premissas atualizadas")
+# Post-it preso na primeira página das anotações: as premissas auxiliares (as outras vêm dos itens).
+POST_IT = [
+    "Y = Fernando Almeida foi responsável pela liberação da Amostra 47.",
+    "O = Otávio Ferraz foi responsável pela liberação da Amostra 47.",
+    "B = Beatrice Salles foi responsável pela liberação da Amostra 47.",
+    "G = Giovani Pistori foi responsável pela liberação da Amostra 47.",
+    "I = Houve uma invasão externa responsável pela liberação da amostra.",
+    "A = Houve arrombamento da câmara de contenção.",
+]
+TECLA_GRAVACAO = pygame.K_r  # toca/para as gravações na inspeção (E volta)
 DISTANCIA_PORTA = 12  # folga (unidades) além do ponto mais perto que os pés alcançam da porta
 # Mapa mental (Tab): miniaturas das salas (ferramentas/gerar_miniaturas.py), lado a lado.
 SALAS_MAPA_MENTAL = [
@@ -80,6 +91,7 @@ FADE = 0.35  # segundos para escurecer (e o mesmo para clarear)
 # Computador da central de segurança: só funciona depois de pegar o pendrive e abre o flashback.
 COMPUTADOR = {"central-de-seguranca-pos-incidente": (360, 190), "central-de-seguranca": (360, 190)}  # mesa de cima, sob o painel
 PENDRIVE = "pendrive-criptografado"
+CRACHA = "cracha-de-acesso"  # o crachá do Giovani também é preciso para acessar as câmeras
 ORDEM = "ordem-de-manutencao"
 ENTRAR_FLASHBACK = 1.0  # segundos escurecendo antes do flashback
 
@@ -195,6 +207,9 @@ class Jogo:
         self.pista_aberta = 0  # pista mostrada no mapa mental
         self.imagens_pistas = {}
         self.aba_mental = "pistas"  # aba do mapa mental: "pistas", "notas" ou "culpado"
+        self.aviso = None  # aviso no topo da tela: {"texto", "t"}
+        self.tutorial_inicio = False  # painel de controles logo depois da introdução
+        self.final = None  # revelação narrada depois de acertar o culpado: {"t": segundos}
         self.chute = None  # suspeito escolhido na aba "Culpado" (uma vez por partida)
         self.cursor_suspeito = 0
         self.etapa_chute = 0  # 0 = quem, 1 = onde, 2 = como
@@ -321,6 +336,13 @@ class Jogo:
     def item_proximo(self):
         return next((item for item in self.itens if item.perto(self.jogador)), None)
 
+    def premissas(self, chave):
+        """Premissas do item; depois de ver as câmeras (flashback), as atualizadas, se houver."""
+        item = ITENS[chave]
+        if self.flashback_visto and "premissas_cameras" in item:
+            return item["premissas_cameras"]
+        return item.get("premissas", [])
+
     def camera(self):
         """Retângulo do mundo visível, centrado no personagem e preso ao mapa."""
         visao = pygame.Rect(0, 0, round(self.largura / self.zoom), round(self.altura / self.zoom))
@@ -330,7 +352,7 @@ class Jogo:
 
     def computador_disponivel(self):
         """Ponto do computador da central, se ele já puder ser usado nesta sala."""
-        if self.flashback_visto or PENDRIVE not in self.pistas:
+        if self.flashback_visto or PENDRIVE not in self.pistas or CRACHA not in self.pistas:
             return None
         return COMPUTADOR.get(self.chave_mapa)
 
@@ -380,9 +402,11 @@ class Jogo:
         self.fade = ["clareando", 0.0, None]
         nome = self.jogador.nome.split()[0]
         if ORDEM in self.pistas:
-            self.falar([(nome, "Então ela não assinou aquele papel?")])
+            falas = [(nome, "Então ela não assinou aquele papel?")]
         else:
-            self.falar([(nome, "Tenho que encontrar esse papel...")])
+            falas = [(nome, "Tenho que encontrar esse papel...")]
+        self.falar(falas)
+        self.aviso = {"texto": "Premissas atualizadas", "t": 0.0}
 
     def interagir(self):
         if self.inspecionando:
@@ -479,6 +503,16 @@ class Jogo:
         for evento in pygame.event.get():
             if evento.type == pygame.MOUSEWHEEL and self.inspecionando and not self.menu_sistema:
                 self.ampliar_folha(evento.y)  # roda do mouse: zoom na folha
+                continue
+            if self.tutorial_inicio and evento.type in (pygame.KEYDOWN, pygame.MOUSEBUTTONDOWN):
+                if getattr(evento, "key", None) in (*TECLAS_INTERAGIR, pygame.K_RETURN, pygame.K_ESCAPE) \
+                        or evento.type == pygame.MOUSEBUTTONDOWN:
+                    self.tutorial_inicio = False
+                    self.tocar("menu-confirmar")
+                continue
+            if self.final and evento.type != pygame.QUIT:
+                if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
+                    self.fim_final()
                 continue
             if self.iniciando is not None and evento.type != pygame.QUIT:
                 continue  # escurecendo para começar: ignora teclas e cliques
@@ -591,7 +625,7 @@ class Jogo:
                     elif evento.key == pygame.K_c and not self.inspecionando:
                         self.aba_mental = "culpado"
                         self.tocar("menu-mover")
-                    elif evento.key in TECLAS_INTERAGIR and self.inspecionando and self.inspecionando.audio:
+                    elif evento.key == TECLA_GRAVACAO and self.inspecionando and self.inspecionando.audio:
                         self.tocar_gravacao()
                     elif evento.key in TECLAS_INTERAGIR and self.inspecionando:
                         self.fechar_inspecao()  # volta ao mapa mental
@@ -607,6 +641,7 @@ class Jogo:
                                                              paginas=[pygame.image.load(caminho(pag)).convert_alpha()
                                                                       for pag in item.get("paginas", [])],
                                                              pagina=0, audio=item.get("audio"),
+                                                             premissas=self.premissas(chave),
                                                              zoom=1.0, rolagem=0.0, lado=0.5)
                         self.fundo_borrado = borrar(self.tela)
                     elif self.inspecionando:
@@ -722,6 +757,9 @@ class Jogo:
         cima = tecla in (pygame.K_UP, pygame.K_w, pygame.K_LEFT, pygame.K_a)
         baixo = tecla in (pygame.K_DOWN, pygame.K_s, pygame.K_RIGHT, pygame.K_d)
         confirmar = tecla in (pygame.K_RETURN, pygame.K_KP_ENTER, *TECLAS_INTERAGIR)
+        if self.pode_tentar_de_novo() and confirmar:
+            self.tentar_de_novo()
+            return
         if self.chute or not self.pode_chutar():
             return  # já chutou (só mostra o resultado) ou ainda falta descobrir mais
         if self.confirmando_chute is not None:
@@ -750,7 +788,22 @@ class Jogo:
             self.confirmando_chute = 1  # começa no "não", para evitar chute sem querer
         self.tocar("menu-confirmar")
 
+    def acertou_tudo(self):
+        return bool(self.chute) and (self.chute["quem"], self.chute["onde"], self.chute["como"]) == (CULPADO, ONDE, COMO)
+
+    def pode_tentar_de_novo(self):
+        """Errou o chute: com 100% da verdade, pode tentar quantas vezes quiser."""
+        return bool(self.chute) and not self.acertou_tudo() and self.progresso_verdade() >= 100
+
+    def tentar_de_novo(self):
+        self.chute = self.confirmando_chute = None
+        self.etapa_chute, self.respostas_chute = 0, [0, 0, 0]
+        self.tocar("menu-confirmar")
+
     def clicar_culpado(self, posicao):
+        if self.pode_tentar_de_novo():
+            self.tentar_de_novo()
+            return
         if self.chute or not self.pode_chutar():
             return
         if self.confirmando_chute is not None:
@@ -769,6 +822,68 @@ class Jogo:
             quem, onde, como = self.respostas_chute
             self.chute = {"quem": SUSPEITOS[quem], "onde": LOCAIS_CHUTE[onde], "como": COMO_CHUTE[como]}
             print(f"[chute] {self.chute}")
+            if (self.chute["quem"], self.chute["onde"], self.chute["como"]) == (CULPADO, ONDE, COMO):
+                self.iniciar_final()
+
+    def iniciar_final(self):
+        """Acertou o culpado: a Giulia narra o que aconteceu, com a legenda da abertura."""
+        with open(caminho("cutscenes/final-tempos.json"), encoding="utf-8") as arquivo:
+            dados = json.load(arquivo)
+        with open(caminho("cutscenes/final.txt"), encoding="utf-8") as arquivo:
+            frases = [linha.strip() for linha in arquivo if linha.strip()]
+        self.final = {"t": 0.0, "frases": frases, "tempos": dados["frases"], "duracao": dados["duracao"], "video": None}
+        try:
+            self.final["video"] = VideoAbertura(caminho("cutscenes/final-video.mp4"))
+        except Exception as erro:
+            print(f"[final] sem vídeo: {erro}")
+        try:
+            pygame.mixer.music.load(caminho("cutscenes/final-narracao.mp3"))
+            pygame.mixer.music.set_volume(self.volume["efeitos"])
+            pygame.mixer.music.play()
+        except pygame.error:
+            pass  # sem áudio: a legenda segue pelo relógio
+
+    def atualizar_final(self, dt):
+        self.final["t"] += min(dt, 0.1)
+        pos = pygame.mixer.music.get_pos() / 1000 if pygame.mixer.get_init() else -1
+        if pos > 0 and abs(pos - self.final["t"]) < 1.5:
+            self.final["t"] = pos  # segue o relógio do áudio
+        if self.final["t"] >= self.final["duracao"]:
+            self.fim_final()
+
+    def fim_final(self):
+        pygame.mixer.music.stop()
+        if self.final["video"]:
+            self.final["video"].fechar()
+        self.final = None
+
+    def desenhar_final(self):
+        video = self.final["video"]
+        quadro = video.quadro(self.final["t"]) if video else None
+        if quadro:
+            self.tela.fill((0, 0, 0))
+            escala = min(self.tela.get_width() / quadro.get_width(), self.tela.get_height() / quadro.get_height())
+            imagem = pygame.transform.smoothscale(quadro, (round(quadro.get_width() * escala), round(quadro.get_height() * escala)))
+            self.tela.blit(imagem, imagem.get_rect(center=self.tela.get_rect().center))
+        else:
+            self.desenhar_jogo()
+            veu = pygame.Surface(self.tela.get_size())
+            veu.set_alpha(200)
+            self.tela.blit(veu, (0, 0))
+        t, tempos = self.final["t"], self.final["tempos"]
+        atual = None
+        for i, (inicio, fim) in enumerate(tempos):
+            if t >= inicio:
+                atual = i
+        if atual is None or t > tempos[-1][1] + 1.5:
+            return
+        frase = self.final["frases"][atual]
+        inicio, fim = tempos[atual]
+        letras = len(frase) * min(1.0, (t - inicio) / max(0.1, (fim - inicio) * 0.85))
+        px = self.px
+        if getattr(self, "fonte_legenda", (None,))[0] != px(16):
+            self.fonte_legenda = (px(16), pygame.font.SysFont("consolas", px(16)))
+        desenhar_legenda(self.tela, px, self.fonte_legenda[1], frase, letras)
 
     def desenhar_culpado(self, area):
         """Quem, onde e como, uma etapa por vez; depois do chute, o resultado de cada parte."""
@@ -789,6 +904,12 @@ class Jogo:
             else:
                 final = (f"Você acertou {acertos} de 3. A verdade continua enterrada no Helix...", (220, 110, 100))
             linhas.append((final[0], self.fonte_grande, final[1]))
+            if acertos < 3:
+                linhas.append(("", self.fonte, None))
+                if self.pode_tentar_de_novo():
+                    linhas.append(("Você já descobriu toda a verdade. Aperte E para acusar de novo.", self.fonte, (150, 190, 120)))
+                else:
+                    linhas.append(("Descubra 100% da verdade para poder acusar de novo.", self.fonte, (190, 196, 188)))
             for texto, fonte, cor in linhas:
                 for linha in quebrar_texto(fonte, texto, area.width) if texto else [""]:
                     rotulo = fonte.render(linha, True, cor or (0, 0, 0))
@@ -819,7 +940,7 @@ class Jogo:
             self.tela.blit(rotulo, (x, y))
             y += rotulo.get_height()
         y += self.px(8)
-        pergunta = ETAPAS_CHUTE[etapa][1] + (" Só dá para chutar uma vez." if etapa == 0 else "")
+        pergunta = ETAPAS_CHUTE[etapa][1] + (" Só dá para chutar uma vez até 100%." if etapa == 0 else "")
         for linha in quebrar_texto(self.fonte, pergunta, area.width):
             dica = self.fonte.render(linha, True, (190, 196, 188))
             self.tela.blit(dica, (x, y))
@@ -846,7 +967,7 @@ class Jogo:
         veu = pygame.Surface(self.tela.get_size(), pygame.SRCALPHA)
         veu.fill((0, 0, 0, 170))
         self.tela.blit(veu, (0, 0))
-        largura_texto = self.fonte_grande.size("Você só pode fazer a acusação uma vez.")[0]
+        largura_texto = self.fonte_grande.size("Você só pode fazer a acusação uma vez até 100%.")[0]
         caixa = pygame.Rect(0, 0, largura_texto + self.px(64), self.px(210))
         caixa.center = (self.largura // 2, self.altura // 2)
         pygame.draw.rect(self.tela, (14, 22, 19), caixa)
@@ -855,7 +976,7 @@ class Jogo:
         titulo = self.fonte_titulo.render("AVISO", True, (220, 110, 100))
         self.tela.blit(titulo, titulo.get_rect(midtop=(caixa.centerx, y)))
         y += titulo.get_height() + self.px(12)
-        for texto in ("Você só pode fazer a acusação uma vez.", "Você tem certeza?"):
+        for texto in ("Você só pode fazer a acusação uma vez até 100%.", "Você tem certeza?"):
             rotulo = self.fonte_grande.render(texto, True, (226, 230, 222))
             self.tela.blit(rotulo, rotulo.get_rect(midtop=(caixa.centerx, y)))
             y += rotulo.get_height() + self.px(4)
@@ -902,7 +1023,7 @@ class Jogo:
             return
         no_menu_principal = self.menu_sistema == "principal" or (
             self.menu_sistema == "volume" and self.volume_origem == "principal")
-        jogando = not no_menu_principal and not self.cutscene
+        jogando = not no_menu_principal and not self.cutscene and not self.final
         # Na trilha e na fachada, som de floresta; dentro do complexo, o zumbido do laboratório.
         som = (("floresta" if self.chave_mapa == FACHADA and "floresta" in self.sons else "ambiente")
                if jogando else None)
@@ -914,6 +1035,10 @@ class Jogo:
         self.ambiente_tocando = som
 
     def atualizar(self, dt, teclas):
+        if self.aviso and not self.flashback and not self.fade:
+            self.aviso["t"] += dt
+            if self.aviso["t"] >= AVISO:
+                self.aviso = None
         if self.iniciando is not None:
             # "Jogar": depois do fade do menu, começa a cutscene.
             self.iniciando += dt
@@ -934,6 +1059,9 @@ class Jogo:
                 self.cutscene.volume = self.volume["efeitos"]
             return
         self.atualizar_ambiente()
+        if self.final:
+            self.atualizar_final(dt)
+            return
         if self.cutscene:
             self.cutscene.atualizar(dt, teclas)
             if self.cutscene.terminou:
@@ -942,6 +1070,7 @@ class Jogo:
                 self.personagem = PERSONAGEM_INICIO
                 self.carregar_mapa(FACHADA)
                 self.fade = ["clareando", 0.0, None]
+                self.tutorial_inicio = True  # controles na tela até apertar E
             return
         if self.indo_flashback is not None:
             self.indo_flashback += dt
@@ -963,6 +1092,8 @@ class Jogo:
                     self.fade = ["clareando", 0.0, None]
                 else:
                     self.fade = None
+            return
+        if self.tutorial_inicio:
             return
         if self.dialogo and not self.algum_menu():
             fala = ITENS[self.dialogo["item"].chave]["fala"]
@@ -1145,8 +1276,7 @@ class Jogo:
                     pygame.draw.circle(self.tela, (226, 196, 142), ponto, self.px(5 + 3 * pulso), max(1, self.px(1)))
                     pygame.draw.circle(self.tela, (226, 196, 142), ponto, self.px(3))
         direita = margem + colunas * lado + (colunas - 1) * espaco
-        self.desenhar_progresso(pygame.Rect(margem, topo + linhas * (lado + legenda + espaco * 2),
-                                            direita - margem, barra_altura))
+        progresso = pygame.Rect(margem, topo + linhas * (lado + legenda + espaco * 2), direita - margem, barra_altura)
 
         # Abas: pistas ou anotações.
         x = direita + self.px(32)
@@ -1191,6 +1321,14 @@ class Jogo:
                 texto = self.fonte_grande.render(linha, True, (226, 230, 222))
                 self.tela.blit(texto, (x, y))
                 y += texto.get_height()
+            premissas = self.premissas(chave)
+            if premissas:
+                y += self.px(6)
+            for premissa in premissas:
+                for linha in quebrar_texto(self.fonte, premissa, largura):
+                    rotulo = self.fonte.render(linha, True, (150, 190, 120))
+                    self.tela.blit(rotulo, (x, y))
+                    y += rotulo.get_height()
             y += self.px(6)
             for linha in quebrar_texto(self.fonte, f"{item['id']} · encontrado em: {self.nome_sala(onde)}", largura):
                 local = self.fonte.render(linha, True, (150, 160, 150))
@@ -1204,13 +1342,16 @@ class Jogo:
             atalhos = [(["←", "→"], "virar página"), (["Esc"], "pistas"), (["Tab"], "fechar")]
         elif self.aba_mental == "culpado":
             ultima = self.etapa_chute == len(ETAPAS_CHUTE) - 1
-            atalhos = ([] if self.chute or not self.pode_chutar() else [(["W", "S"], "escolher"), (["E"], "chutar" if ultima else "próximo")]
+            atalhos = ([(["E"], "acusar de novo")] if self.pode_tentar_de_novo() else [] if self.chute or not self.pode_chutar() else [(["W", "S"], "escolher"), (["E"], "chutar" if ultima else "próximo")]
                        + ([(["Backspace"], "voltar")] if self.etapa_chute else [])) \
                 + [(["Esc"], "pistas"), (["Tab"], "fechar")]
         else:
             atalhos = ([(["A", "D"], "passar"), (["E"], "ampliar")] if self.pistas else []) \
                 + [(["N"], "anotações"), (["C"], "culpado"), (["Tab"], "fechar")]
-        self.desenhar_atalhos(atalhos, (self.largura - margem, self.altura - margem))
+        inicio_atalhos = self.desenhar_atalhos(atalhos, (self.largura - margem, self.altura - margem))
+        # A barra de progresso termina antes das dicas de teclado, para não ficarem uma em cima da outra.
+        progresso.width = min(progresso.width, inicio_atalhos - self.px(20) - progresso.x)
+        self.desenhar_progresso(progresso)
         if self.aba_mental == "culpado":
             self.desenhar_culpado(pygame.Rect(x, y, largura, self.altura - y - margem))
 
@@ -1226,19 +1367,20 @@ class Jogo:
         self.tela.blit(rotulo, rotulo.get_rect(center=caixa.center))
         return caixa.right
 
-    def desenhar_tutorial(self):
+    def desenhar_tutorial(self, x0=None, topo=None):
         """Ao lado das opções da pausa: as teclas do jogo e o que cada uma faz."""
         linhas = [
             (["W", "A", "S", "D"], "andar (ou as setas)"),
             (["E"], "interagir, conversar e confirmar"),
             (["Tab"], "mapa mental: salas, pistas e anotações"),
+            (["R"], "tocar gravações"),
             (["Esc"], "pausa e voltar"),
             (["F11"], "tela cheia"),
         ]
         if self.modo_teste:
             linhas += [(["Caps Lock"], "antes / depois do incidente"), (["Alt"], "trocar personagem")]
-        x0 = round(self.largura * 0.55)
-        topo = self.botoes_menu[0].top
+        x0 = round(self.largura * 0.55) if x0 is None else x0
+        topo = self.botoes_menu[0].top if topo is None else topo
         passo = self.fonte_pequena.get_height() + self.px(14)
         # Coluna da ação logo depois da fileira de teclas mais larga.
         larguras = [sum(max(self.fonte_pequena.get_height() + self.px(4), self.fonte_pequena.size(t)[0] + 2 * self.px(5))
@@ -1271,6 +1413,7 @@ class Jogo:
             pecas.append((fonte.render(acao, True, (170, 180, 168)), False))
         largura = sum(p.get_width() + (2 * folga + self.px(3) if tecla else espaco) for p, tecla in pecas)
         x, base = canto[0] - (largura // 2 if centro else largura), canto[1]
+        inicio = x
         altura = fonte.get_height() + self.px(4)
         for superficie, tecla in pecas:
             if tecla:
@@ -1284,6 +1427,7 @@ class Jogo:
             else:
                 self.tela.blit(superficie, (x + self.px(2), base - altura + (altura - superficie.get_height()) // 2))
                 x += superficie.get_width() + espaco
+        return inicio  # onde as dicas começam (x)
 
     def desenhar_progresso(self, area):
         """Progressão da verdade: quanto dos itens do caso já foi encontrado."""
@@ -1321,7 +1465,13 @@ class Jogo:
         # Texto: cada parágrafo quebrado na largura da folha e dividido em páginas;
         # quando a última enche, aparece uma página nova.
         largura_texto = area.right - margem_x - self.px(16)
-        todas = []
+        # Post-it no topo da 1ª página: o texto dessa página começa depois dele.
+        fonte_post = self.fonte_pequena
+        largura_post = area.right - margem_x - self.px(24)
+        linhas_post = [l for p in POST_IT for l in quebrar_texto(fonte_post, p, largura_post - self.px(16))]
+        altura_post = len(linhas_post) * fonte_post.get_linesize() + self.px(16)
+        reservadas = altura_post // altura_linha + 1
+        todas = [None] * reservadas
         for paragrafo in self.anotacoes.split("\n"):
             todas += quebrar_texto(fonte, paragrafo, largura_texto) or [""]
         cabem = max(1, (area.bottom - topo_texto - self.px(30)) // altura_linha)
@@ -1335,16 +1485,30 @@ class Jogo:
             + ("  >" if indice < len(paginas) - 1 else "   "), True, (120, 112, 96))
         self.tela.blit(numero, numero.get_rect(bottomright=(area.right - self.px(10), area.bottom - self.px(6))))
         x_texto = margem_x + self.px(10)
+        if indice == 0:
+            post = pygame.Rect(margem_x + self.px(8), topo_texto - self.px(4), largura_post, altura_post)
+            pygame.draw.rect(self.tela, (0, 0, 0), post.move(self.px(3), self.px(3)))
+            pygame.draw.rect(self.tela, (244, 222, 120), post)
+            pygame.draw.rect(self.tela, (214, 180, 70), post, 1)
+            fita = pygame.Rect(0, 0, self.px(46), self.px(12))
+            fita.center = (post.centerx, post.top)
+            pygame.draw.rect(self.tela, (220, 216, 200), fita)
+            for n, linha in enumerate(linhas_post):
+                rotulo = fonte_post.render(linha, True, (70, 56, 30))
+                self.tela.blit(rotulo, (post.x + self.px(8), post.y + self.px(8) + n * fonte_post.get_linesize()))
+        primeira = reservadas if indice == 0 else 0  # linha onde o texto começa nesta página
         if not self.anotacoes:
             vazio = fonte.render("Escreva aqui o que for importante...", True, (160, 150, 128))
-            self.tela.blit(vazio, (x_texto, topo_texto + altura_linha - fonte.get_ascent() - self.px(3)))
+            self.tela.blit(vazio, (x_texto, topo_texto + (primeira + 1) * altura_linha - fonte.get_ascent() - self.px(3)))
         for n, linha in enumerate(linhas):
+            if linha is None:
+                continue
             texto = fonte.render(linha, True, (34, 52, 110))
             self.tela.blit(texto, (x_texto, topo_texto + (n + 1) * altura_linha - fonte.get_ascent() - self.px(3)))
         if escrevendo and pygame.time.get_ticks() // 500 % 2 == 0:  # cursor piscando no fim do texto
-            ultima = linhas[-1] if linhas and self.anotacoes else ""
+            ultima = linhas[-1] if linhas and self.anotacoes and linhas[-1] is not None else ""
             cx = x_texto + fonte.size(ultima)[0] + self.px(2)
-            cy = topo_texto + len(linhas if self.anotacoes else [""]) * altura_linha
+            cy = topo_texto + (len(linhas) if self.anotacoes else primeira + 1) * altura_linha
             pygame.draw.line(self.tela, (34, 52, 110), (cx, cy - fonte.get_ascent()), (cx, cy - self.px(3)), max(1, self.px(2)))
 
     def desenhar_obtencao(self):
@@ -1453,6 +1617,28 @@ class Jogo:
             rotulo = self.fonte.render(linha, True, (226, 196, 142))
             self.tela.blit(rotulo, (x, y))
             y += rotulo.get_height()
+        self.desenhar_premissas(item, x, y + self.px(6), largura)
+
+    def desenhar_aviso(self):
+        """Faixa no topo da tela que aparece e some devagar."""
+        t = self.aviso["t"]
+        alfa = min(1.0, t / 0.3, (AVISO - t) / 0.6)
+        rotulo = self.fonte_grande.render(self.aviso["texto"], True, (150, 190, 120))
+        caixa = rotulo.get_rect(midtop=(self.largura // 2, self.px(24))).inflate(self.px(36), self.px(16))
+        painel = pygame.Surface(caixa.size, pygame.SRCALPHA)
+        pygame.draw.rect(painel, (12, 20, 14, 210), painel.get_rect(), border_radius=self.px(6))
+        pygame.draw.rect(painel, (150, 190, 120, 180), painel.get_rect(), 1, border_radius=self.px(6))
+        painel.blit(rotulo, rotulo.get_rect(center=painel.get_rect().center))
+        painel.set_alpha(round(255 * max(0.0, alfa)))
+        self.tela.blit(painel, caixa)
+
+    def desenhar_premissas(self, item, x, y, largura):
+        """Premissas do item, em verde, logo abaixo da observação da Giulia."""
+        for premissa in getattr(item, "premissas", None) or []:
+            for linha in quebrar_texto(self.fonte, premissa, largura):
+                rotulo = self.fonte.render(linha, True, (150, 190, 120))
+                self.tela.blit(rotulo, (x, y))
+                y += rotulo.get_height()
 
     def ampliar_folha(self, passo):
         item = self.inspecionando
@@ -1484,6 +1670,7 @@ class Jogo:
             rotulo = self.fonte_grande.render(linha, True, (225, 225, 225))
             self.tela.blit(rotulo, (x, y))
             y += rotulo.get_height() + self.px(4)
+        self.desenhar_premissas(item, x, y + self.px(6), coluna)
 
     def desenhar_legenda_inspecao(self, item, meio):
         titulo = self.fonte_titulo.render(f"{item.id} — {item.nome}" if item.nome else item.id, True, (255, 255, 255))
@@ -1492,17 +1679,25 @@ class Jogo:
         for i, linha in enumerate(quebrar_texto(self.fonte_grande, item.mensagem, largura_texto)):
             texto = self.fonte_grande.render(linha, True, (225, 225, 225))
             self.tela.blit(texto, texto.get_rect(midtop=(meio, self.px(362 + i * 26))))
+        y = self.px(362 + (i + 1) * 26 + 6)
+        for premissa in getattr(item, "premissas", None) or []:
+            for linha in quebrar_texto(self.fonte, premissa, largura_texto):
+                rotulo = self.fonte.render(linha, True, (150, 190, 120))
+                self.tela.blit(rotulo, rotulo.get_rect(midtop=(meio, y)))
+                y += rotulo.get_height()
 
     def desenhar_dica_inspecao(self, item, meio):
         if getattr(item, "audio", None):
             tocando = self.canal_gravacao and self.canal_gravacao.get_busy()
-            atalhos = [(["E"], "parar gravação" if tocando else "tocar gravação"), (["Esc"], "voltar")]
+            atalhos = [(["R"], "parar gravação" if tocando else "tocar gravação"), (["E"], "voltar")]
         else:
             atalhos = ([(["A", "D"], "folhear")] if len(getattr(item, "paginas", None) or []) > 1 else [])                 + [(["E"], "continuar")]
         self.desenhar_atalhos(atalhos, (meio, self.altura - self.px(16)), centro=True)
 
     def desenhar(self):
-        if self.flashback:
+        if self.final:
+            self.desenhar_final()
+        elif self.flashback:
             self.flashback.desenhar(self.tela, self.px, self.caixa)
         elif self.cutscene:
             self.cutscene.desenhar(self.tela, self.px)
@@ -1554,6 +1749,11 @@ class Jogo:
                 self.caixa.desenhar(self.tela, self.px, nome, texto, self.conversa["letras"], seta)
             if self.obtendo:
                 self.desenhar_obtencao()
+            if self.aviso and not self.fade:
+                self.desenhar_aviso()
+            if self.tutorial_inicio and not self.fade:
+                self.desenhar_tutorial(round(self.largura * 0.36), round(self.altura * 0.36))
+                self.desenhar_atalhos([(["E"], "continuar")], (self.largura // 2, self.altura - self.px(16)), centro=True)
             if self.indo_flashback is not None:
                 veu = pygame.Surface(self.tela.get_size())
                 veu.set_alpha(round(255 * min(1.0, self.indo_flashback / ENTRAR_FLASHBACK)))

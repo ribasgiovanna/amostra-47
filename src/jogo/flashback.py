@@ -8,6 +8,7 @@ import pygame
 
 from dados import MAPAS, PERSONAGENS
 from entidades import Jogador, Mapa
+from cutscene import desenhar_legenda
 
 ALTURA_VISIVEL = 360  # mesma câmera das salas
 ESCURECER = 1.0  # segundos do fade de entrada e de saída
@@ -91,6 +92,50 @@ class Flashback:
         if self.lendo >= PAUSA + len(self.frase()) / LEITURA:
             self.avancar()
 
+    def desenhar_hud(self, tela, px):
+        """HUD de câmera: cantos, REC piscando, bateria, mira no centro, relógio e FPS."""
+        largura, altura = tela.get_size()
+        branco = (235, 235, 235)
+        linha = max(1, px(2))
+        m, braco = px(28), px(70)
+        r = pygame.Rect(m, m, largura - 2 * m, altura - 2 * m)
+        for (x, y), (dx, dy) in (((r.left, r.top), (1, 1)), ((r.right, r.top), (-1, 1)),
+                                 ((r.left, r.bottom), (1, -1)), ((r.right, r.bottom), (-1, -1))):
+            pygame.draw.line(tela, branco, (x, y), (x + dx * braco, y), linha)
+            pygame.draw.line(tela, branco, (x, y), (x, y + dy * braco), linha)
+        if getattr(self, "fonte_hud", (None,))[0] != px(15):
+            self.fonte_hud = (px(15), pygame.font.SysFont("consolas", px(15)))
+        fonte = self.fonte_hud[1]
+        # REC
+        topo = r.top + px(18)
+        if pygame.time.get_ticks() // 600 % 2 == 0:
+            pygame.draw.circle(tela, (220, 40, 40), (r.left + px(24), topo + fonte.get_height() // 2), px(6))
+        tela.blit(fonte.render("REC", True, branco), (r.left + px(38), topo))
+        # bateria
+        bat = pygame.Rect(0, 0, px(30), px(14))
+        bat.topright = (r.right - px(24), topo + px(2))
+        pygame.draw.rect(tela, branco, bat, max(1, px(1)))
+        pygame.draw.rect(tela, branco, bat.inflate(-px(6), -px(6)).move(px(1), 0))
+        pygame.draw.rect(tela, branco, pygame.Rect(bat.left - px(3), bat.centery - px(3), px(3), px(6)))
+        # mira
+        c = pygame.Rect(0, 0, px(140), px(90))
+        c.center = (largura // 2, altura // 2)
+        b = px(30)
+        for (x, y), (dx, dy) in (((c.left, c.top), (1, 1)), ((c.right, c.top), (-1, 1)),
+                                 ((c.left, c.bottom), (1, -1)), ((c.right, c.bottom), (-1, -1))):
+            pygame.draw.line(tela, branco, (x, y), (x + dx * b, y), linha)
+            pygame.draw.line(tela, branco, (x, y), (x, y + dy * b), linha)
+        pygame.draw.line(tela, branco, (c.centerx - px(8), c.centery), (c.centerx + px(8), c.centery), linha)
+        pygame.draw.line(tela, branco, (c.centerx, c.centery - px(8)), (c.centerx, c.centery + px(8)), linha)
+        # relógio e FPS embaixo
+        t = int(self.tempo * 30)
+        relogio = f"{t // 108000:02d}:{t // 1800 % 60:02d}:{t // 30 % 60:02d}:{t % 30:02d}"
+        base = r.bottom - px(18) - fonte.get_height()
+        pygame.draw.rect(tela, branco, pygame.Rect(r.left + px(20), base, px(4), fonte.get_height()))
+        tela.blit(fonte.render(relogio, True, branco), (r.left + px(34), base))
+        fps = fonte.render("CAM 03   30 FPS", True, branco)
+        tela.blit(fps, fps.get_rect(topright=(r.right - px(20), base)))
+
     def desenhar(self, tela, px, caixa):
         largura, altura = tela.get_size()
         zoom = altura / ALTURA_VISIVEL
@@ -107,19 +152,20 @@ class Flashback:
         for ator in sorted(self.atores, key=lambda a: a.pes.bottom):
             ator.desenhar(tela, visao, zoom)
         self.mapa.desenhar_objetos(tela, visao, zoom, topo, atras=False)
-        # Tom de lembrança: sépia leve e bordas escuras.
-        tom = pygame.Surface((largura, altura), pygame.SRCALPHA)
-        tom.fill((120, 85, 40, 80))
-        tela.blit(tom, (0, 0))
+        # Gravação da câmera de segurança: preto e branco, bordas escuras e o HUD por cima.
+        tela.blit(pygame.transform.grayscale(tela), (0, 0))
         borda = pygame.Surface((largura, altura), pygame.SRCALPHA)
         for i in range(12):
             espessura = px(6)
             pygame.draw.rect(borda, (0, 0, 0, 150 - i * 12), borda.get_rect().inflate(-i * 2 * espessura, -i * 2 * espessura), espessura)
         tela.blit(borda, (0, 0))
+        self.desenhar_hud(tela, px)
         if self.tempo >= ESCURECER:
-            chave = FALAS[self.indice][0]
-            seta = self.letras >= len(self.frase()) and pygame.time.get_ticks() // 500 % 2 == 0
-            caixa.desenhar(tela, px, PERSONAGENS[chave]["nome"].split()[0], self.frase(), self.letras, seta)
+            # Caixinha pequena da abertura (sem retrato): "Nome: fala".
+            nome = PERSONAGENS[FALAS[self.indice][0]]["nome"].split()[0] + ": "
+            if getattr(self, "fonte_legenda", (None,))[0] != px(16):
+                self.fonte_legenda = (px(16), pygame.font.SysFont("consolas", px(16)))
+            desenhar_legenda(tela, px, self.fonte_legenda[1], nome + self.frase(), len(nome) + self.letras)
         escuro = 0.0
         if self.tempo < ESCURECER:
             escuro = 1 - self.tempo / ESCURECER
