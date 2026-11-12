@@ -118,8 +118,11 @@ Detalhes de cada entrega em [`entregas/`](entregas/README.md).
 
 ## Como executar o jogo
 
+Requer Python 3.10+.
+
 ```bash
+pip install -r requirements.txt
 python src/jogo/amostra47.py
 ```
 
-*(em desenvolvimento)*
+**Beta (vertical slice):** Otávio Ferraz na Câmara de contenção, com um item interagível (sensor de pressão). Setas ou WASD para andar, **E** para interagir, **F11** para tela cheia, **Esc** para o menu de pausa. Detalhes em [`src/jogo/README.md`](src/jogo/README.md).

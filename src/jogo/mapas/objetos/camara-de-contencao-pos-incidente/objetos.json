@@ -1,0 +1,132 @@
+[
+ {
+  "imagem": "tanque-quebrado.png",
+  "retangulo": [
+   210.9,
+   139.6,
+   298.3,
+   335.6
+  ],
+  "bases": [
+   [
+    0.13,
+    0.255,
+    0.74,
+    0.08
+   ],
+   [
+    0.013,
+    0.33,
+    0.974,
+    0.6
+   ],
+   [
+    0.165,
+    0.925,
+    0.67,
+    0.07
+   ]
+  ],
+  "linha": 0.78
+ },
+ {
+  "imagem": "estacao-canto.png",
+  "retangulo": [
+   90.5,
+   30.9,
+   77.1,
+   102.4
+  ],
+  "pe": 0.55
+ },
+ {
+  "imagem": "estacao-canto-direita.png",
+  "retangulo": [
+   552.3,
+   30.9,
+   77.1,
+   102.4
+  ],
+  "pe": 0.55
+ },
+ {
+  "imagem": "terminal-alerta.png",
+  "retangulo": [
+   97.7,
+   176.9,
+   32.9,
+   52.1
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "terminal-alerta.png",
+  "retangulo": [
+   589.4,
+   176.9,
+   32.9,
+   52.1
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "carrinho-biologico.png",
+  "retangulo": [
+   102.9,
+   421.7,
+   56.6,
+   58.2
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "cadeira.png",
+  "retangulo": [
+   154.3,
+   452.6,
+   20.6,
+   30.8
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "carrinho-laboratorio.png",
+  "retangulo": [
+   473.1,
+   385.7,
+   53.5,
+   56.3
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "cilindros.png",
+  "retangulo": [
+   581.1,
+   416.6,
+   41.1,
+   46.5
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "armarios-sala.png",
+  "retangulo": [
+   41.1,
+   584.2,
+   154.3,
+   111.3
+  ],
+  "pe": 0.45
+ },
+ {
+  "imagem": "maca.png",
+  "retangulo": [
+   596.6,
+   591.4,
+   53.5,
+   63.0
+  ],
+  "pe": 0.3
+ }
+]

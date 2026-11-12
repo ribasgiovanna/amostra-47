@@ -1,0 +1,192 @@
+[
+ {
+  "imagem": "armarios-canto.png",
+  "retangulo": [
+   71.8,
+   57.4,
+   152.0,
+   109.1
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "banco.png",
+  "retangulo": [
+   246.9,
+   239.5,
+   91.9,
+   61.9
+  ],
+  "pe": 0.35
+ },
+ {
+  "imagem": "banco.png",
+  "retangulo": [
+   381.8,
+   239.5,
+   91.9,
+   61.9
+  ],
+  "pe": 0.35
+ },
+ {
+  "imagem": "banco.png",
+  "retangulo": [
+   246.9,
+   391.7,
+   91.9,
+   61.9
+  ],
+  "pe": 0.35
+ },
+ {
+  "imagem": "banco.png",
+  "retangulo": [
+   381.8,
+   391.7,
+   91.9,
+   61.9
+  ],
+  "pe": 0.35
+ },
+ {
+  "imagem": "vaso-planta.png",
+  "retangulo": [
+   213.6,
+   238.9,
+   37.9,
+   48.2
+  ],
+  "pe": 0.4
+ },
+ {
+  "imagem": "vaso-planta.png",
+  "retangulo": [
+   469.7,
+   240.4,
+   36.7,
+   46.7
+  ],
+  "pe": 0.4
+ },
+ {
+  "imagem": "vaso-planta.png",
+  "retangulo": [
+   213.6,
+   393.9,
+   37.9,
+   48.2
+  ],
+  "pe": 0.4
+ },
+ {
+  "imagem": "vaso-planta.png",
+  "retangulo": [
+   469.7,
+   395.4,
+   36.7,
+   46.7
+  ],
+  "pe": 0.4
+ },
+ {
+  "imagem": "estante-suprimentos.png",
+  "retangulo": [
+   508.1,
+   55.9,
+   117.7,
+   84.8
+  ],
+  "pe": 0.3
+ },
+ {
+  "imagem": "maleta-socorro.png",
+  "retangulo": [
+   611.5,
+   157.1,
+   25.8,
+   22.0
+  ],
+  "pe": 0.5
+ },
+ {
+  "imagem": "maleta-socorro.png",
+  "retangulo": [
+   103.3,
+   298.2,
+   28.7,
+   24.4
+  ],
+  "pe": 0.5
+ },
+ {
+  "imagem": "luminaria.png",
+  "retangulo": [
+   140.7,
+   238.0,
+   25.8,
+   57.7
+  ],
+  "pe": 0.2
+ },
+ {
+  "imagem": "luminaria.png",
+  "retangulo": [
+   566.6,
+   303.2,
+   23.7,
+   52.8
+  ],
+  "pe": 0.2
+ },
+ {
+  "imagem": "estante-estreita.png",
+  "retangulo": [
+   97.2,
+   189.5,
+   34.2,
+   109.1
+  ],
+  "pe": 0.25
+ },
+ {
+  "imagem": "estante-estreita.png",
+  "retangulo": [
+   600.0,
+   264.4,
+   28.7,
+   91.6
+  ],
+  "pe": 0.25
+ },
+ {
+  "imagem": "maca.png",
+  "retangulo": [
+   565.6,
+   626.0,
+   68.9,
+   42.9
+  ],
+  "pe": 0.4
+ },
+ {
+  "imagem": "mochilas.png",
+  "retangulo": [
+   574.2,
+   369.5,
+   51.7,
+   52.5
+  ],
+  "pe": 0.4
+ },
+ {
+  "imagem": "mochilas.png",
+  "retangulo": [
+   110.8,
+   508.1,
+   39.6,
+   40.2
+  ],
+  "pe": 0.4
+ }
+]
