@@ -69,6 +69,9 @@ ALTURA_VISIVEL = 360
 ALTURA_BASE_UI = 540  # tamanhos de fonte e margens abaixo valem para esta altura
 FPS = 60
 TECLAS_INTERAGIR = (pygame.K_e,)
+TELA_MINIMA = (320, 180)  # abaixo disso (ex.: janela minimizada no Alt+Tab) o jogo não desenha
+FADE_FINAL = 1.2  # segundos do fade para o preto antes e depois do final
+AVISO_ACUSACAO = 6.0  # o pop-up de "já pode acusar" fica um pouco mais
 AVISO = 4.0  # segundos do aviso no topo da tela (ex.: "Premissas atualizadas")
 # Post-it preso na primeira página das anotações: as premissas auxiliares (as outras vêm dos itens).
 POST_IT = [
@@ -147,7 +150,7 @@ def posicionar_janela(posicao):
 
 # Menus do sistema: (chave, texto do botão).
 MENUS_SISTEMA = {
-    "principal": [("jogar", "Jogar"), ("teste", "Game test"), ("volume", "Opções"), ("sair", "Sair")],
+    "principal": [("jogar", "Jogar"), ("volume", "Opções"), ("sair", "Sair")],
     "pausa": [("continuar", "Continuar"), ("volume", "Opções"), ("menu", "Menu principal"), ("sair", "Sair")],
     "volume": [("efeitos", "Efeitos sonoros"), ("musica", "Música"), ("voltar", "Voltar")],
 }
@@ -181,7 +184,11 @@ class Jogo:
         self.volume_origem = "principal"  # menu de onde se abriu o de volume
         self.aplicar_volumes()
         self.iniciando = None  # tempo do fade do menu principal ao escolher Jogar
-        pygame.display.set_caption("Amostra 47 — beta")
+        pygame.display.set_caption("Amostra 47")
+        try:  # ícone da janela e da barra de tarefas: o crachá
+            pygame.display.set_icon(pygame.image.load(caminho("itens/cracha-de-acesso.png")))
+        except (pygame.error, FileNotFoundError):
+            pass
         self.tamanho_janela = JANELA_INICIAL
         self.tela_cheia = False
         self.relogio = pygame.time.Clock()
@@ -316,9 +323,17 @@ class Jogo:
             posicionar_janela(None)
         self.ajustar_escala()
 
+    def tela_utilizavel(self):
+        """False com a janela minimizada (Alt+Tab) ou pequena demais para desenhar."""
+        largura, altura = self.tela.get_size()
+        return largura >= TELA_MINIMA[0] and altura >= TELA_MINIMA[1]
+
     def ajustar_escala(self):
         """Recalcula zoom e fontes para o tamanho atual da tela."""
+        if not self.tela_utilizavel():
+            return  # janela minimizada: mantém zoom e fontes até ela voltar
         self.largura, self.altura = self.tela.get_size()
+        self.fundo_borrado = None  # fundo da inspeção é refeito no tamanho novo
         self.zoom = self.altura / ALTURA_VISIVEL
         # A interface encolhe também em janelas estreitas (base 960 x 540), para nada sair da tela.
         self.ui = min(self.altura / ALTURA_BASE_UI, self.largura / (ALTURA_BASE_UI * 16 / 9))
@@ -438,11 +453,15 @@ class Jogo:
             return
         self.dialogo = None
         item.coletado = True
+        antes = self.progresso_verdade()
         self.pistas[item.chave] = self.chave_mapa
         self.pista_aberta = len(self.pistas) - 1
+        self.avisar_acusacao(antes)
         self.tocar("pista")
         self.obtendo = {"item": item, "t": 0.0, "arte": pygame.image.load(caminho(ITENS[item.chave]["imagem"])).convert_alpha()}
         print(f"[coleta] {item.id} {item.nome}")
+        if item.chave == CRACHA:
+            self.iniciar_final("cracha", menu=False)  # a Giulia vira o crachá e vê a foto com o pai
 
     def trocar_personagem(self, chave):
         """Troca o jogador mantendo posição e direção."""
@@ -511,14 +530,17 @@ class Jogo:
                     self.tocar("menu-confirmar")
                 continue
             if self.final and evento.type != pygame.QUIT:
-                if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
-                    self.fim_final()
+                if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE \
+                        and self.final["fase"] == "tocando":
+                    self.final["fase"], self.final["f"] = "saindo", 0.0
                 continue
             if self.iniciando is not None and evento.type != pygame.QUIT:
                 continue  # escurecendo para começar: ignora teclas e cliques
             if evento.type == pygame.QUIT:
                 self.rodando = False
             elif evento.type == pygame.VIDEORESIZE and not self.tela_cheia:
+                if evento.w < TELA_MINIMA[0] or evento.h < TELA_MINIMA[1]:
+                    continue  # minimizada (Alt+Tab) ou pequena demais: mantém a escala anterior
                 self.tamanho_janela = evento.size
                 self.ajustar_escala()
             elif evento.type == pygame.TEXTINPUT:
@@ -595,6 +617,7 @@ class Jogo:
                 elif evento.key == pygame.K_TAB and not self.inspecionando:
                     # Mapa mental: pistas coletadas e onde o personagem está.
                     self.mapa_mental = not self.mapa_mental
+                    self.parar_gravacao()
                     self.menu_mapas = self.menu_personagens = False
                     self.pista_aberta = max(0, len(self.pistas) - 1)  # abre na mais recente
                 elif self.mapa_mental:
@@ -627,6 +650,8 @@ class Jogo:
                         self.tocar("menu-mover")
                     elif evento.key == TECLA_GRAVACAO and self.inspecionando and self.inspecionando.audio:
                         self.tocar_gravacao()
+                    elif evento.key == TECLA_GRAVACAO and not self.inspecionando and self.audio_pista():
+                        self.tocar_gravacao(self.audio_pista())  # gravador: toca sem precisar ampliar
                     elif evento.key in TECLAS_INTERAGIR and self.inspecionando:
                         self.fechar_inspecao()  # volta ao mapa mental
                     elif evento.key in TECLAS_INTERAGIR and self.pistas:
@@ -654,9 +679,11 @@ class Jogo:
                             self.inspecionando.pagina = (self.inspecionando.pagina + passo) % len(paginas)
                             self.tocar("menu-mover")
                     elif self.pistas and evento.key in (pygame.K_LEFT, pygame.K_a, pygame.K_UP, pygame.K_w):
+                        self.parar_gravacao()
                         self.pista_aberta = (self.pista_aberta - 1) % len(self.pistas)
                         self.tocar("menu-mover")
                     elif self.pistas and evento.key in (pygame.K_RIGHT, pygame.K_d, pygame.K_DOWN, pygame.K_s):
+                        self.parar_gravacao()
                         self.pista_aberta = (self.pista_aberta + 1) % len(self.pistas)
                         self.tocar("menu-mover")
                 elif evento.key == pygame.K_CAPSLOCK and self.modo_teste and not self.inspecionando:
@@ -748,6 +775,21 @@ class Jogo:
         """Porcentagem da verdade descoberta (itens do caso encontrados)."""
         return round(100 * len(self.pistas) / max(1, len(ITENS)))
 
+    def avisar_acusacao(self, antes):
+        """Pop-up com as teclas quando o progresso libera a acusação (30%) e quando chega a 100%."""
+        agora = self.progresso_verdade()
+        if self.acertou_tudo():
+            return
+        if antes < 100 <= agora and (not self.chute or self.pode_tentar_de_novo()):
+            texto = "Verdade completa! Você pode acusar o culpado" + (" de novo" if self.chute else "")
+        elif antes < MINIMO_CHUTE <= agora and not self.chute:
+            texto = "Você já pode acusar o culpado"
+        else:
+            return
+        self.aviso = {"texto": texto, "t": 0.0, "duracao": AVISO_ACUSACAO,
+                      "teclas": [(["Tab"], "mapa mental"), (["C"], "culpado")]}
+        self.tocar("pista")
+
     def pode_chutar(self):
         return self.progresso_verdade() >= MINIMO_CHUTE
 
@@ -825,39 +867,85 @@ class Jogo:
             if (self.chute["quem"], self.chute["onde"], self.chute["como"]) == (CULPADO, ONDE, COMO):
                 self.iniciar_final()
 
-    def iniciar_final(self):
-        """Acertou o culpado: a Giulia narra o que aconteceu, com a legenda da abertura."""
-        with open(caminho("cutscenes/final-tempos.json"), encoding="utf-8") as arquivo:
+    def iniciar_final(self, nome="final", menu=True):
+        """Cena em vídeo com narração e legenda (arquivos cutscenes/<nome>-video.mp4, -narracao.mp3,
+        .txt e -tempos.json). "final": acertou o culpado, volta ao menu; "cracha": a Giulia acha o
+        crachá do pai, volta ao jogo."""
+        with open(caminho(f"cutscenes/{nome}-tempos.json"), encoding="utf-8") as arquivo:
             dados = json.load(arquivo)
-        with open(caminho("cutscenes/final.txt"), encoding="utf-8") as arquivo:
+        with open(caminho(f"cutscenes/{nome}.txt"), encoding="utf-8") as arquivo:
             frases = [linha.strip() for linha in arquivo if linha.strip()]
-        self.final = {"t": 0.0, "frases": frases, "tempos": dados["frases"], "duracao": dados["duracao"], "video": None}
+        # fase: "escurecendo" (jogo -> preto) -> "tocando" (vídeo clareia) -> "saindo" (-> preto) -> menu/jogo
+        self.final = {"t": 0.0, "frases": frases, "tempos": dados["frases"], "duracao": dados["duracao"],
+                      "video": None, "fase": "escurecendo", "f": 0.0, "nome": nome, "menu": menu}
         try:
-            self.final["video"] = VideoAbertura(caminho("cutscenes/final-video.mp4"))
+            self.final["video"] = VideoAbertura(caminho(f"cutscenes/{nome}-video.mp4"))
         except Exception as erro:
-            print(f"[final] sem vídeo: {erro}")
+            print(f"[{nome}] sem vídeo: {erro}")
+
+    def tocar_narracao_final(self):
         try:
-            pygame.mixer.music.load(caminho("cutscenes/final-narracao.mp3"))
+            pygame.mixer.music.load(caminho(f"cutscenes/{self.final['nome']}-narracao.mp3"))
             pygame.mixer.music.set_volume(self.volume["efeitos"])
             pygame.mixer.music.play()
         except pygame.error:
             pass  # sem áudio: a legenda segue pelo relógio
 
     def atualizar_final(self, dt):
+        final = self.final
+        if final["fase"] != "tocando":
+            final["f"] += min(dt, 0.1)
+            if final["f"] >= FADE_FINAL:
+                if final["fase"] == "escurecendo":
+                    final["fase"], final["f"] = "tocando", 0.0
+                    self.tocar_narracao_final()
+                else:
+                    self.fim_final()
+            return
+        final["f"] += min(dt, 0.1)
         self.final["t"] += min(dt, 0.1)
         pos = pygame.mixer.music.get_pos() / 1000 if pygame.mixer.get_init() else -1
         if pos > 0 and abs(pos - self.final["t"]) < 1.5:
             self.final["t"] = pos  # segue o relógio do áudio
         if self.final["t"] >= self.final["duracao"]:
-            self.fim_final()
+            self.final["fase"], self.final["f"] = "saindo", 0.0
 
     def fim_final(self):
+        """Fim da cena: o final volta ao menu principal; as outras voltam ao jogo, clareando do preto."""
         pygame.mixer.music.stop()
         if self.final["video"]:
             self.final["video"].fechar()
+        menu = self.final["menu"]
         self.final = None
+        if not menu:
+            self.fade = ["clareando", 0.0, None]
+            return
+        self.menu_sistema, self.cursor = "principal", 0
+        self.fechar_inspecao()
+        self.cutscene = self.fade = self.inspecionando = self.dialogo = self.obtendo = None
+        self.conversa = self.flashback = self.indo_flashback = None
+        self.mapa_mental = self.menu_mapas = self.menu_personagens = False
 
     def desenhar_final(self):
+        final = self.final
+        if final["fase"] == "escurecendo":
+            self.desenhar_jogo()
+            self.escurecer_tela(final["f"] / FADE_FINAL)
+            return
+        if final["fase"] == "saindo":
+            self.desenhar_final_quadro()
+            self.escurecer_tela(final["f"] / FADE_FINAL)
+            return
+        self.desenhar_final_quadro()
+        if final["f"] < FADE_FINAL:
+            self.escurecer_tela(1 - final["f"] / FADE_FINAL)
+
+    def escurecer_tela(self, quanto):
+        veu = pygame.Surface(self.tela.get_size())
+        veu.set_alpha(round(255 * max(0.0, min(1.0, quanto))))
+        self.tela.blit(veu, (0, 0))
+
+    def desenhar_final_quadro(self):
         video = self.final["video"]
         quadro = video.quadro(self.final["t"]) if video else None
         if quadro:
@@ -992,12 +1080,26 @@ class Jogo:
             self.tela.blit(rotulo, rotulo.get_rect(center=botao.center))
             self.botoes_aviso.append(botao)
 
-    def tocar_gravacao(self):
-        """Gravador: E toca a gravação; E de novo enquanto toca, para."""
-        if self.canal_gravacao and self.canal_gravacao.get_busy():
+    def audio_pista(self):
+        """Gravação da pista selecionada na lista do mapa mental (ou None)."""
+        if not self.pistas or self.aba_mental not in (None, "pistas"):
+            return None
+        return ITENS[list(self.pistas)[self.pista_aberta % len(self.pistas)]].get("audio")
+
+    def gravacao_tocando(self):
+        return bool(self.canal_gravacao and self.canal_gravacao.get_busy())
+
+    def parar_gravacao(self):
+        if self.canal_gravacao:
             self.canal_gravacao.stop()
+            self.canal_gravacao = None
+
+    def tocar_gravacao(self, caminho_audio=None):
+        """Gravador: R toca a gravação; R de novo enquanto toca, para."""
+        if self.gravacao_tocando():
+            self.parar_gravacao()
             return
-        caminho_audio = self.inspecionando.audio
+        caminho_audio = caminho_audio or self.inspecionando.audio
         if caminho_audio not in self.gravacoes:
             try:
                 self.gravacoes[caminho_audio] = pygame.mixer.Sound(caminho(caminho_audio))
@@ -1035,9 +1137,10 @@ class Jogo:
         self.ambiente_tocando = som
 
     def atualizar(self, dt, teclas):
-        if self.aviso and not self.flashback and not self.fade:
+        if self.aviso and not self.flashback and not self.fade and not self.final \
+                and not self.obtendo and not self.dialogo:
             self.aviso["t"] += dt
-            if self.aviso["t"] >= AVISO:
+            if self.aviso["t"] >= self.aviso.get("duracao", AVISO):
                 self.aviso = None
         if self.iniciando is not None:
             # "Jogar": depois do fade do menu, começa a cutscene.
@@ -1347,6 +1450,7 @@ class Jogo:
                 + [(["Esc"], "pistas"), (["Tab"], "fechar")]
         else:
             atalhos = ([(["A", "D"], "passar"), (["E"], "ampliar")] if self.pistas else []) \
+                + ([(["R"], "parar gravação" if self.gravacao_tocando() else "tocar gravação")] if self.audio_pista() else []) \
                 + [(["N"], "anotações"), (["C"], "culpado"), (["Tab"], "fechar")]
         inicio_atalhos = self.desenhar_atalhos(atalhos, (self.largura - margem, self.altura - margem))
         # A barra de progresso termina antes das dicas de teclado, para não ficarem uma em cima da outra.
@@ -1572,7 +1676,7 @@ class Jogo:
             pagina = paginas[item.pagina]
             if len(paginas) == 1 and pagina.get_height() > pagina.get_width() * 1.15:
                 self.desenhar_folha(item, pagina)  # documento em pé: folha grande para dar de ler
-                self.desenhar_atalhos([(["Roda", "+", "-"], "zoom"), (["W", "A", "S", "D"], "mover"), (["E"], "continuar")],
+                self.desenhar_atalhos([(["+", "-"], "zoom"), (["W", "A", "S", "D"], "mover"), (["E"], "continuar")],
                                       (meio, self.altura - self.px(16)), centro=True)
                 return
             escala = min(self.largura * 0.8 / pagina.get_width(), lado / pagina.get_height())
@@ -1622,13 +1726,23 @@ class Jogo:
     def desenhar_aviso(self):
         """Faixa no topo da tela que aparece e some devagar."""
         t = self.aviso["t"]
-        alfa = min(1.0, t / 0.3, (AVISO - t) / 0.6)
+        alfa = min(1.0, t / 0.3, (self.aviso.get("duracao", AVISO) - t) / 0.6)
         rotulo = self.fonte_grande.render(self.aviso["texto"], True, (150, 190, 120))
-        caixa = rotulo.get_rect(midtop=(self.largura // 2, self.px(24))).inflate(self.px(36), self.px(16))
+        teclas = self.aviso.get("teclas")
+        altura_teclas = self.fonte_pequena.get_height() + self.px(12) if teclas else 0
+        caixa = rotulo.get_rect(midtop=(self.largura // 2, self.px(24)))
+        caixa.height += altura_teclas
+        caixa = caixa.inflate(self.px(36), self.px(16))
         painel = pygame.Surface(caixa.size, pygame.SRCALPHA)
-        pygame.draw.rect(painel, (12, 20, 14, 210), painel.get_rect(), border_radius=self.px(6))
-        pygame.draw.rect(painel, (150, 190, 120, 180), painel.get_rect(), 1, border_radius=self.px(6))
-        painel.blit(rotulo, rotulo.get_rect(center=painel.get_rect().center))
+        pygame.draw.rect(painel, (12, 20, 14, 225), painel.get_rect(), border_radius=self.px(6))
+        pygame.draw.rect(painel, (150, 190, 120, 200), painel.get_rect(), 1, border_radius=self.px(6))
+        painel.blit(rotulo, rotulo.get_rect(midtop=(caixa.width // 2, self.px(8))))
+        if teclas:  # as teclas desenhadas dentro do painel, embaixo do texto
+            tela, self.tela = self.tela, painel
+            try:
+                self.desenhar_atalhos(teclas, (caixa.width // 2, caixa.height - self.px(8)), centro=True)
+            finally:
+                self.tela = tela
         painel.set_alpha(round(255 * max(0.0, alfa)))
         self.tela.blit(painel, caixa)
 
@@ -1771,10 +1885,23 @@ class Jogo:
             dt = self.relogio.tick(FPS) / 1000
             self.tratar_eventos()
             self.atualizar(dt, pygame.key.get_pressed())
-            self.desenhar()
+            if self.tela_utilizavel() and self.tela.get_size() == (self.largura, self.altura):
+                self.desenhar()
+            elif self.tela_utilizavel():
+                self.ajustar_escala()  # voltou do Alt+Tab com outro tamanho
         pygame.quit()
 
 
 if __name__ == "__main__":
-    Jogo().executar()
+    try:
+        Jogo().executar()
+    except Exception:
+        # Se o jogo fechar com erro, grava o motivo em "erro.log" ao lado do jogo (ou do .exe).
+        import traceback
+        pasta = os.path.dirname(sys.executable) if getattr(sys, "frozen", False) else os.path.dirname(os.path.abspath(__file__))
+        with open(os.path.join(pasta, "erro.log"), "a", encoding="utf-8") as arquivo:
+            import datetime
+            arquivo.write(f"\n=== {datetime.datetime.now():%d/%m/%Y %H:%M:%S} ===\n")
+            traceback.print_exc(file=arquivo)
+        raise
     sys.exit()

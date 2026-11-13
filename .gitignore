@@ -10,3 +10,7 @@ venv/
 desktop.ini
 Thumbs.db
 .DS_Store
+
+# executável (python src/jogo/ferramentas/gerar_exe.py)
+build/
+dist/
