@@ -2,10 +2,12 @@
 
 import math
 import os
+import sys
 
 import pygame
 
-PASTA_JOGO = os.path.dirname(os.path.abspath(__file__))
+# No executável (PyInstaller) os arquivos do jogo ficam em sys._MEIPASS.
+PASTA_JOGO = getattr(sys, "_MEIPASS", None) or os.path.dirname(os.path.abspath(__file__))
 
 
 def caminho(relativo):
@@ -228,18 +230,18 @@ class Item:
 
 
 def desenhar_brilho(tela, posicao, visao, zoom, tempo, destacado=False):
-    # Brilho branco pulsante indica que há algo para interagir.
+    # Brilho amarelo pulsante indica que há algo para interagir.
     pulso = (math.sin(tempo * 4) + 1) / 2
     raio = round((9 + pulso * 3 + (3 if destacado else 0)) * zoom)
     brilho = pygame.Surface((raio * 4, raio * 4), pygame.SRCALPHA)
     centro = raio * 2
     for r in range(raio * 2, 0, -1):
-        alfa = int(255 * (1 - r / (raio * 2)) ** 1.5 * (0.7 + 0.3 * pulso))
-        pygame.draw.circle(brilho, (255, 255, 255, alfa), (centro, centro), r)
+        alfa = min(255, int(330 * (1 - r / (raio * 2)) ** 1.3 * (0.7 + 0.3 * pulso)))
+        pygame.draw.circle(brilho, (255, 205, 40, alfa), (centro, centro), r)
     # Pequena cintilação em cruz para destacar o brilho em piso claro.
     braco = round((4 + pulso * 4) * zoom)
     espessura = max(2, round(zoom))
-    pygame.draw.line(brilho, (255, 255, 255), (centro - braco, centro), (centro + braco, centro), espessura)
-    pygame.draw.line(brilho, (255, 255, 255), (centro, centro - braco), (centro, centro + braco), espessura)
+    pygame.draw.line(brilho, (255, 230, 90), (centro - braco, centro), (centro + braco, centro), espessura)
+    pygame.draw.line(brilho, (255, 230, 90), (centro, centro - braco), (centro, centro + braco), espessura)
     centro_tela = ((posicao.x - visao.x) * zoom, (posicao.y - visao.y) * zoom)
     tela.blit(brilho, brilho.get_rect(center=centro_tela))

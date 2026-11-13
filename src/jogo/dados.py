@@ -272,6 +272,7 @@ ITENS = {
         "id": "OBJ-01",
         "nome": "Crachá de acesso de Giovani Pistori",
         "imagem": "itens/cracha-de-acesso.png",
+        "paginas": ["itens/cracha-de-acesso.png", "itens/cracha-de-acesso-verso.png"],  # frente e verso (foto)
         "fala": "Um crachá antigo do Complexo Helix, preso a um suporte de plástico rígido. O cartão está desgastado, "
                 "com manchas escuras próximas às bordas. A foto funcional ainda é reconhecível.",
         "palpite": "Ele carregava essa foto para o trabalho... o tempo todo? Talvez eu possa usar para acessar as câmeras.",
@@ -349,6 +350,7 @@ ITENS = {
         "id": "OBJ-05",
         "nome": "Relatório de acesso",
         "imagem": "itens/relatorio-de-acesso.png",
+        "paginas": ["itens/relatorio-de-acesso-documento.png"],  # ao ampliar, mostra o relatório preenchido
         "fala": "Uma prancheta com folhas de controle de entrada e saída. Parte da tinta desapareceu e algumas linhas "
                 "foram assinaladas à mão. Ainda é possível reconstruir a sequência de movimentações.",
         "palpite": "Otávio saiu do laboratório antes da liberação. Então por que ainda havia suspeitas sobre ele?",
